@@ -1,0 +1,334 @@
+(function () {
+  'use strict';
+  const staticHosting = document.querySelector('meta[name="factorlab-hosting"]')?.content === 'static';
+  const $ = id => document.getElementById(id);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const copy = {
+    'zh-CN': {
+      title: '账号与研究存档', kicker: 'FACTORLAB / 研究连续性', welcome: '把每一次判断，留在研究进程里',
+      intro: '围绕高端制造与尖端科技，在长期定位和短期战术之间检验你的配置判断。',
+      guest: '继续访客进度', login: '登录', register: '注册', close: '关闭',
+      signInTitle: '登录 FactorLab', registerTitle: '创建你的账号', authIntro: '进入你的行业配置研究台', enter: '登录并进入', createAndEnter: '注册并进入', returnToWorkspace: '返回研究台',
+      show: '显示', hide: '隐藏', showPassword: '显示密码', hidePassword: '隐藏密码', showConfirmation: '显示确认密码', hideConfirmation: '隐藏确认密码',
+      boundary: '账号与存档保存在这台电脑，不会自动同步到其他设备。',
+      isolation: '登录后进入独立研究空间。访客进度保留在当前浏览器，不会自动上传到账号。',
+      offline: '当前页面未连接本地账号服务。你仍可使用访客进度，并在复盘页导出备份。',
+      staticTitle: '浏览器存档', staticIntro: '公开版 · 在当前浏览器继续研究', staticNotice: '公开版未连接账号和在线 AI 服务。研究进度保存在当前浏览器，可导出 JSON 备份。',
+      staticBoundary: '浏览器存档不会跨设备同步。清除网站数据可能移除进度，请定期导出备份。',
+      checking: '正在检查本地账号服务…', username: '用户名', password: '密码', confirmPassword: '确认密码',
+      usernameHint: '3–32 位英文字母、数字、下划线或连字符', passwordHint: '10–128 个字符；请使用此项目专用密码',
+      passwordMismatch: '两次输入的密码不一致。', invalidUsername: '用户名需为 3–32 位英文字母、数字、下划线或连字符。',
+      invalidPassword: '密码长度需为 10–128 个字符。', working: '正在处理…', logout: '退出并返回访客',
+      slots: '我的研究存档', empty: '还没有账号存档。为当前研究进度命名，保存第一个版本。',
+      saveName: '存档名称', savePlaceholder: '例如：复苏情景 · 防御配置', createSave: '保存为新存档',
+      nameHint: '最多 12 个独立存档；每次保存由你确认。', invalidName: '请输入 1–60 个字符的存档名称。',
+      load: '载入', overwrite: '用当前进度更新', refresh: '刷新列表', export: '导出当前进度',
+      restore: '恢复上次载入前的草稿', loadWarning: '载入将替换当前工作进度。当前进度会先保留为可恢复草稿。',
+      overwriteWarning: '确认用当前工作进度更新此账号存档？其他存档保持独立。',
+      confirmLoad: '保留草稿并载入', confirmUpdate: '确认更新', cancel: '取消', loaded: '研究存档已载入。',
+      saved: '已保存到本地服务。', restored: '载入前草稿已恢复。', loggedIn: '已进入账号研究空间。',
+      browserSaved: '浏览器草稿自动保存', browserBlocked: '浏览器无法保存草稿，请导出备份',
+      serviceUnsaved: '本地服务：本次研究尚未手动保存', serviceSaved: '本地服务：上次保存',
+      serviceDirty: '当前草稿有后续更改', quota: '已达到 12 个存档上限。你可以更新已有存档。',
+      conflict: '此存档已在另一处更新。本次没有覆盖，当前草稿仍保留；请刷新列表后另存新档或重新核对版本。',
+      network: '本地服务暂不可用。当前浏览器进度仍保留，请稍后重试。',
+      unauthorized: '登录已失效，账号草稿已保留。请重新登录。', forbidden: '会话已变化或未通过校验，账号草稿已保留。请重新登录。',
+      duplicate: '用户名已被使用，请换一个名称。', credentials: '用户名或密码不正确。', rate: '尝试次数过多，请稍后重试。',
+      rejected: '数据未通过校验，当前草稿和已有存档均未替换。', backupFailed: '无法保留载入前草稿，已停止载入。请先导出当前进度。',
+      day: '第 {day} 天 · 第 {round} 轮', version: '版本 {revision}', baseline: '基准情景', stress: '压力情景', recovery: '复苏情景',
+      account: '本地账号', guestLabel: '访客', serverLabel: '本地服务存档', sessionUnknown: '账号服务状态未知', progress: '研究 → 因子检验 → 配置 → 风险归因 → 复盘'
+    },
+    en: {
+      title: 'Account & research saves', kicker: 'FACTORLAB / RESEARCH CONTINUITY', welcome: 'Keep your decisions in the research record',
+      intro: 'Test allocation across advanced manufacturing and frontier technology, from long-term positioning to tactical choices.',
+      guest: 'Continue as visitor', login: 'Sign in', register: 'Register', close: 'Close',
+      signInTitle: 'Sign in to FactorLab', registerTitle: 'Create your account', authIntro: 'Enter your sector allocation workspace', enter: 'Sign in & continue', createAndEnter: 'Create account & continue', returnToWorkspace: 'Back to workspace',
+      show: 'Show', hide: 'Hide', showPassword: 'Show password', hidePassword: 'Hide password', showConfirmation: 'Show confirmation password', hideConfirmation: 'Hide confirmation password',
+      boundary: 'Accounts and saves stay on this computer. They do not sync to other devices.',
+      isolation: 'Signing in opens a separate research workspace. Visitor progress stays in this browser and is never uploaded automatically.',
+      offline: 'This page is not connected to the local account service. Continue as a visitor and export a backup from the journal.',
+      staticTitle: 'Browser saves', staticIntro: 'Public version · Continue research in this browser', staticNotice: 'The public version has no connected account or online AI service. Progress stays in this browser and can be exported as a JSON backup.',
+      staticBoundary: 'Browser saves do not sync across devices. Clearing site data may remove progress. Export backups regularly.',
+      checking: 'Checking the local account service…', username: 'Username', password: 'Password', confirmPassword: 'Confirm password',
+      usernameHint: '3–32 letters, numbers, underscores or hyphens', passwordHint: '10–128 characters; use a password dedicated to this project',
+      passwordMismatch: 'The two passwords do not match.', invalidUsername: 'Use 3–32 ASCII letters, numbers, underscores or hyphens.',
+      invalidPassword: 'Use a password of 10–128 characters.', working: 'Working…', logout: 'Sign out to visitor',
+      slots: 'My research saves', empty: 'No account saves yet. Name your current research progress to save the first version.',
+      saveName: 'Save name', savePlaceholder: 'For example: Recovery · Defensive allocation', createSave: 'Save as new',
+      nameHint: 'Up to 12 independent saves. You choose when to save.', invalidName: 'Enter a save name of 1–60 characters.',
+      load: 'Load', overwrite: 'Update with current progress', refresh: 'Refresh list', export: 'Export current progress',
+      restore: 'Recover the draft kept before loading', loadWarning: 'Loading replaces your current working progress. A recoverable copy of that progress will be kept first.',
+      overwriteWarning: 'Update this account save with your current progress? Other saves remain independent.',
+      confirmLoad: 'Keep draft & load', confirmUpdate: 'Confirm update', cancel: 'Cancel', loaded: 'Research save loaded.',
+      saved: 'Saved to the local service.', restored: 'Your earlier draft has been recovered.', loggedIn: 'Your account workspace is ready.',
+      browserSaved: 'Browser draft saves automatically', browserBlocked: 'Browser cannot save drafts; export a backup',
+      serviceUnsaved: 'Local service: this research has not been saved manually', serviceSaved: 'Local service: last saved',
+      serviceDirty: 'Your draft has later changes', quota: 'All 12 save slots are in use. You can update an existing save.',
+      conflict: 'This save changed elsewhere. Nothing was overwritten and your current draft is preserved. Refresh the list, then save a new copy or review the new version.',
+      network: 'The local service is unavailable. Your browser progress is preserved. Please retry later.',
+      unauthorized: 'Your session expired. The account draft is preserved. Please sign in again.', forbidden: 'Your session changed or verification failed. The account draft is preserved. Please sign in again.',
+      duplicate: 'That username is already in use. Choose another.', credentials: 'The username or password is incorrect.', rate: 'Too many attempts. Please try again later.',
+      rejected: 'Validation failed. Your current draft and existing saves were not replaced.', backupFailed: 'Could not keep a recovery draft, so loading was stopped. Export your current progress first.',
+      day: 'Day {day} · Round {round}', version: 'Revision {revision}', baseline: 'Baseline', stress: 'Stress', recovery: 'Recovery',
+      account: 'Local account', guestLabel: 'Visitor', serverLabel: 'Local service saves', sessionUnknown: 'Account service status unknown', progress: 'Research → Factor tests → Allocation → Risk attribution → Reflection'
+    }
+  };
+  let initialized = false, ready = false, lang = 'zh-CN', enabled = false, session = { user: null, csrfToken: null };
+  let mode = 'login', busy = false, message = '', messageError = false, saves = [], pending = null, lastSaved = null;
+  let dialog, banner, trigger, mascotHost, mascot, libraryHost, libraryMascot, savedFeedback;
+  const feedback=(stage,id)=>document.dispatchEvent(new CustomEvent('factorlab:feedback',{detail:{kind:'account',stage,id}}));
+  const app = () => window.FactorLabApp;
+  const t = (key, values = {}) => Object.entries(values).reduce((str, [name, value]) => str.replaceAll('{' + name + '}', String(value)), copy[lang][key] || key);
+  const recoveryKey = () => 'factorlab-v3-before-load-' + (session.user?.id || 'guest');
+  function hasRecovery() { try { return !!localStorage.getItem(recoveryKey()); } catch { return false; } }
+  function dismissed() { try { return localStorage.getItem('factorlab-v3-welcome-seen') === '1'; } catch { return false; } }
+  function date(value) { const d = new Date(value); return Number.isFinite(d.getTime()) ? d.toLocaleString(lang, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—'; }
+  function notify(key, error = false) { message = key; messageError = error; updateMessage(); }
+  function updateMessage() {
+    const node = $('account-message');
+    if (node) { node.textContent = message ? t(message) : ''; node.classList.toggle('is-error', messageError); }
+  }
+  function syncStatus() {
+    const node = $('account-browser-state');
+    if (node) node.textContent = t(app().getUI().writable ? 'browserSaved' : 'browserBlocked');
+    const serverState = $('account-server-state');
+    if (serverState) {
+      const changed = lastSaved && lastSaved.envelope !== JSON.stringify(app().getEnvelope());
+      serverState.textContent = lastSaved ? t('serviceSaved') + ' ' + date(lastSaved.at) + (changed ? ' · ' + t('serviceDirty') : '') : t('serviceUnsaved');
+    }
+  }
+  function renderChrome() {
+    const title = t(staticHosting ? 'staticTitle' : session.user ? 'title' : 'login');
+    trigger.title = title;
+    trigger.setAttribute('aria-label', title);
+    trigger.disabled = !ready;
+    trigger.innerHTML = '<span class="account-avatar" aria-hidden="true">' + esc(session.user ? session.user.username.slice(0, 2).toUpperCase() : 'FL') + '</span><span class="account-trigger-label">' + esc(session.user ? session.user.username : title) + '</span>';
+    banner.hidden = !!session.user || dismissed();
+    banner.innerHTML = `<div><span class="eyebrow">${t('kicker')}</span><h2>${t('welcome')}</h2><p>${t('intro')}</p><small>${t('progress')}</small></div><div class="account-welcome-actions"><button class="primary" data-account-action="guest">${t('guest')}</button>${staticHosting ? `<button data-account-action="export">${t('export')}</button>` : `<div><button data-account-action="login-tab" ${!ready || !enabled ? 'disabled' : ''}>${t('login')}</button><button data-account-action="register-tab" ${!ready || !enabled ? 'disabled' : ''}>${t('register')}</button></div>`}<p>${t(staticHosting ? 'staticNotice' : !ready ? 'checking' : enabled ? 'isolation' : 'offline')}</p></div>`;
+  }
+  function renderDialog(preserve = false) {
+    const focusId=preserve&&dialog.contains(document.activeElement)?document.activeElement.id:null;
+    const selection=focusId&&document.activeElement.selectionStart!=null?[document.activeElement.selectionStart,document.activeElement.selectionEnd]:null;
+    const formValues = preserve ? [...dialog.querySelectorAll('input')].map(node => [node.id, node.value]) : [];
+    const user = session.user;
+    dialog.classList.toggle('account-auth-dialog', !user);
+    dialog.innerHTML = `<div class="account-dialog-heading"><div><span class="eyebrow">${user ? t('kicker') : 'FACTORLAB'}</span><h2 id="account-title">${t(staticHosting ? 'staticTitle' : user ? 'title' : mode === 'register' ? 'registerTitle' : 'signInTitle')}</h2></div><button id="close-accounts" class="icon-button" aria-label="${t('close')}">×</button></div>${user ? `<p class="account-boundary">${t('boundary')}</p>` : `<p class="account-auth-intro">${t(staticHosting ? 'staticIntro' : 'authIntro')}</p>`}<div id="account-message" role="status" aria-live="polite" class="account-message"></div>${user ? saveMarkup() : authMarkup()}<div class="account-bottom">${user ? `<span id="account-browser-state"></span><div class="account-exit-actions"><button data-account-action="logout">${t('logout')}</button><button class="primary" data-account-action="workspace">${t('returnToWorkspace')}</button></div>` : `<button data-account-action="guest">${t('guest')}</button><p class="account-local-note">${t(staticHosting ? 'staticBoundary' : 'boundary')}</p>`}</div>`;
+    for (const [id, value] of formValues) if ($(id)) $(id).value = value;
+    if (!user) {
+      const layout=document.createElement('div');layout.className='auth-layout';
+      const panel=document.createElement('div');panel.className='auth-panel';
+      while(dialog.firstChild)panel.append(dialog.firstChild);
+      const companion=document.createElement('aside');companion.className='auth-companion';
+      companion.innerHTML=`<div><span class="eyebrow">FACTORLAB</span><h3>${lang==='en'?'Every decision starts with evidence.':'每次判断，从证据开始。'}</h3><p>${lang==='en'?'Your research companion, from sector cycles to reflection.':'从行业周期到配置复盘，陪你完成每一轮研究。'}</p></div>`;
+      if(!mascotHost){mascotHost=document.createElement('div');mascotHost.className='mascot-host';mascotHost.id='login-mascot';}
+      companion.append(mascotHost);layout.append(companion,panel);dialog.append(layout);
+      if(!mascot)mascot=window.FactorMascot?.mount(mascotHost,{context:'login',language:lang,focusRoot:dialog});
+      mascot?.setLanguage(lang);mascot?.setVisible(dialog.open);
+    } else {
+      mascot?.setVisible(false);
+      if(!libraryHost){libraryHost=document.createElement('div');libraryHost.className='mascot-host account-library-companion';libraryHost.id='library-mascot';}
+      dialog.querySelector('.account-library-heading')?.append(libraryHost);
+      if(!libraryMascot)libraryMascot=window.FactorMascot?.mount(libraryHost,{context:'workspace',language:lang,focusRoot:dialog});
+      libraryMascot?.setLanguage(lang);libraryMascot?.setVisible(dialog.open);
+      if(savedFeedback&&!busy){libraryMascot?.emit('success',{id:savedFeedback});savedFeedback=null;}
+    }
+    if(!user)libraryMascot?.setVisible(false);
+    if(focusId&&$(focusId)){ $(focusId).focus({preventScroll:true});if(selection)$(focusId).setSelectionRange(...selection); }
+    $('close-accounts').addEventListener('click', () => dialog.close());
+    $('account-auth-form')?.addEventListener('submit', authenticate);
+    $('account-new-save-form')?.addEventListener('submit', createSave);
+    updateMessage(); syncStatus();
+    dialog.querySelectorAll('button,input').forEach(node => { if (busy && node.id !== 'close-accounts') node.disabled = true; });
+    if (busy) dialog.setAttribute('aria-busy', 'true'); else dialog.removeAttribute('aria-busy');
+  }
+  function passwordMarkup(id, confirmation = false) {
+    const disabled = !enabled || !ready || busy ? 'disabled' : '';
+    return `<div class="account-password-field"><input id="${id}" name="${confirmation ? 'password-confirm' : 'password'}" type="password" autocomplete="${mode === 'register' ? 'new-password' : 'current-password'}" minlength="10" maxlength="128" required ${disabled}><button type="button" data-account-action="toggle-password" aria-controls="${id}" aria-pressed="false" aria-label="${t(confirmation ? 'showConfirmation' : 'showPassword')}" ${disabled}>${t('show')}</button></div>`;
+  }
+  function authMarkup() {
+    if (staticHosting) return `<div class="account-auth-grid"><p class="account-service-note">${t('staticNotice')}</p><p id="account-browser-state"></p><button data-account-action="export">${t('export')}</button></div>`;
+    const disabled = !enabled || !ready || busy ? 'disabled' : '';
+    return `<div class="account-auth-grid"><div class="account-tabs"><button type="button" data-account-action="login-tab" aria-pressed="${mode === 'login'}">${t('login')}</button><button type="button" data-account-action="register-tab" aria-pressed="${mode === 'register'}">${t('register')}</button></div>${!ready || !enabled ? `<p class="account-service-note">${t(!ready ? 'checking' : 'offline')}</p>` : ''}<form id="account-auth-form"><label for="account-username">${t('username')}</label><input id="account-username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="32" pattern="[A-Za-z0-9_-]{3,32}" required ${disabled}>${mode === 'register' ? `<small>${t('usernameHint')}</small>` : ''}<label for="account-password">${t('password')}</label>${passwordMarkup('account-password')}${mode === 'register' ? `<small>${t('passwordHint')}</small><label for="account-password-confirm">${t('confirmPassword')}</label>${passwordMarkup('account-password-confirm', true)}` : ''}<button type="submit" id="account-submit" class="primary wide" ${disabled}>${t(busy ? 'working' : mode === 'register' ? 'createAndEnter' : 'enter')}</button></form></div>`;
+  }
+  function saveMarkup() {
+    return `<div class="account-library-heading"><div><span class="source-tag">${t('account')} · ${esc(session.user.username)}</span><h3>${t('slots')} <span class="account-count">${saves.length} / 12</span></h3></div><button data-account-action="refresh">${t('refresh')}</button></div><p id="account-server-state" class="account-service-note"></p><form id="account-new-save-form" class="account-new-save"><label for="account-save-name">${t('saveName')}</label><div><input id="account-save-name" maxlength="60" required placeholder="${t('savePlaceholder')}" ${saves.length >= 12 ? 'disabled' : ''}><button type="submit" id="account-create-save" class="primary" ${saves.length >= 12 ? 'disabled' : ''}>${t('createSave')}</button></div><small>${t(saves.length >= 12 ? 'quota' : 'nameHint')}</small></form><div id="account-slot-list" class="account-slot-list">${saves.length ? saves.map(save => `<article><div><h4>${esc(save.name)}</h4><p>${esc(t('day', { day: save.day, round: save.round }))} · ${esc(t(save.scenario))}</p><small>${esc(date(save.updatedAt))} · ${esc(t('version', { revision: save.revision }))}</small></div><div class="account-slot-actions"><button data-account-action="load" data-save-id="${esc(save.id)}">${t('load')}</button><button data-account-action="overwrite" data-save-id="${esc(save.id)}">${t('overwrite')}</button></div></article>`).join('') : `<p class="account-empty">${t('empty')}</p>`}</div>${pending ? `<section class="account-confirm" aria-label="${t('confirmLoad')}"><strong>${esc(pending.name || '')}</strong><p>${t(pending.type === 'overwrite' ? 'overwriteWarning' : 'loadWarning')}</p><div><button id="account-confirm-action" class="primary" data-account-action="confirm">${t(pending.type === 'overwrite' ? 'confirmUpdate' : 'confirmLoad')}</button><button data-account-action="cancel">${t('cancel')}</button></div></section>` : ''}<div class="account-transfer"><button data-account-action="export">${t('export')}</button>${hasRecovery() ? `<button data-account-action="recover">${t('restore')}</button>` : ''}</div>`;
+  }
+  async function request(url, options = {}) {
+    const controller = new AbortController(), timeout = setTimeout(() => controller.abort(), 6000);
+    const headers = { Accept: 'application/json', ...(options.method ? { 'Content-Type': 'application/json' } : {}), ...(session.csrfToken ? { 'X-CSRF-Token': session.csrfToken } : {}) };
+    try {
+      const response = await fetch(url, { ...options, headers, credentials: 'same-origin', cache: 'no-store', signal: controller.signal });
+      const data = await response.json().catch(() => null);
+      if (!response.ok) throw Object.assign(new Error('request'), { status: response.status });
+      if (!data || typeof data !== 'object') throw Error('response');
+      return data;
+    } finally { clearTimeout(timeout); }
+  }
+  function failure(error, auth = false) {
+    const status = error.status;
+    if ([401, 403].includes(status) && !auth) { session = { user: null, csrfToken: null }; mode = 'login'; saves = []; lastSaved = null; pending = null; app().setProfile(null); renderChrome(); }
+    notify(status === 409 ? (auth ? 'duplicate' : 'conflict') : status === 401 ? (auth ? 'credentials' : 'unauthorized') : status === 403 ? 'forbidden' : status === 429 ? 'rate' : status === 400 || status === 413 || status === 422 ? 'rejected' : 'network', true);
+  }
+  function installSession(value) {
+    if (value.enabled !== true || !value.user || typeof value.user.id !== 'string' || typeof value.user.username !== 'string' || typeof value.csrfToken !== 'string') throw Error('session');
+    session = { user: value.user, csrfToken: value.csrfToken }; enabled = true; saves = []; lastSaved = null; pending = null;
+    app().setProfile(session.user.id); renderChrome();
+  }
+  async function fetchSaves() {
+    const data = await request('/api/saves');
+    if (!Array.isArray(data.saves)) throw Error('schema');
+    saves = data.saves.slice(0, 12);
+  }
+  async function authenticate(event) {
+    event.preventDefault(); if (busy || !enabled) return;
+    const username = $('account-username').value.trim(), password = $('account-password').value;
+    if (!/^[A-Za-z0-9_-]{3,32}$/.test(username)) return notify('invalidUsername', true);
+    if (password.length < 10 || password.length > 128) return notify('invalidPassword', true);
+    if (mode === 'register' && password !== $('account-password-confirm').value) return notify('passwordMismatch', true);
+    busy = true; message = ''; const action = mode; updateMessage(); setAuthBusy();
+    let signedIn = false;
+    try { installSession(await request('/api/' + (action === 'register' ? 'register' : 'login'), { method: 'POST', body: JSON.stringify({ username, password }) })); signedIn = true; }
+    catch (error) { failure(error, true); }
+    finally {
+      busy = false;
+      if (signedIn) { enterWorkspace(); feedback('success'); }
+      else { setAuthBusy(); $('account-password')?.focus(); }
+    }
+  }
+  function setAuthBusy() {
+    dialog.querySelectorAll('button,input').forEach(node => { node.disabled = busy || (!enabled && node.closest('#account-auth-form')); });
+    dialog.toggleAttribute('aria-busy', busy);
+    if (busy) dialog.setAttribute('aria-busy', 'true');
+    if ($('account-submit')) $('account-submit').textContent = t(busy ? 'working' : mode === 'register' ? 'createAndEnter' : 'enter');
+  }
+  function clearWelcome() {
+    const url = new URL(location.href);
+    if (url.searchParams.has('welcome')) { url.searchParams.delete('welcome'); history.replaceState(history.state, '', url.href); }
+  }
+  function enterWorkspace() {
+    clearWelcome();
+    try { localStorage.setItem('factorlab-v3-welcome-seen', '1'); } catch {}
+    banner.hidden = true; dialog.close();
+    window.FactorLabWorkspace?.go('research', { animate: false, focus: true });
+    $('workspace')?.focus({ preventScroll: true });
+  }
+  function rememberSaved(save, envelope) {
+    if (!save || typeof save.id !== 'string' || !Number.isInteger(save.revision)) throw Error('save');
+    lastSaved = { at: save.updatedAt, envelope: JSON.stringify(envelope) }; notify('saved');savedFeedback=save.id+':'+save.revision;
+  }
+  async function createSave(event) {
+    event.preventDefault(); if (busy || !session.user) return;
+    const name = $('account-save-name').value.trim();
+    if (!name || name.length > 60) return notify('invalidName', true);
+    if (saves.length >= 12) return notify('quota', true);
+    const envelope = app().getEnvelope(); busy = true; message = ''; renderDialog(true);
+    try { const data = await request('/api/saves', { method: 'POST', body: JSON.stringify({ name, envelope }) }); rememberSaved(data.save, envelope); await fetchSaves(); }
+    catch (error) { failure(error); }
+    finally { busy = false; renderDialog(); }
+  }
+  function preserveDraft() {
+    try { const raw = JSON.stringify(app().getEnvelope()); localStorage.setItem(recoveryKey(), raw); if (localStorage.getItem(recoveryKey()) !== raw) throw Error('write'); }
+    catch { throw Object.assign(new Error('backup'), { backup: true }); }
+  }
+  async function confirmAction() {
+    if (!pending || busy) return;
+    const action = pending, envelope = app().getEnvelope(); busy = true; message = ''; renderDialog(true);
+    try {
+      if (action.type === 'overwrite') {
+        const data = await request('/api/saves/' + encodeURIComponent(action.id), { method: 'PUT', body: JSON.stringify({ name: action.name, envelope, revision: action.revision }) });
+        rememberSaved(data.save, envelope); await fetchSaves();
+      } else {
+        const next = action.type === 'recover' ? JSON.parse(localStorage.getItem(recoveryKey())) : (await request('/api/saves/' + encodeURIComponent(action.id))).save?.envelope;
+        if (!next) throw Object.assign(new Error('save'), { status: 422 });
+        try { if (!['factorlab-ui-v2', 'factorlab-ui-v3'].includes(next.version)) throw Error('version'); window.FactorLabSimulation.restore(next.game); }
+        catch { throw Object.assign(new Error('save'), { status: 422 }); }
+        preserveDraft(); app().loadEnvelope(next); lastSaved = null; notify(action.type === 'recover' ? 'restored' : 'loaded');
+      }
+      pending = null;
+    } catch (error) { if (error.backup) notify('backupFailed', true); else failure(error); }
+    finally { busy = false; renderDialog(); }
+  }
+  function exportProgress() {
+    const url = URL.createObjectURL(new Blob([JSON.stringify(app().getEnvelope(), null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a'); link.href = url; link.download = 'FactorLab-current-progress.json'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  async function refresh() {
+    if (busy || !session.user) return; busy = true; message = ''; pending = null; renderDialog(true);
+    try { await fetchSaves(); } catch (error) { failure(error); }
+    finally { busy = false; renderDialog(); }
+  }
+  async function logout() {
+    if (busy) return; busy = true; message = ''; renderDialog();
+    try {
+      await request('/api/logout', { method: 'POST', body: '{}' });
+      session = { user: null, csrfToken: null }; saves = []; pending = null; lastSaved = null; mode = 'login';
+      app().setProfile(null); renderChrome();
+    } catch (error) { failure(error); }
+    finally { busy = false; renderDialog(); }
+  }
+  function open(nextMode) {
+    if (busy) return;
+    const username = nextMode ? $('account-username')?.value : '';
+    if (nextMode === mode && dialog.open) return;
+    if (nextMode) mode = nextMode; message = ''; pending = null;
+    document.dispatchEvent(new Event('factorlab:pause')); renderDialog();
+    if (!dialog.open) dialog.showModal();
+    mascot?.setVisible(!session.user);libraryMascot?.setVisible(!!session.user);
+    if (session.user) refresh(); else { if (username) $('account-username').value = username; $('account-username')?.focus();mascot?.emit('welcome'); }
+  }
+  function action(event) {
+    const button = event.target.closest('[data-account-action]'); if (!button || busy) return;
+    const name = button.dataset.accountAction;
+    if (name === 'guest' || name === 'workspace') enterWorkspace();
+    else if (name === 'toggle-password') {
+      const input = $(button.getAttribute('aria-controls'));
+      const visible = input.type === 'password', confirmation = input.id === 'account-password-confirm';
+      input.type = visible ? 'text' : 'password';
+      button.setAttribute('aria-pressed', String(visible));
+      button.setAttribute('aria-label', t(confirmation ? visible ? 'hideConfirmation' : 'showConfirmation' : visible ? 'hidePassword' : 'showPassword'));
+      button.textContent = t(visible ? 'hide' : 'show');
+    }
+    else if (name === 'login-tab' || name === 'register-tab') open(name === 'login-tab' ? 'login' : 'register');
+    else if (name === 'refresh') refresh();
+    else if (name === 'logout') logout();
+    else if (name === 'export') exportProgress();
+    else if (name === 'confirm') confirmAction();
+    else if (name === 'cancel') { pending = null; renderDialog(true); }
+    else if (name === 'recover') { pending = { type: 'recover', name: t('restore') }; renderDialog(true); $('account-confirm-action').focus(); }
+    else if (name === 'load' || name === 'overwrite') {
+      const save = saves.find(item => item.id === button.dataset.saveId); if (!save) return;
+      pending = { type: name, id: save.id, name: save.name, revision: save.revision }; message = ''; renderDialog(true); $('account-confirm-action').focus();
+    }
+  }
+  async function checkSession() {
+    const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname) && ['http:', 'https:'].includes(location.protocol);
+    if (local && !staticHosting) {
+      try { const data = await request('/api/session'); enabled = data.enabled === true; if (enabled && data.user) installSession(data); }
+      catch { enabled = false; }
+    }
+    ready = true; renderChrome(); if (dialog.open) renderDialog();
+    if (new URLSearchParams(location.search).get('welcome') === '1') {
+      if (session.user) clearWelcome(); else open();
+    }
+  }
+  function initialize() {
+    if (initialized || !app()) return; initialized = true; lang = app().getUI().lang === 'en' ? 'en' : 'zh-CN';
+    trigger = document.createElement('button'); trigger.id = 'open-accounts'; trigger.className = 'account-trigger'; trigger.setAttribute('aria-haspopup', 'dialog');
+    document.querySelector('.top-actions').insertBefore(trigger, $('settings'));
+    banner = document.createElement('section'); banner.id = 'account-welcome'; banner.className = 'account-welcome'; $('workspace').insertBefore(banner, $('workspace').querySelector('footer'));
+    dialog = document.createElement('dialog'); dialog.id = 'account-dialog'; dialog.className = 'account-dialog'; dialog.setAttribute('aria-labelledby', 'account-title'); document.body.append(dialog);
+    trigger.addEventListener('click', () => open()); banner.addEventListener('click', action); dialog.addEventListener('click', action);
+    dialog.addEventListener('cancel', event => { if (busy) event.preventDefault(); });
+    dialog.addEventListener('close', () => { mascot?.setVisible(false);libraryMascot?.setVisible(false);savedFeedback=null; dialog.querySelectorAll('input[name=password],input[name=password-confirm]').forEach(node => { node.value = ''; node.type = 'password'; }); pending = null; clearWelcome(); });
+    renderChrome(); checkSession();
+    window.FactorLabAccounts = { get ready() { return ready; }, open, refresh, getStatus: () => ({ enabled, signedIn: !!session.user, busy }) };
+  }
+  document.addEventListener('factorlab:render', () => {
+    initialize(); if (!initialized) return;
+    const next = app().getUI().lang === 'en' ? 'en' : 'zh-CN';
+    if (next !== lang) { lang = next; renderChrome(); if (dialog.open) renderDialog(true); }
+    syncStatus();
+  });
+  document.addEventListener('factorlab:save', () => { if (initialized) syncStatus(); });
+  initialize();
+})();
