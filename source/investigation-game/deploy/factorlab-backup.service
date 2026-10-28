@@ -1,0 +1,24 @@
+[Unit]
+Description=FactorLab verified SQLite backup
+After=factorlab.service
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+WorkingDirectory=/opt/factorlab/current/investigation-game
+ExecStart=/opt/factorlab/runtime/node-v24.22.0-linux-x64/bin/node /opt/factorlab/current/investigation-game/deploy/backup.cjs --source /var/lib/factorlab/factorlab.sqlite --directory /var/backups/factorlab
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/var/lib/factorlab
+ReadWritePaths=/var/backups/factorlab
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=CAP_DAC_READ_SEARCH
+AmbientCapabilities=
+TimeoutStartSec=300

@@ -1,0 +1,18 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+assert(fs.existsSync(__dirname + '/progression.js'), 'progression rules must exist');
+const P = require('./progression.js');
+const D = require('./data.json');
+assert.equal(P.pressure([0,0,0,0,.15,.85], .1), 150);
+assert.equal(P.mission(1, [.2,.2,.15,.15,.2,.1], [.2,.2,.15,.15,.15,.15], .2).passed, true);
+assert.equal(P.mission(1, [0,0,0,0,.201,.799], [0,0,0,0,.2,.8], .2).passed, false);
+assert.equal(P.mission(2, [0,0,0,0,.2,.8], [0,0,0,0,.15,.85], .2).passed, false);
+assert.equal(P.mission(2, [0,0,0,0,.1,.9], [0,0,0,0,.15,.85], .2).passed, true);
+let paths = P.collect([], 'navigator:boost.buffer', D.nodes);
+assert.deepEqual(paths, ['navigator:boost.buffer']);
+assert.deepEqual(P.collect(paths, paths[0], D.nodes), paths);
+assert.deepEqual(P.collect(paths, 'navigator:boost', D.nodes), paths);
+assert.deepEqual(P.collect(['unknown'], 'guardian:hold.hold', D.nodes), ['guardian:hold.hold']);
+assert.deepEqual(P.collect(null, null, D.nodes), []);
+assert.deepEqual(P.badges(D.nodes['guardian:boost.buffer'].ledger), ['Risk-aware']);
+console.log('PASS: pressure, mission boundaries, terminal-only collection, deduplication, badge quality');

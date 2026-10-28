@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>03 研究航线 · FactorLab 交互实验</title>
+<link rel="stylesheet" href="icons.css"><link rel="stylesheet" href="common.css"><link rel="stylesheet" href="03-journey.css">
+</head>
+<body data-demo="03">
+<main class="journey">
+  <div class="journey-heading"><div><p class="overline">INTERACTION STUDY / 03</p><h1>研究有路径，思考不被打断。</h1><p class="intro">试试走完四个章节，再用「快速跳转」回到任意一步。你的草稿会留在原处。</p></div><button class="command-trigger" id="command-open">快速跳转 <kbd>Ctrl K</kbd></button></div>
+  <div class="book">
+    <aside class="spine">
+      <div class="spine-top"><span class="seal" data-seal="cycle" aria-hidden="true"></span><p>第 1 / 6 轮<br><small>交易日 0 · 研究阶段</small></p></div>
+      <h2>订单回暖，<br>利润兑现了吗？</h2>
+      <p class="spine-intro">高端制造与尖端科技<br>长期定位 × 短期战术</p>
+      <nav class="chapter-nav" aria-label="研究章节">
+        <span class="chapter-marker" aria-hidden="true"></span>
+        <button data-step="0" aria-current="step"><b>01</b><span>阅读证据<small>厘清行业周期</small></span><i></i></button>
+        <button data-step="1"><b>02</b><span>挑选因子<small>把判断变成假设</small></span><i></i></button>
+        <button data-step="2"><b>03</b><span>检查草稿<small>明确配置期限</small></span><i></i></button>
+        <button data-step="3"><b>04</b><span>留下札记<small>记录下一次验证</small></span><i></i></button>
+      </nav>
+      <div class="spine-status"><span id="visited-count">已浏览 1 / 4 章</span><div><i id="visited-bar"></i></div><small>浏览进度不等于研究完成</small></div>
+      <div class="spine-foot">初始净值 <strong>100,000</strong><br>尚未结算 · 交互示意</div>
+    </aside>
+    <div class="reading">
+      <div class="reading-bar"><span id="chapter-label">CHAPTER 01 / EVIDENCE</span><span>本页草稿 · 刷新即重置</span></div>
+      <div class="chapter-viewport">
+        <section class="chapter" data-chapter="0">
+          <p class="chapter-num" aria-hidden="true">01</p><h2 tabindex="-1">先把「回暖」拆开。</h2><p class="chapter-intro">三条信息都指向同一个行业，但它们回答的是不同时间尺度的问题。</p>
+          <div class="evidence-notes">
+            <button data-evidence="E1" aria-pressed="false"><span>E1</span><div><strong>订单增加，利润还没跟上</strong><p>需求改善是线索；还需核对毛利率、现金流与订单转化。</p></div><b>摘录</b></button>
+            <button data-evidence="E2" aria-pressed="false"><span>E2</span><div><strong>好消息可能已经体现在价格里</strong><p>基本面向好与短期买入价值，需要分开论证。</p></div><b>摘录</b></button>
+            <button data-evidence="E3" aria-pressed="false"><span>E3</span><div><strong>长期支持，需要时间兑现</strong><p>产业方向不直接给出本轮时点，仍需观察产能与盈利节奏。</p></div><b>摘录</b></button>
+          </div>
+          <p class="chapter-hint">点击摘录，证据会随你进入后续章节。</p>
+        </section>
+        <section class="chapter" data-chapter="1" hidden>
+          <p class="chapter-num" aria-hidden="true">02</p><h2 tabindex="-1">用因子表达判断。</h2><p class="chapter-intro">选择你想进一步研究的因子。选中只记录研究意图，尚未计算分数或回测收益。</p>
+          <div class="factor-grid">
+            <button data-factor="quality" aria-pressed="false"><span class="seal" data-seal="factors" aria-hidden="true"></span><strong>质量</strong><small>利润能否转化为现金？</small><i>＋</i></button>
+            <button data-factor="value" aria-pressed="false"><span class="seal" data-seal="evidence" aria-hidden="true"></span><strong>价值</strong><small>价格包含了多少乐观预期？</small><i>＋</i></button>
+            <button data-factor="momentum" aria-pressed="false"><span class="seal" data-seal="cycle" aria-hidden="true"></span><strong>动量</strong><small>趋势是否持续？</small><i>＋</i></button>
+            <button data-factor="lowvol" aria-pressed="false"><span class="seal" data-seal="risk" aria-hidden="true"></span><strong>低波动</strong><small>如何理解波动与风险？</small><i>＋</i></button>
+          </div>
+          <div class="method-note"><b>后续验证路径</b><p>固定样本与基准 → 构建多因子 → 样本外回测 → 检查因子功效、回撤与归因。</p></div>
+        </section>
+        <section class="chapter" data-chapter="2" hidden>
+          <p class="chapter-num" aria-hidden="true">03</p><h2 tabindex="-1">同一组合，不同判断期限。</h2><p class="chapter-intro">切换解释角度，观察研究问题如何变化。组合比例保持为同一份示意草稿。</p>
+          <div class="horizon-switch" aria-label="判断期限"><span class="horizon-thumb" aria-hidden="true"></span><button data-horizon="long" aria-pressed="true">长期定位</button><button data-horizon="short" aria-pressed="false">短期战术</button></div>
+          <p class="horizon-note" id="horizon-note">长期定位：关注产业竞争力与盈利兑现路径，接受验证需要时间。</p>
+          <div class="weight-list"><div><span>半导体</span><i style="--w:20%"></i><b>20%</b></div><div><span>机器人与工业自动化</span><i style="--w:20%"></i><b>20%</b></div><div><span>先进材料</span><i style="--w:15%"></i><b>15%</b></div><div><span>清洁能源装备</span><i style="--w:15%"></i><b>15%</b></div><div><span>AI 与数字基础设施</span><i style="--w:15%"></i><b>15%</b></div><div><span>现金</span><i style="--w:15%"></i><b>15%</b></div></div>
+          <p class="chapter-hint">合计 100% · 尚未执行；可调权重体验在「02 配置雕刻」。</p>
+        </section>
+        <section class="chapter" data-chapter="3" hidden>
+          <p class="chapter-num" aria-hidden="true">04</p><h2 tabindex="-1">给下一次验证留一个问题。</h2><p class="chapter-intro">记录尚未解决的疑问。切回前面的章节，摘录与这段文字都能保留。</p>
+          <div class="note-summary" id="note-summary"></div>
+          <label class="note-label" for="reflection">我还需要验证什么？</label><textarea id="reflection" maxlength="280" placeholder="例如：订单转化为收入之后，毛利率和现金流是否也改善？"></textarea><div class="note-meta"><span>文字只保留在此演示页面内</span><span id="char-count">0 / 280</span></div>
+          <button class="primary" id="pin-note">整理为本页札记 <span>↗</span></button><div class="pinned-note" id="pinned-note" hidden><b>本页札记已整理</b><p></p><small>刷新将重置；没有写入正式研究存档。</small></div>
+        </section>
+      </div>
+      <div class="carry-strip"><span>随行摘录</span><div id="carry-tags"><small>还没有摘录；回第一章添加</small></div></div>
+      <footer class="chapter-actions"><button id="prev-step" class="quiet" disabled>← 上一章</button><span id="step-counter">01 / 04</span><button id="next-step" class="primary">挑选因子 <span>→</span></button></footer>
+    </div>
+  </div>
+  <p class="demo-foot">方案 03 · 连贯章节过渡 / 随行摘录 / 上下文快速跳转。情境与数值均为交互示意，未调用 AI 或结算组合。</p>
+  <details class="source-note"><summary>灵感与实现</summary><p>参考 <a href="https://manual.raycast.com/action-panel" target="_blank" rel="noreferrer">Raycast 上下文操作</a>与 <a href="https://linear.app/docs/command-menu" target="_blank" rel="noreferrer">Linear 命令菜单</a>的快速定位思路。过渡使用项目内已有的 <a href="https://github.com/motiondivision/motion" target="_blank" rel="noreferrer">Motion（MIT）</a>；本页为原创演示。</p></details>
+</main>
+<dialog id="command-dialog" aria-labelledby="command-title"><div class="command-head"><h2 id="command-title">前往研究章节</h2><button id="command-close" aria-label="关闭快速跳转">×</button></div><label for="command-input">搜索章节、证据或操作</label><input id="command-input" autocomplete="off" placeholder="试试「因子」或「札记」"><div id="command-results"></div><p class="command-help">↑ ↓ 选择 · Enter 前往 · Esc 关闭</p></dialog>
+<script src="vendor/motion.js"></script><script src="common.js"></script><script src="03-journey.js"></script>
+</body></html>

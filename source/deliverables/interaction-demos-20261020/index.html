@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>月白 · 绛紫 — FactorLab 交互实验室</title><link rel="stylesheet" href="icons.css"><link rel="stylesheet" href="gallery.css"></head>
+<body>
+<header class="gallery-nav"><a href="index.html" class="wordmark">FactorLab<span>INTERACTION LAB</span></a><span class="edition">月白 · 绛紫 / 交互方案 01—03</span><a href="#references">查看灵感来源 ↗</a></header>
+<main>
+  <section class="gallery-hero"><div><p class="eyebrow">THREE WAYS TO THINK WITH EVIDENCE</p><h1>让每一步操作，<br>都与思考保持连贯。</h1></div><div class="hero-aside"><div class="swatches"><i></i><i></i><i></i><i></i></div><p>保留你选中的月白与绛紫。<br>这次比较的是展开方式、反馈手感与研究节奏。</p><small>独立交互 demo · 正式网站尚未升级<br>所有情境、比例与规则均为演示用途</small></div></section>
+  <section class="demo-grid" aria-label="三版交互方案">
+    <article class="demo-card"><button class="preview" data-open="01" aria-label="体验方案01 证据聚焦"><img src="previews/01-desktop.png" alt="证据聚焦的月白工作区和绛紫证据面板"><span>打开交互演示 ↗</span></button><div class="card-heading"><span class="number">01</span><div><h2>证据聚焦</h2><p>把阅读变成可整理的研究。</p></div></div><p class="card-description">卡片连贯展开成阅读纸张；切换相邻证据，将重点收进对照托盘。</p><div class="tags"><span>空间展开</span><span>证据对照</span><span>撤销</span></div><button class="try" data-open="01">点击 E1，开始阅读 <span>→</span></button></article>
+    <article class="demo-card"><button class="preview" data-open="02" aria-label="体验方案02 配置雕刻"><img src="previews/02-desktop.png" alt="配置雕刻的权重圆环和可调行业滑条"><span>打开交互演示 ↗</span></button><div class="card-heading"><span class="number">02</span><div><h2>配置雕刻</h2><p>让每次调整都有清楚的回声。</p></div></div><p class="card-description">拖动行业比例，圆环与现金立即联动；检查前后差异，随时撤销。</p><div class="tags"><span>直接操纵</span><span>联动反馈</span><span>前后对照</span></div><button class="try" data-open="02">拖动比例，感受反馈 <span>→</span></button></article>
+    <article class="demo-card"><button class="preview" data-open="03" aria-label="体验方案03 研究航线"><img src="previews/03-desktop.png" alt="研究航线的深色章节导航和月白阅读区域"><span>打开交互演示 ↗</span></button><div class="card-heading"><span class="number">03</span><div><h2>研究航线</h2><p>推进流程，也能从容回看。</p></div></div><p class="card-description">章节切换保持阅读位置；摘录随行，快速跳转，让思路回到上下文。</p><div class="tags"><span>章节过渡</span><span>随行摘录</span><span>快速跳转</span></div><button class="try" data-open="03">摘录一条，走入下一章 <span>→</span></button></article>
+  </section>
+  <section class="player-section" id="play" hidden aria-label="交互演示">
+    <div class="player-heading"><div><p class="eyebrow">LIVE DEMO</p><h2 id="player-title">01 证据聚焦</h2></div><div class="player-actions"><button data-width="desktop" aria-pressed="true">桌面</button><button data-width="mobile" aria-pressed="false">手机</button><a id="standalone" href="01-evidence.html" target="_blank" rel="noreferrer">单独打开 ↗</a><button id="player-close">收起</button></div></div>
+    <p id="player-guide" class="player-guide"></p>
+    <div class="player-stage"><iframe title="FactorLab 交互演示" id="demo-frame"></iframe></div><p class="player-note">可在顶部切换三版。每版支持重置演示与减少动效；切换或刷新页面会重置该页草稿。</p>
+  </section>
+  <section class="selection-note"><span class="seal" data-seal="settings" aria-hidden="true"></span><div><h2>你可以选一版，也可以组合喜欢的交互。</h2><p>例如「保留 01 的证据展开、02 的权重联动，再用 03 的章节导航」。选择后再接入完整研究流程。</p></div><span class="selection-rule">READ → TRY → CHOOSE</span></section>
+  <section id="references" class="references"><div><p class="eyebrow">REFERENCE, NOT REPLICA</p><h2>交互灵感与实现依据</h2><p>参考主流产品如何保留上下文，以及开源动效的连续反馈。三版均按 FactorLab 的研究问题重新设计。</p></div><div class="reference-links">
+    <a href="https://linear.app/docs/peek" target="_blank" rel="noreferrer"><b>Linear / Peek</b><span>证据就地速览与相邻切换 ↗</span></a>
+    <a href="https://stripe.com/blog/workbench-a-new-way-to-debug-monitor-and-grow-your-stripe-integration" target="_blank" rel="noreferrer"><b>Stripe / Workbench</b><span>保留工作上下文的检查面板 ↗</span></a>
+    <a href="https://manual.raycast.com/action-panel" target="_blank" rel="noreferrer"><b>Raycast / Action Panel</b><span>可见入口与快捷操作并存 ↗</span></a>
+    <a href="https://github.com/motiondivision/motion" target="_blank" rel="noreferrer"><b>GitHub / Motion</b><span>复用项目已有 14.1.0 · MIT ↗</span></a>
+    <a href="https://github.com/juliangarnier/anime" target="_blank" rel="noreferrer"><b>GitHub / Anime.js</b><span>调研局部布局、弹性与拖动 ↗</span></a>
+    <a href="https://github.com/bramus/view-transitions-demos" target="_blank" rel="noreferrer"><b>GitHub / View Transitions</b><span>调研空间过渡与层级返回 ↗</span></a>
+  </div></section>
+  <footer><span>FactorLab · 月白绛紫交互研究 · 2026.10</span><span>无账号连接 / 无真实交易 / 无在线 AI 调用</span><a href="vendor/MOTION-LICENSE.txt">Motion 许可</a></footer>
+</main><script src="gallery.js"></script></body></html>

@@ -1,0 +1,6615 @@
+{
+  "title": "FactorLab 面向金融初学者的信息输出剧本｜精简审阅稿",
+  "scope": "剧本与呈现层级提案；未接入正式应用。57个原场景逐项对应，动态取值与原触发条件保留；新增设计明确标注。",
+  "scenes": [
+    {
+      "id": "welcome",
+      "title": "场景 01｜欢迎横幅",
+      "context": "首次进入且尚未关闭欢迎横幅。",
+      "group": "第一幕｜进入研究",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "FactorLab · 行业配置练习",
+          "kind": "data",
+          "sourceUnit": "01.01",
+          "originalText": "FACTORLAB / 研究连续性",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用证据做一次行业配置",
+          "kind": "title",
+          "sourceUnit": "01.02",
+          "originalText": "把每一次判断，留在研究进程里",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "研究高端制造与尖端科技，比较长期持有和本轮调整的结果。",
+          "kind": "body",
+          "sourceUnit": "01.03",
+          "originalText": "围绕高端制造与尖端科技，在长期定位和短期战术之间检验你的配置判断。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "看证据 → 测方法 → 做配置 → 看结果",
+          "kind": "body",
+          "sourceUnit": "01.04",
+          "originalText": "研究 → 因子检验 → 配置 → 风险归因 → 复盘",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "访客进度保存在当前浏览器；登录后可手动保存账号存档。",
+          "kind": "body",
+          "condition": "本地账号服务可用，未登录",
+          "sourceUnit": "01.05",
+          "originalText": "登录后进入独立研究空间。访客进度保留在当前浏览器，不会自动上传到账号。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "正在检查账号服务…",
+          "kind": "feedback",
+          "condition": "本地服务状态检查中",
+          "sourceUnit": "01.06",
+          "originalText": "正在检查本地账号服务…",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号服务未连接，可先使用访客模式。",
+          "kind": "feedback",
+          "condition": "当前页面未连接本地账号服务",
+          "sourceUnit": "01.07",
+          "originalText": "当前页面未连接本地账号服务。你仍可使用访客进度，并在复盘页导出备份。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 8
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 9
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 39
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 14
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 18
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 15
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 100
+        }
+      ],
+      "number": 1,
+      "editorNote": "起点以默认六轮情境为准。按钮使用“继续访客进度”；没有草稿时建议显示“开始练习”，须由实际草稿状态驱动。登录作为可选入口。课程主线与合成标签必须首屏可见。",
+      "additions": [
+        {
+          "text": "合成数据教学练习，共 6 轮，每轮 20 个交易日。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "signin",
+      "title": "场景 02｜登录界面",
+      "context": "访客打开账号入口或带欢迎参数进入。",
+      "group": "第一幕｜进入研究",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "登录 FactorLab",
+          "kind": "title",
+          "sourceUnit": "02.01",
+          "originalText": "登录 FactorLab",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "登录后可手动保存研究存档。",
+          "kind": "body",
+          "sourceUnit": "02.02",
+          "originalText": "进入你的行业配置研究台",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "每次判断，从证据开始。",
+          "kind": "title",
+          "sourceUnit": "02.03",
+          "originalText": "每次判断，从证据开始。",
+          "presentation": "合并或移除",
+          "rationale": "与欢迎页主题重复，登录表单直接说明用途。"
+        },
+        {
+          "speaker": "界面",
+          "text": "从行业周期到配置复盘，陪你完成每一轮研究。",
+          "kind": "body",
+          "sourceUnit": "02.04",
+          "originalText": "从行业周期到配置复盘，陪你完成每一轮研究。",
+          "presentation": "合并或移除",
+          "rationale": "与欢迎页主题重复，登录表单直接说明用途。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用户名",
+          "kind": "data",
+          "sourceUnit": "02.05",
+          "originalText": "用户名",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "密码",
+          "kind": "data",
+          "sourceUnit": "02.06",
+          "originalText": "密码",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "显示密码",
+          "kind": "data",
+          "sourceUnit": "02.07",
+          "originalText": "显示",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "隐藏密码",
+          "kind": "data",
+          "sourceUnit": "02.08",
+          "originalText": "隐藏",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号存档保存在当前账号服务；浏览器草稿不会自动上传。",
+          "kind": "body",
+          "sourceUnit": "02.09",
+          "originalText": "账号与存档保存在这台电脑，不会自动同步到其他设备。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "正在登录…",
+          "kind": "feedback",
+          "condition": "登录或注册请求处理中",
+          "sourceUnit": "02.10",
+          "originalText": "正在处理…",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号服务未连接，可先使用访客模式。",
+          "kind": "feedback",
+          "condition": "账号服务不可用时，表单禁用",
+          "sourceUnit": "02.11",
+          "originalText": "当前页面未连接本地账号服务。你仍可使用访客进度，并在复盘页导出备份。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 122
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 18
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 12
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 13
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 21
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 15
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 148
+        }
+      ],
+      "number": 2,
+      "editorNote": "不再用“这台电脑”笼统描述所有部署。单机部署与远程服务器部署均按当前连接的账号服务表述；这不承诺自动同步或跨设备草稿一致。",
+      "additions": []
+    },
+    {
+      "id": "register",
+      "title": "场景 03｜注册界面",
+      "context": "本地账号服务可用时显示注册表单。",
+      "group": "第一幕｜进入研究",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "创建账号",
+          "kind": "title",
+          "sourceUnit": "03.01",
+          "originalText": "创建你的账号",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "进入你的行业配置研究台",
+          "kind": "body",
+          "sourceUnit": "03.02",
+          "originalText": "进入你的行业配置研究台",
+          "presentation": "合并或移除",
+          "rationale": "注册页不重复研究台宣传语。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用户名",
+          "kind": "data",
+          "sourceUnit": "03.03",
+          "originalText": "用户名",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "3–32 位，可用英文字母、数字、_ 或 -",
+          "kind": "data",
+          "sourceUnit": "03.04",
+          "originalText": "3–32 位英文字母、数字、下划线或连字符",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "密码",
+          "kind": "data",
+          "sourceUnit": "03.05",
+          "originalText": "密码",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "10–128 个字符，请使用专用密码",
+          "kind": "data",
+          "sourceUnit": "03.06",
+          "originalText": "10–128 个字符；请使用此项目专用密码",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "确认密码",
+          "kind": "data",
+          "sourceUnit": "03.07",
+          "originalText": "确认密码",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "显示密码",
+          "kind": "data",
+          "sourceUnit": "03.08",
+          "originalText": "显示",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "隐藏密码",
+          "kind": "data",
+          "sourceUnit": "03.09",
+          "originalText": "隐藏",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号存档保存在当前账号服务；浏览器草稿不会自动上传。",
+          "kind": "body",
+          "sourceUnit": "03.10",
+          "originalText": "账号与存档保存在这台电脑，不会自动同步到其他设备。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 18
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 19
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 12
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 13
+        }
+      ],
+      "number": 3,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "auth-result",
+      "title": "场景 04｜身份与登录结果",
+      "context": "登录成功进入研究台，或认证失败停留在表单。",
+      "group": "第一幕｜进入研究",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "已登录，继续研究",
+          "kind": "feedback",
+          "condition": "登录/注册成功",
+          "sourceUnit": "04.01",
+          "originalText": "已成功，可以继续研究",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "账号：{用户名}",
+          "kind": "data",
+          "condition": "登录后账号入口展示用户名",
+          "sourceUnit": "04.02",
+          "originalText": "本地账号：{用户名}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "访客",
+          "kind": "data",
+          "condition": "访客身份",
+          "sourceUnit": "04.03",
+          "originalText": "访客",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用户名需为 3–32 位，只能用英文字母、数字、_ 或 -。",
+          "kind": "feedback",
+          "condition": "用户名格式未通过前端检查",
+          "sourceUnit": "04.04",
+          "originalText": "用户名需为 3–32 位英文字母、数字、下划线或连字符。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "密码需为 10–128 个字符。",
+          "kind": "feedback",
+          "condition": "密码长度未通过前端检查",
+          "sourceUnit": "04.05",
+          "originalText": "密码长度需为 10–128 个字符。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "两次密码不同，请重新确认。",
+          "kind": "feedback",
+          "condition": "注册时两次密码不一致",
+          "sourceUnit": "04.06",
+          "originalText": "两次输入的密码不一致。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "此用户名已被使用，请换一个。",
+          "kind": "feedback",
+          "condition": "注册返回409",
+          "sourceUnit": "04.07",
+          "originalText": "用户名已被使用，请换一个名称。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用户名或密码不正确。",
+          "kind": "feedback",
+          "condition": "认证返回401",
+          "sourceUnit": "04.08",
+          "originalText": "用户名或密码不正确。",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "尝试过多，请稍后再试。",
+          "kind": "feedback",
+          "condition": "请求返回429",
+          "sourceUnit": "04.09",
+          "originalText": "尝试次数过多，请稍后重试。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请重新登录。浏览器中的账号草稿已保留。",
+          "kind": "feedback",
+          "condition": "请求返回403",
+          "sourceUnit": "04.10",
+          "originalText": "会话已变化或未通过校验，账号草稿已保留。请重新登录。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号服务暂不可用。浏览器进度已保留，请稍后重试。",
+          "kind": "feedback",
+          "condition": "网络、超时或服务响应不可用",
+          "sourceUnit": "04.11",
+          "originalText": "本地服务暂不可用。当前浏览器进度仍保留，请稍后重试。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/experience.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 39
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 20
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 21
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 36
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 35
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 34
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 182
+        }
+      ],
+      "number": 4,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "static-entry",
+      "title": "场景 05｜公开版浏览器存档",
+      "context": "静态发布模式打开存档入口。",
+      "group": "第一幕｜进入研究",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "浏览器存档",
+          "kind": "title",
+          "sourceUnit": "05.01",
+          "originalText": "浏览器存档",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "进度保存在当前浏览器",
+          "kind": "body",
+          "sourceUnit": "05.02",
+          "originalText": "公开版 · 在当前浏览器继续研究",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "此版本不提供账号存档和在线 AI。可导出文件备份进度。",
+          "kind": "body",
+          "sourceUnit": "05.03",
+          "originalText": "公开版未连接账号和在线 AI 服务。研究进度保存在当前浏览器，可导出 JSON 备份。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "不会跨设备同步；清除网站数据可能丢失进度。",
+          "kind": "body",
+          "sourceUnit": "05.04",
+          "originalText": "浏览器存档不会跨设备同步。清除网站数据可能移除进度，请定期导出备份。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已自动保存到此浏览器",
+          "kind": "feedback",
+          "condition": "浏览器可写",
+          "sourceUnit": "05.05",
+          "originalText": "浏览器草稿自动保存",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "浏览器保存失败，请导出进度。",
+          "kind": "feedback",
+          "condition": "浏览器不可写",
+          "sourceUnit": "05.06",
+          "originalText": "浏览器无法保存草稿，请导出备份",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 16
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 17
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 30
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 149
+        }
+      ],
+      "number": 5,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "research-heading",
+      "title": "场景 06｜研究台",
+      "context": "进入行业研究视图。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "行业研究",
+          "kind": "title",
+          "sourceUnit": "06.01",
+          "originalText": "研究台",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "先看公开证据，再决定本轮是否调整配置。",
+          "kind": "body",
+          "sourceUnit": "06.02",
+          "originalText": "从行业证据出发 区分长期定位与本轮战术判断",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "当前证据",
+          "kind": "title",
+          "sourceUnit": "06.03",
+          "originalText": "正在发生",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "截至当前交易日",
+          "kind": "data",
+          "sourceUnit": "06.04",
+          "originalText": "仅显示已公开线索",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "周期观察",
+          "kind": "title",
+          "sourceUnit": "06.05",
+          "originalText": "周期观察",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "从证据到行动",
+          "kind": "data",
+          "sourceUnit": "06.06",
+          "originalText": "从证据到行动",
+          "presentation": "合并或移除",
+          "rationale": "与任务说明及下一步按钮重复。"
+        },
+        {
+          "speaker": "界面",
+          "text": "你的下一步判断",
+          "kind": "title",
+          "sourceUnit": "06.07",
+          "originalText": "你的下一步判断",
+          "presentation": "合并或移除",
+          "rationale": "与任务说明及下一步按钮重复。"
+        },
+        {
+          "speaker": "界面",
+          "text": "下一步：用因子检验选行业的方法。",
+          "kind": "body",
+          "sourceUnit": "06.08",
+          "originalText": "先检验因子 再记录配置依据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 8
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 7
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 46
+        }
+      ],
+      "number": 6,
+      "editorNote": "保留五个行业与 Cash。真实长期投资跨越的时间远长于本章；“长期持有参照”只是模拟比较，不证明真实长期表现。",
+      "additions": [
+        {
+          "text": "长期定位：你持续看好的行业；短期战术：因本轮新证据做的调整。",
+          "presentation": "展开",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "title": "场景 07｜市场与持仓",
+      "context": "研究或风险视图显示当前已发生的市场状态。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "资产与比较",
+          "kind": "title",
+          "sourceUnit": "07.01",
+          "originalText": "市场与持仓",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "当前资产（虚拟）：{组合净值，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.02",
+          "originalText": "组合净值：{组合净值，2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "{自开局组合累计收益，正数带+，2位小数%}",
+          "kind": "data",
+          "sourceUnit": "07.03",
+          "originalText": "{自开局组合累计收益，正数带+，2位小数%}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "行业基准：{行业基准净值，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.04",
+          "originalText": "行业基准：{行业基准净值，2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "五行业各 20%，每日调回等权；免交易费。",
+          "kind": "body",
+          "sourceUnit": "07.05",
+          "originalText": "五行业等权，每日再平衡",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "长期持有参照：{长期锚净值，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.06",
+          "originalText": "长期锚：{长期锚净值，2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "开局配置一直持有，不交易。",
+          "kind": "body",
+          "sourceUnit": "07.07",
+          "originalText": "初始配置，不交易",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "确认本轮配置后，开始模拟。",
+          "kind": "body",
+          "condition": "交易日0",
+          "sourceUnit": "07.08",
+          "originalText": "确认配置后，市场开始推进。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "你的组合",
+          "kind": "data",
+          "sourceUnit": "07.09",
+          "originalText": "你的组合",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "行业基准",
+          "kind": "data",
+          "sourceUnit": "07.10",
+          "originalText": "行业基准",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "长期持有参照",
+          "kind": "data",
+          "sourceUnit": "07.11",
+          "originalText": "长期锚",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "{图表金额刻度}；第 {交易日刻度} 日",
+          "kind": "data",
+          "condition": "刻度随图表范围和窗口宽度变化",
+          "sourceUnit": "07.12",
+          "originalText": "{图表金额刻度}；第 {交易日刻度} 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "半导体：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.13",
+          "originalText": "半导体：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "机器人：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.14",
+          "originalText": "机器人：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "先进材料：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.15",
+          "originalText": "先进材料：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "清洁能源：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.16",
+          "originalText": "清洁能源：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "AI 基础设施：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "kind": "data",
+          "sourceUnit": "07.17",
+          "originalText": "AI 基础设施：{自开局行业累计涨跌，1位小数%}；{当前合成价格，2位小数}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 5
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 68
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 47
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 70
+        }
+      ],
+      "number": 7,
+      "editorNote": "金额和百分比使用不同标签。图例下保留两种参照的短定义；行业价格详情可展开，完整行业名称沿用场景18。不得将累计收益写成本轮收益。",
+      "additions": [
+        {
+          "text": "自开局累计收益",
+          "presentation": "首屏",
+          "condition": "作为原累计收益数值的紧邻标签，不新增计算",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "macro",
+      "title": "场景 08｜宏观条件",
+      "context": "研究台显示当前模型状态。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "数据",
+          "text": "政策利率：{当前数值，1位小数}%",
+          "kind": "data",
+          "sourceUnit": "08.01",
+          "originalText": "政策利率：{当前数值，1位小数}%",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "通胀：{当前数值，1位小数}%",
+          "kind": "data",
+          "sourceUnit": "08.02",
+          "originalText": "通胀：{当前数值，1位小数}%",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "经济增长：{当前数值，1位小数}%",
+          "kind": "data",
+          "sourceUnit": "08.03",
+          "originalText": "经济增长：{当前数值，1位小数}%",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "市场流动性：{当前数值，整数}/100",
+          "kind": "data",
+          "sourceUnit": "08.04",
+          "originalText": "市场流动性：{当前数值，整数}/100",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "信用压力：{当前数值，整数}/100",
+          "kind": "data",
+          "sourceUnit": "08.05",
+          "originalText": "信用压力：{当前数值，整数}/100",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "市场情绪：{当前数值，整数}/100",
+          "kind": "data",
+          "sourceUnit": "08.06",
+          "originalText": "市场情绪：{当前数值，整数}/100",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "{周期标签：扩张／过热／滞胀／衰退／复苏}",
+          "kind": "data",
+          "condition": "由当前模型状态选择其一",
+          "sourceUnit": "08.07",
+          "originalText": "{周期标签：扩张／过热／滞胀／衰退／复苏}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 5
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 66
+        }
+      ],
+      "number": 8,
+      "editorNote": "默认保留当前模型周期标签与背景入口。宏观指标展开查看；/100 是模型刻度，不是发生概率。行业周期仍须结合行业证据，不能只看宏观标签。",
+      "additions": [
+        {
+          "text": "模拟周期；查看利率、需求与风险指标可了解背景。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "opening-brief",
+      "title": "场景 09｜开局简报",
+      "context": "首条事件出现前，开局背景展开。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "订单改善，盈利仍待确认",
+          "kind": "title",
+          "sourceUnit": "09.01",
+          "originalText": "订单回来了，利润呢？",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "订单增加不等于利润增长。先区分已披露的事实和市场预期。",
+          "kind": "body",
+          "sourceUnit": "09.02",
+          "originalText": "新增订单改善，但交付与盈利尚未确认。政策支持需要时间，价格也可能已经反映乐观预期。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 7
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 81
+        }
+      ],
+      "number": 9,
+      "editorNote": "只在开局显示一次；E1承接证据，不再重复完整简报。",
+      "additions": []
+    },
+    {
+      "id": "evidence-E1",
+      "title": "场景 10｜E1 公开证据",
+      "context": "证据卡展开；未查看与已查看状态分别显示。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "E1 · 查看订单线索",
+          "kind": "data",
+          "condition": "尚未标记查看",
+          "sourceUnit": "10.01",
+          "originalText": "E1 · 查看证据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "E1 · 已查看",
+          "kind": "data",
+          "condition": "已在决策阶段标记查看",
+          "sourceUnit": "10.02",
+          "originalText": "E1 · 已查看",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "订单改善，盈利待确认",
+          "kind": "title",
+          "sourceUnit": "10.03",
+          "originalText": "订单回来了，利润呢？",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合成订单线索改善；收入和利润是否跟上，仍需后续披露。",
+          "kind": "body",
+          "sourceUnit": "10.04",
+          "originalText": "合成订单线索改善，但订单转化为收入与利润仍需后续披露。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 78
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 15
+        }
+      ],
+      "number": 10,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "evidence-E2",
+      "title": "场景 11｜E2 公开证据",
+      "context": "证据卡展开；未查看与已查看状态分别显示。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "E2 · 查看价格风险",
+          "kind": "data",
+          "condition": "尚未标记查看",
+          "sourceUnit": "11.01",
+          "originalText": "E2 · 查看证据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "E2 · 已查看",
+          "kind": "data",
+          "condition": "已在决策阶段标记查看",
+          "sourceUnit": "11.02",
+          "originalText": "E2 · 已查看",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "好消息可能已反映在价格中",
+          "kind": "title",
+          "sourceUnit": "11.03",
+          "originalText": "好消息可能已在价格里",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "需求改善，也可能买贵。当前价格不保证未来收益。",
+          "kind": "body",
+          "sourceUnit": "11.04",
+          "originalText": "需求改善与估值风险可以同时存在。当前价格不是未来收益保证。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 78
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 16
+        }
+      ],
+      "number": 11,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "evidence-E3",
+      "title": "场景 12｜E3 公开证据",
+      "context": "证据卡展开；未查看与已查看状态分别显示。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "E3 · 查看政策影响",
+          "kind": "data",
+          "condition": "尚未标记查看",
+          "sourceUnit": "12.01",
+          "originalText": "E3 · 查看证据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "E3 · 已查看",
+          "kind": "data",
+          "condition": "已在决策阶段标记查看",
+          "sourceUnit": "12.02",
+          "originalText": "E3 · 已查看",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "政策支持需要时间",
+          "kind": "title",
+          "sourceUnit": "12.03",
+          "originalText": "长期支持需要时间",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "政策先影响融资与需求，盈利可能更晚变化。调整配置前，说明本轮理由。",
+          "kind": "body",
+          "sourceUnit": "12.04",
+          "originalText": "政策影响先进入融资与需求，再传到盈利。保持长期锚，并说明短期偏移的理由。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 78
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 17
+        }
+      ],
+      "number": 12,
+      "editorNote": "三张证据卡并列；已查看只表示打开过，不能当作理解或判断正确。展开内容仍在同页，不新增多级弹窗。",
+      "additions": []
+    },
+    {
+      "id": "cycle",
+      "title": "场景 13｜周期观察",
+      "context": "研究台的周期解释区域显示。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "周期观察",
+          "kind": "title",
+          "sourceUnit": "13.01",
+          "originalText": "周期观察",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "根据证据判断",
+          "kind": "data",
+          "sourceUnit": "13.02",
+          "originalText": "解释与推断",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "看订单、库存和利润是否互相印证。只看价格上涨，不能确认行业复苏。",
+          "kind": "body",
+          "sourceUnit": "13.03",
+          "originalText": "对照订单、库存与利润披露判断行业周期。价格上涨本身不足以确认行业复苏。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "周期标签来自教学模型。",
+          "kind": "body",
+          "condition": "合成观测标签提示文本；是否可见依样式和悬停状态",
+          "sourceUnit": "13.04",
+          "originalText": "当前周期标签由教学模型给出，并非现实市场判断。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 46
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 20
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 23
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 22
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 168
+        }
+      ],
+      "number": 13,
+      "editorNote": "不补造库存、利润、行业周期分数或自动结论。若当前数据没有对应观测，应显示未披露，而不是让用户误以为已验证。",
+      "additions": [
+        {
+          "text": "未披露的信息，暂不下结论。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "backtest-input",
+      "title": "场景 14｜因子研究实验",
+      "context": "进入因子与回测视图。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "因子与回测",
+          "kind": "title",
+          "sourceUnit": "14.01",
+          "originalText": "回测与因子",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用过去的数据检验选行业的方法。",
+          "kind": "body",
+          "sourceUnit": "14.02",
+          "originalText": "用事前信息检验方法 把收益与有效性放在一起看",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "你更看重哪些选行业线索？",
+          "kind": "title",
+          "sourceUnit": "14.03",
+          "originalText": "研究因子偏好",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "36 个月合成样本",
+          "kind": "data",
+          "sourceUnit": "14.04",
+          "originalText": "合成观测",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "动量：{偏好数值 0–100，初始25}",
+          "kind": "data",
+          "sourceUnit": "14.05",
+          "originalText": "动量：{偏好数值 0–100，初始25}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "动量：过去六个月的涨跌表现",
+          "kind": "body",
+          "sourceUnit": "14.06",
+          "originalText": "过去六个月累计收益",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "价值：{偏好数值 0–100，初始25}",
+          "kind": "data",
+          "sourceUnit": "14.07",
+          "originalText": "价值：{偏好数值 0–100，初始25}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "价值：盈利相对价格的水平（E/P）",
+          "kind": "body",
+          "sourceUnit": "14.08",
+          "originalText": "当时已公布的合成 E/P",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "质量：{偏好数值 0–100，初始25}",
+          "kind": "data",
+          "sourceUnit": "14.09",
+          "originalText": "质量：{偏好数值 0–100，初始25}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "质量：股东投入资本的盈利水平（ROE）",
+          "kind": "body",
+          "sourceUnit": "14.10",
+          "originalText": "当时已公布的合成 ROE",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "低波动：{偏好数值 0–100，初始25}",
+          "kind": "data",
+          "sourceUnit": "14.11",
+          "originalText": "低波动：{偏好数值 0–100，初始25}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "低波动：过去六个月波动较小",
+          "kind": "body",
+          "sourceUnit": "14.12",
+          "originalText": "过去六个月波动率的负值",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "这里只做研究，调整偏好不会改变持仓。",
+          "kind": "body",
+          "sourceUnit": "14.13",
+          "originalText": "独立研究实验。调整这里的偏好不会改动持仓。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 10
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 15
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 20
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 13
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 14
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 16
+        }
+      ],
+      "number": 14,
+      "editorNote": "四个滑块旁保留一行白话定义。组合是多因子评分，不把“偏好”当作资金比例。E/P、ROE具体定义与局限放在术语说明。",
+      "additions": [
+        {
+          "text": "因子是给行业打分的线索；权重越高，排序越重视它。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "backtest-results",
+      "title": "场景 15｜回测与因子功效结果",
+      "context": "回测视图初次渲染，或有效偏好回测完成。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "36 个月回测完成",
+          "kind": "feedback",
+          "sourceUnit": "15.01",
+          "originalText": "已完成 36 个月回放",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "策略收益：{合成回测结果，2位小数}%",
+          "kind": "data",
+          "sourceUnit": "15.02",
+          "originalText": "合成策略收益：{合成回测结果，2位小数}%",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "五行业等权收益：{合成回测结果，2位小数}%",
+          "kind": "data",
+          "sourceUnit": "15.03",
+          "originalText": "五行业等权基准：{合成回测结果，2位小数}%",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "最大回撤：{合成回测结果，2位小数}%",
+          "kind": "data",
+          "sourceUnit": "15.04",
+          "originalText": "策略最大回撤：{合成回测结果，2位小数}%",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "前二与后二行业的月均收益差：{前二减后二的月均差，3位小数} 个百分点",
+          "kind": "data",
+          "sourceUnit": "15.05",
+          "originalText": "前二减后二 月均差：{前二减后二的月均差，3位小数} pp",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "36 个月合成历史",
+          "kind": "title",
+          "sourceUnit": "15.06",
+          "originalText": "36 个月合成历史",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "初始净值 1",
+          "kind": "data",
+          "sourceUnit": "15.07",
+          "originalText": "初始净值 1",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "36 个月",
+          "kind": "data",
+          "sourceUnit": "15.08",
+          "originalText": "36 个月",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "因子打分与随后收益的关系",
+          "kind": "title",
+          "sourceUnit": "15.09",
+          "originalText": "因子有效性",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "因子",
+          "kind": "data",
+          "sourceUnit": "15.10",
+          "originalText": "因子",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "排序相关性（平均 Rank IC）",
+          "kind": "data",
+          "sourceUnit": "15.11",
+          "originalText": "平均 Rank IC",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "可计算月份",
+          "kind": "data",
+          "sourceUnit": "15.12",
+          "originalText": "有效月份",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "动量 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "kind": "data",
+          "sourceUnit": "15.13",
+          "originalText": "动量 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "价值 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "kind": "data",
+          "sourceUnit": "15.14",
+          "originalText": "价值 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "质量 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "kind": "data",
+          "sourceUnit": "15.15",
+          "originalText": "质量 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "低波动 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "kind": "data",
+          "sourceUnit": "15.16",
+          "originalText": "低波动 | {平均 Rank IC，3位小数或—} | {有效月份} / {样本月数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合成回测，不证明真实市场有效。此实验每行业可达 50%、免交易费，与本轮配置规则不同。",
+          "kind": "body",
+          "sourceUnit": "15.17",
+          "originalText": "全部历史为合成数据。小样本和反复调参不能证明现实有效性。该研究实验与模拟配置的 40% 单行业上限和交易成本不同。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "回测结果已更新",
+          "kind": "feedback",
+          "condition": "用户运行回测后",
+          "sourceUnit": "15.18",
+          "originalText": "回测已完成；合成结果不代表现实有效性",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 15
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 16
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 17
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 13
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 2
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 148
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 19
+        },
+        {
+          "path": "investigation-game/v3/experience.js",
+          "line": 11
+        }
+      ],
+      "number": 15,
+      "editorNote": "保留四因子功效表在默认结果中，不能为精简而把课程必需的因子功效全部隐藏。无有效观测时显示“—（无法计算）”，不写成0或无风险。",
+      "additions": [
+        {
+          "text": "最大回撤：资产从此前最高点下跌最多的幅度。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "排序相关性越接近 1，打分高的行业随后越倾向涨得好；接近 0 表示关系弱，负值表示相反。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "可计算月份只表示数据足以计算，不能当作获利月份或胜率。",
+          "presentation": "展开",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "样本小、反复调参可能产生偶然结果。",
+          "presentation": "展开",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "backtest-detail",
+      "title": "场景 16｜方法与逐月记录",
+      "context": "回测方法明细展开。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "查看回测规则和逐月结果",
+          "kind": "title",
+          "sourceUnit": "16.01",
+          "originalText": "查看方法与逐月记录",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "先用 6 个月形成线索，再逐月用当时已知信息排序。前二行业各 50%，基准五行业各 20%；均每月调仓，免交易费、不加杠杆。",
+          "kind": "body",
+          "sourceUnit": "16.02",
+          "originalText": "6 个月预热后，逐月使用当时可得信息排序，前二行业各 50%。基准为五行业各 20%。两者均每月再平衡，零交易成本，不加杠杆。",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "样本月",
+          "kind": "data",
+          "sourceUnit": "16.03",
+          "originalText": "样本月",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "事前选择",
+          "kind": "data",
+          "sourceUnit": "16.04",
+          "originalText": "事前选择",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "策略收益",
+          "kind": "data",
+          "sourceUnit": "16.05",
+          "originalText": "策略收益",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "基准收益",
+          "kind": "data",
+          "sourceUnit": "16.06",
+          "originalText": "基准收益",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "{样本月序号1–36} | {当时选出的前二行业} | {当月策略收益，2位小数%} | {当月基准收益，2位小数%}",
+          "kind": "data",
+          "condition": "每个样本月一行，共36行；具体结果由偏好和合成样本确定",
+          "sourceUnit": "16.07",
+          "originalText": "{样本月序号1–36} | {当时选出的前二行业} | {当月策略收益，2位小数%} | {当月基准收益，2位小数%}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 18
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 17
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 20
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 148
+        }
+      ],
+      "number": 16,
+      "editorNote": "回测只使用各决策时点可得信息。月度基准不要与主模拟“每日再平衡”的基准混为一谈。",
+      "additions": []
+    },
+    {
+      "id": "backtest-feedback",
+      "title": "场景 17｜回测待更新或输入无效",
+      "context": "研究偏好已改变或全为零。",
+      "group": "第二幕｜证据与方法",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "偏好已更改，请重新运行回测。",
+          "kind": "feedback",
+          "condition": "偏好滑条改变但尚未重新运行",
+          "sourceUnit": "17.01",
+          "originalText": "偏好已修改，运行回测后更新结果",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请将至少一个因子权重设为大于 0。",
+          "kind": "feedback",
+          "condition": "四项因子权重全为零",
+          "sourceUnit": "17.02",
+          "originalText": "至少一个因子权重需要大于零",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 15
+        }
+      ],
+      "number": 17,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "allocation",
+      "title": "场景 18｜本轮配置",
+      "context": "进入配置决策视图。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "本轮配置",
+          "kind": "title",
+          "sourceUnit": "18.01",
+          "originalText": "构建配置",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "分配资金，再记录这次调整的依据。",
+          "kind": "body",
+          "sourceUnit": "18.02",
+          "originalText": "先记录判断与依据 再将配置交给模拟市场",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "1. 分配资金",
+          "kind": "data",
+          "sourceUnit": "18.03",
+          "originalText": "01 / 配置权重",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮配置",
+          "kind": "title",
+          "sourceUnit": "18.04",
+          "originalText": "本轮配置",
+          "presentation": "合并或移除",
+          "rationale": "与本场景标题重复。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合计 100%；每行业最多 40%；不能为负。",
+          "kind": "data",
+          "sourceUnit": "18.05",
+          "originalText": "单行业 ≤ 40%",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "半导体 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "kind": "data",
+          "condition": "目标在决策期可编辑，推进与结算阶段锁定",
+          "sourceUnit": "18.06",
+          "originalText": "半导体 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "机器人与工业自动化 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "kind": "data",
+          "condition": "目标在决策期可编辑，推进与结算阶段锁定",
+          "sourceUnit": "18.07",
+          "originalText": "机器人与工业自动化 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "先进材料 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "kind": "data",
+          "condition": "目标在决策期可编辑，推进与结算阶段锁定",
+          "sourceUnit": "18.08",
+          "originalText": "先进材料 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "清洁能源装备 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "kind": "data",
+          "condition": "目标在决策期可编辑，推进与结算阶段锁定",
+          "sourceUnit": "18.09",
+          "originalText": "清洁能源装备 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "AI 与数字基础设施 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "kind": "data",
+          "condition": "目标在决策期可编辑，推进与结算阶段锁定",
+          "sourceUnit": "18.10",
+          "originalText": "AI 与数字基础设施 | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "现金（Cash） | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "kind": "data",
+          "condition": "目标在决策期可编辑，推进与结算阶段锁定",
+          "sourceUnit": "18.11",
+          "originalText": "Cash | {当前持仓比例，1位小数%} | {目标配置比例，最多2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "合计：{目标合计，整数}%",
+          "kind": "data",
+          "sourceUnit": "18.12",
+          "originalText": "合计：{目标合计，整数}%",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "预计费用：{预览费用，2位小数；无效配置为—}",
+          "kind": "data",
+          "condition": "决策期",
+          "sourceUnit": "18.13",
+          "originalText": "预计费用：{预览费用，2位小数；无效配置为—}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "已扣交易费：{已确认交易费，2位小数}",
+          "kind": "data",
+          "condition": "非决策期",
+          "sourceUnit": "18.14",
+          "originalText": "已扣交易费：{已确认交易费，2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 9
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 51
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 9
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 91
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 3
+        }
+      ],
+      "number": 18,
+      "editorNote": "保留当前与目标两列、合计、费用预览及已扣费用；每行标明百分比。现金不受“单行业40%”上限限制。不新增自动补现金、撤销等未在正式v3确认的功能。",
+      "additions": [
+        {
+          "text": "当前持仓 → 本轮目标",
+          "presentation": "首屏",
+          "condition": "配置表列标题，不生成新数据",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "allocation-preferences",
+      "title": "场景 19｜配置中的因子偏好",
+      "context": "配置面板的因子详情展开。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "从因子生成配置",
+          "kind": "title",
+          "sourceUnit": "19.01",
+          "originalText": "因子研究偏好",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "因子用于选行业。应用后会改写配置草稿，确认前可再调整。",
+          "kind": "body",
+          "sourceUnit": "19.02",
+          "originalText": "偏好用于筛选行业，不是另一笔资金。应用后生成可调整的行业配置。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "动量：{归一化研究偏好，整数}%",
+          "kind": "data",
+          "sourceUnit": "19.03",
+          "originalText": "动量：{归一化研究偏好，整数}%",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "价值：{归一化研究偏好，整数}%",
+          "kind": "data",
+          "sourceUnit": "19.04",
+          "originalText": "价值：{归一化研究偏好，整数}%",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "质量：{归一化研究偏好，整数}%",
+          "kind": "data",
+          "sourceUnit": "19.05",
+          "originalText": "质量：{归一化研究偏好，整数}%",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "低波动：{归一化研究偏好，整数}%",
+          "kind": "data",
+          "sourceUnit": "19.06",
+          "originalText": "低波动：{归一化研究偏好，整数}%",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 9
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 8
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 101
+        }
+      ],
+      "number": 19,
+      "editorNote": "因子偏好与行业资金分开命名，避免用户认为又投入一笔本金。应用草稿不等于执行交易。",
+      "additions": []
+    },
+    {
+      "id": "decision",
+      "title": "场景 20｜结果出现之前的判断",
+      "context": "本轮判断与理由区域显示。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "2. 记录判断",
+          "kind": "data",
+          "sourceUnit": "20.01",
+          "originalText": "02 / 决策依据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "先写理由，再看结果",
+          "kind": "title",
+          "sourceUnit": "20.02",
+          "originalText": "把判断写在结果之前",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "这是你的预判，尚未发生。",
+          "kind": "body",
+          "sourceUnit": "20.03",
+          "originalText": "预测属于你的判断 不代表已经发生的事实",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮市场会怎样？",
+          "kind": "title",
+          "sourceUnit": "20.04",
+          "originalText": "记录你的市场判断",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "上行",
+          "kind": "data",
+          "sourceUnit": "20.05",
+          "originalText": "上行",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "横盘",
+          "kind": "data",
+          "sourceUnit": "20.06",
+          "originalText": "横盘",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "下行",
+          "kind": "data",
+          "sourceUnit": "20.07",
+          "originalText": "下行",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "按本轮行业基准判断：超过 +1% 为上行，低于 −1% 为下行，其余为横盘。",
+          "kind": "body",
+          "sourceUnit": "20.08",
+          "originalText": "以本轮基准收益为准：超过 +1% 为上行，低于 −1% 为下行，其余为横盘。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "这次配置最主要的理由是什么？",
+          "kind": "title",
+          "sourceUnit": "20.09",
+          "originalText": "这次决定，依据是什么？",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "选择一个主要理由",
+          "kind": "data",
+          "sourceUnit": "20.10",
+          "originalText": "请选择一个理由",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "需求与公开证据",
+          "kind": "data",
+          "sourceUnit": "20.11",
+          "originalText": "需求与公开证据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "控制风险、保留现金",
+          "kind": "data",
+          "sourceUnit": "20.12",
+          "originalText": "控制风险与保留 Cash",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "维持长期配置",
+          "kind": "data",
+          "sourceUnit": "20.13",
+          "originalText": "坚持长期配置",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "价格与盈利预期",
+          "kind": "data",
+          "sourceUnit": "20.14",
+          "originalText": "估值与预期差",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "选填：哪条证据会让你改变判断？",
+          "kind": "body",
+          "condition": "补充理由为空时的占位提示",
+          "sourceUnit": "20.15",
+          "originalText": "补充一句：什么证据会让你改变判断？（选填）",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "确认后执行一次调仓并扣费，随后推进本轮；轮内不能调仓。",
+          "kind": "body",
+          "sourceUnit": "20.16",
+          "originalText": "决策时市场暂停。确认后只交易一次，交易费从净值扣除。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 52
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 9
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 3
+        }
+      ],
+      "number": 20,
+      "editorNote": "事实、个人预判、选择理由分别标注。长期理由不等于承诺永不调整；选填文字沿用现有字段与长度限制，不新增必填门槛。",
+      "additions": []
+    },
+    {
+      "id": "decision-errors",
+      "title": "场景 21｜配置校验反馈",
+      "context": "配置、因子偏好或判断理由未满足约束。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "请把合计调为 100%；每行业最多 40%，权重不能为负。",
+          "kind": "feedback",
+          "condition": "合计、非负或单行业上限校验不通过",
+          "sourceUnit": "21.01",
+          "originalText": "配置需合计 100%，单行业不超过 40%，且所有权重非负。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请将至少一个因子偏好设为大于 0。",
+          "kind": "feedback",
+          "condition": "因子偏好全部为零",
+          "sourceUnit": "21.02",
+          "originalText": "至少设置一项大于零的因子偏好。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请选择本次配置的主要理由。",
+          "kind": "feedback",
+          "condition": "确认时尚未选择理由",
+          "sourceUnit": "21.03",
+          "originalText": "请记录一个判断理由再确认。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本次未执行。请核对当前阶段和配置。",
+          "kind": "feedback",
+          "condition": "阶段/种子/情境或其他动作校验失败",
+          "sourceUnit": "21.04",
+          "originalText": "本次操作无法执行，请检查当前阶段与配置。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 12
+        }
+      ],
+      "number": 21,
+      "editorNote": "错误就近显示，并保留输入。合并错误文案沿用现有验证结果；若后续想显示“还差x%”，必须先实现对应真实差值，不能写死。",
+      "additions": []
+    },
+    {
+      "id": "check-state",
+      "title": "场景 22｜快速核对状态",
+      "context": "决策阶段核对理由。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "核对我的理由",
+          "kind": "title",
+          "sourceUnit": "22.01",
+          "originalText": "快速核对理由",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "根据已公开信息核对理由，由你决定如何配置。",
+          "kind": "body",
+          "condition": "关联的无障碍说明，不作为可见正文",
+          "sourceUnit": "22.02",
+          "originalText": "对照可见证据检查理由，辅助判断，不代替你的配置决定。",
+          "presentation": "仅辅助技术",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "正在核对…",
+          "kind": "feedback",
+          "condition": "真实本地接口请求等待中",
+          "sourceUnit": "22.03",
+          "originalText": "正在核对…",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "理由或进度已改变，请重新核对。",
+          "kind": "feedback",
+          "condition": "理由、存档、身份或研究状态已变更",
+          "sourceUnit": "22.04",
+          "originalText": "理由或研究状态已变更，请重新核对。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/quick-check.js",
+          "line": 6
+        }
+      ],
+      "number": 22,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "check-rule",
+      "title": "场景 23｜快速核对的规则结果",
+      "context": "无在线语义服务或公开版直接执行规则检查。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "规则检查",
+          "kind": "data",
+          "condition": "本地服务返回rule",
+          "sourceUnit": "23.01",
+          "originalText": "规则检查 · 未使用 Jev",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "AI 不可用 · 改用规则检查",
+          "kind": "data",
+          "condition": "请求失败或服务返回fallback",
+          "sourceUnit": "23.02",
+          "originalText": "服务不可用 · 仅规则检查",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "规则检查 · 此版本未连接 AI",
+          "kind": "data",
+          "condition": "静态发布模式",
+          "sourceUnit": "23.03",
+          "originalText": "公开版 · 规则检查",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "配置限制",
+          "kind": "data",
+          "sourceUnit": "23.04",
+          "originalText": "配置边界",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "配置符合限制",
+          "kind": "feedback",
+          "condition": "配置校验通过",
+          "sourceUnit": "23.05",
+          "originalText": "符合当前配置限制",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请检查合计与行业上限",
+          "kind": "feedback",
+          "condition": "配置校验不通过",
+          "sourceUnit": "23.06",
+          "originalText": "请检查权重与行业上限",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "理由记录",
+          "kind": "data",
+          "sourceUnit": "23.07",
+          "originalText": "理由记录",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已填写补充理由",
+          "kind": "feedback",
+          "condition": "补充理由非空",
+          "sourceUnit": "23.08",
+          "originalText": "已填写理由",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请填写补充理由后再核对",
+          "kind": "feedback",
+          "condition": "补充理由为空",
+          "sourceUnit": "23.09",
+          "originalText": "请先填写具体理由",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "待复核",
+          "kind": "feedback",
+          "condition": "相应检查需要复核；服务端规则结果可附带",
+          "sourceUnit": "23.10",
+          "originalText": "待复核",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "这里只检查输入与配置限制，不能判断理由是否成立。",
+          "kind": "body",
+          "sourceUnit": "23.11",
+          "originalText": "Jev 未连接；规则只能检查输入和配置，无法判断理由是否成立。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "语义结果可能出错。模型概率不是收益概率，也不是经验证的准确率。",
+          "kind": "body",
+          "sourceUnit": "23.12",
+          "originalText": "语义结果可能出错。模型概率不是收益概率，也不是经验证的准确率。",
+          "presentation": "合并或移除",
+          "rationale": "规则模式不展示模型概率，避免让用户误以为AI已经运行；相关边界保留在在线分支。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/quick-check.js",
+          "line": 6
+        },
+        {
+          "path": "investigation-game/v3/quick-check.js",
+          "line": 32
+        }
+      ],
+      "number": 23,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "check-live",
+      "title": "场景 24｜Jev 语义结果的可达分支",
+      "context": "仅服务端确实返回live时。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "AI 理由核对 · Jev",
+          "kind": "title",
+          "sourceUnit": "24.01",
+          "originalText": "Jev 语义核对",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "与证据是否一致",
+          "kind": "data",
+          "sourceUnit": "24.02",
+          "originalText": "证据支持",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "当前证据支持这段理由",
+          "kind": "feedback",
+          "condition": "该分类被模型选中时显示其一",
+          "sourceUnit": "24.03",
+          "originalText": "有可见证据支持",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "理由与当前证据有冲突",
+          "kind": "feedback",
+          "condition": "该分类被模型选中时显示其一",
+          "sourceUnit": "24.04",
+          "originalText": "与可见证据存在冲突",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "证据不足，请补充依据",
+          "kind": "feedback",
+          "condition": "该分类被模型选中时显示其一",
+          "sourceUnit": "24.05",
+          "originalText": "证据不足，需补充依据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "理由针对的时间",
+          "kind": "data",
+          "sourceUnit": "24.06",
+          "originalText": "判断期限",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "长期定位",
+          "kind": "feedback",
+          "condition": "该期限分类被模型选中时显示其一",
+          "sourceUnit": "24.07",
+          "originalText": "长期定位",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "短期战术",
+          "kind": "feedback",
+          "condition": "该期限分类被模型选中时显示其一",
+          "sourceUnit": "24.08",
+          "originalText": "短期战术",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "同时涉及长期与短期",
+          "kind": "feedback",
+          "condition": "该期限分类被模型选中时显示其一",
+          "sourceUnit": "24.09",
+          "originalText": "同时涉及长期与短期",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "时间范围不清楚",
+          "kind": "feedback",
+          "condition": "该期限分类被模型选中时显示其一",
+          "sourceUnit": "24.10",
+          "originalText": "期限不清楚",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "待复核",
+          "kind": "feedback",
+          "condition": "低集中度或不确定/冲突分类",
+          "sourceUnit": "24.11",
+          "originalText": "待复核",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "查看模型分类详情",
+          "kind": "title",
+          "condition": "概率明细可展开",
+          "sourceUnit": "24.12",
+          "originalText": "查看模型选项概率",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "{检查名称}: {选项名称}: {四舍五入的模型概率}% · {其他选项及概率}",
+          "kind": "data",
+          "condition": "每项分类返回有效概率时；不是收益或准确率",
+          "sourceUnit": "24.13",
+          "originalText": "{检查名称}: {选项名称}: {四舍五入的模型概率}% · {其他选项及概率}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "所用资料：{本次可见资料ID，以 · 分隔}",
+          "kind": "data",
+          "condition": "返回引用非空时",
+          "sourceUnit": "24.14",
+          "originalText": "可核对的证据: {本次可见资料ID，以 · 分隔}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "AI 判断可能有误；分类概率不代表盈利概率或已验证的准确率。",
+          "kind": "body",
+          "sourceUnit": "24.15",
+          "originalText": "语义结果可能出错。模型概率不是收益概率，也不是经验证的准确率。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/quick-check.js",
+          "line": 6
+        },
+        {
+          "path": "investigation-game/v3/quick-check.js",
+          "line": 31
+        },
+        {
+          "path": "investigation-game/v3/quick-check.js",
+          "line": 33
+        }
+      ],
+      "number": 24,
+      "editorNote": "仅保留为条件分支：服务端实际返回live且通过时效核验时才显示。现有真实探测HTTP451，不能把本段当作在线可用演示。概率详情与其边界同时可见。",
+      "additions": []
+    },
+    {
+      "id": "check-causes",
+      "title": "场景 25｜Jev 降级的具体原因",
+      "context": "服务返回已识别的受限原因。",
+      "group": "第三幕｜配置与判断",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "AI 访问受限，已改用规则检查。",
+          "kind": "feedback",
+          "condition": "HTTP451映射",
+          "sourceUnit": "25.01",
+          "originalText": "Jev 返回访问限制（HTTP 451），目前仅执行规则检查。",
+          "presentation": "首屏",
+          "rationale": "首屏说清影响；保留HTTP451供按需排查。"
+        },
+        {
+          "speaker": "界面",
+          "text": "AI 服务认证失败，已改用规则检查。",
+          "kind": "feedback",
+          "condition": "HTTP401/403映射",
+          "sourceUnit": "25.02",
+          "originalText": "Jev 未接受服务端凭证，目前仅执行规则检查。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "AI 请求受限，已改用规则检查；稍后可重试。",
+          "kind": "feedback",
+          "condition": "HTTP429映射",
+          "sourceUnit": "25.03",
+          "originalText": "Jev 请求受限，请稍后重试；规则检查仍可使用。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/quick-check.js",
+          "line": 29
+        }
+      ],
+      "number": 25,
+      "editorNote": "",
+      "additions": [
+        {
+          "text": "Jev 返回 HTTP 451（访问限制）。",
+          "presentation": "展开",
+          "condition": "服务端确实返回access-restricted对应原因",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "advance",
+      "title": "场景 26｜逐日推进的共用输出",
+      "context": "确认配置后市场逐日推进，或暂停播放。",
+      "group": "第四幕｜六轮市场推进",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "模拟进行中",
+          "kind": "data",
+          "sourceUnit": "26.01",
+          "originalText": "市场推进中",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮进度 {day} / {total} 个交易日",
+          "kind": "data",
+          "sourceUnit": "26.02",
+          "originalText": "本轮已推进 {day} / {total} 日",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "新信息 · 已暂停",
+          "kind": "data",
+          "condition": "新事件出现时",
+          "sourceUnit": "26.03",
+          "originalText": "事件暂停",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "先看新证据，再继续本轮；本轮持仓暂不能调整。",
+          "kind": "body",
+          "condition": "事件暂停时",
+          "sourceUnit": "26.04",
+          "originalText": "新信息已公开，持仓保持锁定。观察影响，再继续本轮。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "影响仍在传导",
+          "kind": "data",
+          "condition": "事件仍在传导",
+          "sourceUnit": "26.05",
+          "originalText": "传导中",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "该事件影响已结束",
+          "kind": "data",
+          "condition": "事件持续期已结束",
+          "sourceUnit": "26.06",
+          "originalText": "已结束",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "查看此前事件 · {此前事件数量}",
+          "kind": "title",
+          "condition": "已有至少两条事件，展开后显示历史事件原文",
+          "sourceUnit": "26.07",
+          "originalText": "此前事件 · {此前事件数量}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 {day} 日",
+          "kind": "data",
+          "condition": "每张事件显示实际公开日",
+          "sourceUnit": "26.08",
+          "originalText": "第 {day} 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 9
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 7
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 82
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 57
+        }
+      ],
+      "number": 26,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "round-1",
+      "title": "场景 27｜第 1 轮独有叙事",
+      "context": "默认6轮×20日：第0日进入本轮；第7日公开事件。",
+      "group": "第四幕｜六轮市场推进",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "本轮关注：传闻与事实",
+          "kind": "title",
+          "sourceUnit": "27.01",
+          "originalText": "订单线索",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "出现补库存传闻",
+          "kind": "title",
+          "sourceUnit": "27.02",
+          "originalText": "订单传闻浮现",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "产业链传出补库存消息，但经营改善尚未证实。市场情绪已升温。",
+          "kind": "body",
+          "sourceUnit": "27.03",
+          "originalText": "产业链出现补库存传闻，经营改善尚未核实。市场情绪升温，证据仍有限。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 7 日",
+          "kind": "data",
+          "condition": "默认120日课程情境；自定义配置会按总日数缩放事件时点",
+          "sourceUnit": "27.04",
+          "originalText": "第 7 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 18
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 57
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 118
+        }
+      ],
+      "number": 27,
+      "editorNote": "",
+      "additions": [
+        {
+          "text": "思考：后续披露能否证实需求改善？",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "round-2",
+      "title": "场景 28｜第 2 轮独有叙事",
+      "context": "默认6轮×20日：第20日进入本轮；第25日公开事件。",
+      "group": "第四幕｜六轮市场推进",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "本轮关注：订单能否变成收入",
+          "kind": "title",
+          "sourceUnit": "28.01",
+          "originalText": "数据披露",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "收入披露更新",
+          "kind": "title",
+          "sourceUnit": "28.02",
+          "originalText": "数据披露：收入与订单不同步",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合成披露：较多订单已转为收入，但仍有交付时滞；价格可能已反映改善。",
+          "kind": "body",
+          "condition": "订单转化内部情境分支达到强披露条件；本次未实走此分支",
+          "sourceUnit": "28.03",
+          "originalText": "最新合成披露显示较多订单转化为收入；交付时滞仍存在，价格也可能已反映改善。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合成披露：订单转为收入偏弱，部分交付延后。此前传闻尚未充分兑现。",
+          "kind": "body",
+          "condition": "订单转化内部情境分支为弱披露；隔离回放已核对",
+          "sourceUnit": "28.04",
+          "originalText": "最新合成披露显示订单转化偏弱，部分交付延后。传闻与已确认收入需要重新区分。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 25 日",
+          "kind": "data",
+          "condition": "默认120日课程情境；自定义配置会按总日数缩放事件时点",
+          "sourceUnit": "28.05",
+          "originalText": "第 25 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 19
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 20
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 21
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 58
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 118
+        }
+      ],
+      "number": 28,
+      "editorNote": "两条披露正文互斥，只按实际模拟结果显示一条。用户事前不能看到本轮结果或后续事件；第25日也是当前默认情境的内部触发记录，不预告在开局。",
+      "additions": [
+        {
+          "text": "思考：新数据支持还是削弱了你原先的理由？",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "round-3",
+      "title": "场景 29｜第 3 轮独有叙事",
+      "context": "默认6轮×20日：第40日进入本轮；第46日公开事件。",
+      "group": "第四幕｜六轮市场推进",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "本轮关注：成本与延迟",
+          "kind": "title",
+          "sourceUnit": "29.01",
+          "originalText": "传导滞后",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "交付承压，融资收紧",
+          "kind": "title",
+          "sourceUnit": "29.02",
+          "originalText": "供应链与融资成本冲击",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "运输与设备交付承压，融资条件收紧；成本影响会持续多个交易日。",
+          "kind": "body",
+          "sourceUnit": "29.03",
+          "originalText": "运输与设备交付承压，信用条件收紧。成本变化将持续多个交易日。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 46 日",
+          "kind": "data",
+          "condition": "默认120日课程情境；自定义配置会按总日数缩放事件时点",
+          "sourceUnit": "29.04",
+          "originalText": "第 46 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 22
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 59
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 118
+        }
+      ],
+      "number": 29,
+      "editorNote": "",
+      "additions": [
+        {
+          "text": "思考：影响先出现在成本、收入，还是利润？",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "round-4",
+      "title": "场景 30｜第 4 轮独有叙事",
+      "context": "默认6轮×20日：第60日进入本轮；第72日公开事件。",
+      "group": "第四幕｜六轮市场推进",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "本轮关注：行业差异",
+          "kind": "title",
+          "sourceUnit": "30.01",
+          "originalText": "行业分化",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "行业现金流出现差异",
+          "kind": "title",
+          "sourceUnit": "30.02",
+          "originalText": "行业分化：利润率成为焦点",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "自动化与材料行业的现金流出现差异。质量因子可供观察，但不会一直占优。",
+          "kind": "body",
+          "sourceUnit": "30.03",
+          "originalText": "自动化与材料的现金流表现出现差异。质量因子提供观察角度，但不会永久占优。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 72 日",
+          "kind": "data",
+          "condition": "默认120日课程情境；自定义配置会按总日数缩放事件时点",
+          "sourceUnit": "30.04",
+          "originalText": "第 72 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 23
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 60
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 118
+        }
+      ],
+      "number": 30,
+      "editorNote": "",
+      "additions": [
+        {
+          "text": "思考：哪些经营差异值得在下一轮核对？",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "round-5",
+      "title": "场景 31｜第 5 轮独有叙事",
+      "context": "默认6轮×20日：第80日进入本轮；第95日公开事件。",
+      "group": "第四幕｜六轮市场推进",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "本轮关注：盈利与价格",
+          "kind": "title",
+          "sourceUnit": "31.01",
+          "originalText": "风险再定价",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "盈利开始兑现",
+          "kind": "title",
+          "sourceUnit": "31.02",
+          "originalText": "盈利兑现进入检验期",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "订单开始转为盈利，但估值和融资成本仍会影响价格。",
+          "kind": "body",
+          "sourceUnit": "31.03",
+          "originalText": "订单开始转化为盈利，估值与资金成本仍影响价格。长期叙事与短期回报并不相同。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 95 日",
+          "kind": "data",
+          "condition": "默认120日课程情境；自定义配置会按总日数缩放事件时点",
+          "sourceUnit": "31.04",
+          "originalText": "第 95 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 24
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 61
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 118
+        }
+      ],
+      "number": 31,
+      "editorNote": "",
+      "additions": [
+        {
+          "text": "思考：盈利改善，是否就意味着本轮价格一定上涨？",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "round-6",
+      "title": "场景 32｜第 6 轮独有叙事",
+      "context": "默认6轮×20日：第100日进入本轮；第116日公开事件。",
+      "group": "第四幕｜六轮市场推进",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "本轮关注：复核整段判断",
+          "kind": "title",
+          "sourceUnit": "32.01",
+          "originalText": "结果兑现",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "进入最终复盘",
+          "kind": "title",
+          "sourceUnit": "32.02",
+          "originalText": "订单迷雾：本章证据收束",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "回看每轮当时可见的证据，区分判断依据、承担的风险和最终盈亏。",
+          "kind": "body",
+          "sourceUnit": "32.03",
+          "originalText": "本章已披露的信息进入最终复盘。检查当时的证据、风险与预测，而不只看盈亏。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 116 日",
+          "kind": "data",
+          "condition": "默认120日课程情境；自定义配置会按总日数缩放事件时点",
+          "sourceUnit": "32.04",
+          "originalText": "第 116 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 25
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 62
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 118
+        }
+      ],
+      "number": 32,
+      "editorNote": "每轮只加一个思考问题，无需弹窗作答，不改结算与积分。六段事件逐时发布，不能把完整剧本提前展示给玩家。",
+      "additions": [
+        {
+          "text": "思考：下次你会用哪条新证据检验自己的方法？",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "settle",
+      "title": "场景 33｜第1至5轮结算",
+      "context": "本轮20个交易日完成，进入复盘。",
+      "group": "第五幕｜结果、归因与反思",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "决定 → 结果 → 反思",
+          "kind": "data",
+          "sourceUnit": "33.01",
+          "originalText": "决定 → 结果 → 反思",
+          "presentation": "合并或移除",
+          "rationale": "结算标题及数据已表达流程，移除重复口号。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮结果",
+          "kind": "title",
+          "sourceUnit": "33.02",
+          "originalText": "本轮结算完成",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "本轮收益：{本轮实际合成收益，带符号2位小数%}",
+          "kind": "data",
+          "sourceUnit": "33.03",
+          "originalText": "本轮收益：{本轮实际合成收益，带符号2位小数%}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "本轮调仓相对不调仓（虚拟金额）：{相对本轮不交易的虚拟金额差，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "33.04",
+          "originalText": "相对本轮不交易：{相对本轮不交易的虚拟金额差，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "自开局相对长期持有（虚拟金额）：{当前组合减长期锚的虚拟金额差，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "33.05",
+          "originalText": "相对长期锚：{当前组合减长期锚的虚拟金额差，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "学习积分：{本轮获得积分，整数}",
+          "kind": "data",
+          "sourceUnit": "33.06",
+          "originalText": "学习积分：{本轮获得积分，整数}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "你的预判：{forecast}；本轮基准实际：{actual}",
+          "kind": "feedback",
+          "sourceUnit": "33.07",
+          "originalText": "判断 {forecast} / 实际 {actual}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "积分记录纪律与风险观察，不计入金融净值。",
+          "kind": "body",
+          "sourceUnit": "33.08",
+          "originalText": "积分记录纪律与风险观察，不计入金融净值。",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 10
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 131
+        }
+      ],
+      "number": 33,
+      "editorNote": "本轮不交易与自开局长期持有的时间口径分别标明。相对金额正为多、负为少，不能把它们直接写成百分点或因果证明。结算先展示研究结果，再展开积分和徽章。",
+      "additions": [
+        {
+          "text": "接着看：这些收益来自哪里，承担了多少风险？",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "badges",
+      "title": "场景 34｜结算徽章",
+      "context": "结算满足对应条件时显示，未获得的徽章不出现。",
+      "group": "第五幕｜结果、归因与反思",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "判断有据",
+          "kind": "feedback",
+          "condition": "本轮记录了非空理由",
+          "sourceUnit": "34.01",
+          "originalText": "判断有据",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "证据观察者",
+          "kind": "feedback",
+          "condition": "当前研究记录至少看过一条证据",
+          "sourceUnit": "34.02",
+          "originalText": "证据观察者",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "分散配置",
+          "kind": "feedback",
+          "condition": "确认时六项权重平方和≤0.26",
+          "sourceUnit": "34.03",
+          "originalText": "分散配置",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "风险守护",
+          "kind": "feedback",
+          "condition": "确认时Cash≥10%，截至结算最大回撤≤12%",
+          "sourceUnit": "34.04",
+          "originalText": "风险守护",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "预测复盘",
+          "kind": "feedback",
+          "condition": "本轮基准方向分类与玩家判断一致",
+          "sourceUnit": "34.05",
+          "originalText": "预测复盘",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 26
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 160
+        }
+      ],
+      "number": 34,
+      "editorNote": "徽章只记录预设行为条件；不能当作投资能力、研究正确性或学习效果证明。",
+      "additions": []
+    },
+    {
+      "id": "risk",
+      "title": "场景 35｜风险与因子暴露",
+      "context": "进入风险与归因视图。",
+      "group": "第五幕｜结果、归因与反思",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "风险与收益来源",
+          "kind": "title",
+          "sourceUnit": "35.01",
+          "originalText": "风险与归因",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "看赚了多少，也看过程中承受了多大下跌。",
+          "kind": "body",
+          "sourceUnit": "35.02",
+          "originalText": "对照基准与长期锚 看清收益来源和承担的风险",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "风险与收益来源",
+          "kind": "title",
+          "sourceUnit": "35.03",
+          "originalText": "风险与收益来源",
+          "presentation": "合并或移除",
+          "rationale": "与本场景标题重复。"
+        },
+        {
+          "speaker": "数据",
+          "text": "年化波动率：{年化波动率，2位小数%或—}",
+          "kind": "data",
+          "sourceUnit": "35.04",
+          "originalText": "年化波动率：{年化波动率，2位小数%或—}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "风险调整表现（Sharpe）：{Sharpe，2位小数或—}",
+          "kind": "data",
+          "sourceUnit": "35.05",
+          "originalText": "Sharpe：{Sharpe，2位小数或—}",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "最大回撤：{最大回撤，2位小数%}",
+          "kind": "data",
+          "sourceUnit": "35.06",
+          "originalText": "最大回撤：{最大回撤，2位小数%}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "分散度：{分散度，整数%}",
+          "kind": "data",
+          "sourceUnit": "35.07",
+          "originalText": "分散度：{分散度，整数%}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "基于已实现日收益；252 日年化，Sharpe 使用同期模拟 Cash 日利率。少于 2 个观测时留空；超额收益零方差时 Sharpe 留空。回撤包含初始净值。",
+          "kind": "body",
+          "sourceUnit": "35.08",
+          "originalText": "基于已实现日收益；252 日年化，Sharpe 使用同期模拟 Cash 日利率。少于 2 个观测时留空；超额收益零方差时 Sharpe 留空。回撤包含初始净值。",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "因子",
+          "kind": "data",
+          "sourceUnit": "35.09",
+          "originalText": "因子",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "组合对该因子的敏感程度",
+          "kind": "data",
+          "sourceUnit": "35.10",
+          "originalText": "组合暴露",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "最近一日因子收益",
+          "kind": "data",
+          "sourceUnit": "35.11",
+          "originalText": "最近一日因子收益",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "动量 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "kind": "data",
+          "condition": "交易日0的因子收益为—",
+          "sourceUnit": "35.12",
+          "originalText": "动量 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "价值 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "kind": "data",
+          "condition": "交易日0的因子收益为—",
+          "sourceUnit": "35.13",
+          "originalText": "价值 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "质量 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "kind": "data",
+          "condition": "交易日0的因子收益为—",
+          "sourceUnit": "35.14",
+          "originalText": "质量 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "数据",
+          "text": "低波动 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "kind": "data",
+          "condition": "交易日0的因子收益为—",
+          "sourceUnit": "35.15",
+          "originalText": "低波动 | {当前组合暴露，2位小数} | {最近一日因子收益，带符号2位小数%或—}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "因子暴露 = 当前行业权重 × 模型行业暴露；现金暴露为 0。",
+          "kind": "body",
+          "sourceUnit": "35.16",
+          "originalText": "组合暴露 = 当前行业权重 × 合成行业暴露；Cash 暴露为零。",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "解释边界",
+          "kind": "data",
+          "sourceUnit": "35.17",
+          "originalText": "解释边界",
+          "presentation": "合并或移除",
+          "rationale": "“解释边界”不单独占一个标题，保留下一条实质内容。"
+        },
+        {
+          "speaker": "界面",
+          "text": "盈利和判断质量分开看",
+          "kind": "title",
+          "sourceUnit": "35.18",
+          "originalText": "收益与决策质量分开看",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "一次盈利不能证明方法有效；一次下跌也不足以否定长期理由。请对照证据、参照组合与费用复盘。",
+          "kind": "body",
+          "sourceUnit": "35.19",
+          "originalText": "短期盈利不等于策略有效 一次回撤也不足以否定长期定位 对照基准 成本与可见证据复核判断",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 8
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 3
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 123
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 56
+        }
+      ],
+      "number": 35,
+      "editorNote": "收益率频率、252日年化、模拟现金日利率、少于2个观测与零方差边界原文保留在计算口径中。—不等于0；分散度也不等于安全程度。收益来源摘要与全明细见场景36。",
+      "additions": [
+        {
+          "text": "最大回撤：资产从此前最高点下跌最多的幅度，包含初始资产。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "attribution",
+      "title": "场景 36｜已结算收益归因",
+      "context": "至少已结算一轮时显示最近一轮金额归因。",
+      "group": "第五幕｜结果、归因与反思",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "第 {round} 轮收益来源 · 虚拟金额",
+          "kind": "title",
+          "sourceUnit": "36.01",
+          "originalText": "第 {round} 轮已结算收益归因 · 虚拟金额",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "市场整体影响（Beta）：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.02",
+          "originalText": "市场 Beta：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "动量：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.03",
+          "originalText": "动量：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "价值：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.04",
+          "originalText": "价值：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "质量：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.05",
+          "originalText": "质量：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "低波动：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.06",
+          "originalText": "低波动：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "行业自身影响：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.07",
+          "originalText": "行业项：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "已发生事件影响：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.08",
+          "originalText": "事件冲击：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "其他模拟冲击：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.09",
+          "originalText": "特异冲击：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "现金利息：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.10",
+          "originalText": "Cash 收益：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "交易费用：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "kind": "data",
+          "sourceUnit": "36.11",
+          "originalText": "交易费用：{该项已结算虚拟金额贡献，带符号2位小数}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 8
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 125
+        }
+      ],
+      "number": 36,
+      "editorNote": "初版保留全部金额，避免为精简而漏掉成本或损失项。可按市场、四因子、行业及冲击、现金及费用分组排版，不改变归因值。以后若做“最大来源摘要”，须从真实已结算贡献计算，保留全部正负项，不能预写为某个因子获胜。归因是模型分解，不是现实因果识别。",
+      "additions": [
+        {
+          "text": "正数为增加，负数为减少；各项合计应与本轮资产变动一致。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "journal",
+      "title": "场景 37｜决策手记与反思",
+      "context": "复盘视图展示既有决策记录。",
+      "group": "第五幕｜结果、归因与反思",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "决策复盘",
+          "kind": "title",
+          "sourceUnit": "37.01",
+          "originalText": "决策手记",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "回看当时理由，给下一轮留下一个可检验的问题。",
+          "kind": "body",
+          "sourceUnit": "37.02",
+          "originalText": "对照当时的判断复盘 为下一轮留下问题",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "决策手记",
+          "kind": "title",
+          "sourceUnit": "37.03",
+          "originalText": "决策手记",
+          "presentation": "合并或移除",
+          "rationale": "与本场景标题重复。"
+        },
+        {
+          "speaker": "界面",
+          "text": "尚无已结算记录。完成一轮后，可在这里对照理由和结果。",
+          "kind": "body",
+          "condition": "尚未结算任何轮次",
+          "sourceUnit": "37.04",
+          "originalText": "你的第一份投资决定，将从这里开始。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 {轮次} 轮 | {当时理由的中文标签及补充文字} | {该轮收益，带符号2位小数%}",
+          "kind": "data",
+          "condition": "每条已结算结果一行；最多默认六行",
+          "sourceUnit": "37.05",
+          "originalText": "第 {轮次} 轮 | {当时理由的中文标签及补充文字} | {该轮收益，带符号2位小数%}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "下一轮，你要核对哪条新证据？",
+          "kind": "title",
+          "sourceUnit": "37.06",
+          "originalText": "下次我会关注什么？",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "例如：后续收入是否支持订单改善的判断？",
+          "kind": "body",
+          "condition": "反思输入为空时",
+          "sourceUnit": "37.07",
+          "originalText": "写下一个能检验原先判断的新证据。反思随存档保存。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "{玩家当前反思原文}",
+          "kind": "data",
+          "condition": "已有反思输入时",
+          "sourceUnit": "37.08",
+          "originalText": "{玩家当前反思原文}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "反思自动保存在当前浏览器；账号存档需手动更新。",
+          "kind": "body",
+          "sourceUnit": "37.09",
+          "originalText": "反思是你的观点 会随进度保存在当前浏览器",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 12
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 137
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 171
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 57
+        }
+      ],
+      "number": 37,
+      "editorNote": "原反思为全局字段，不能写成每轮独立保存。本段示例仅是填空提示，不替用户生成已经完成的反思。",
+      "additions": []
+    },
+    {
+      "id": "complete",
+      "title": "场景 38｜第六轮结束",
+      "context": "默认第120日第六轮结算完成。",
+      "group": "第五幕｜结果、归因与反思",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "六轮练习完成",
+          "kind": "data",
+          "sourceUnit": "38.01",
+          "originalText": "章节完成",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "决定 → 结果 → 反思",
+          "kind": "data",
+          "sourceUnit": "38.02",
+          "originalText": "决定 → 结果 → 反思",
+          "presentation": "合并或移除",
+          "rationale": "去除重复流程口号。"
+        },
+        {
+          "speaker": "界面",
+          "text": "回看长期持有与本轮调整",
+          "kind": "title",
+          "sourceUnit": "38.03",
+          "originalText": "完成首章研究",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第六轮收益：{第六轮收益，带符号2位小数%}",
+          "kind": "data",
+          "sourceUnit": "38.04",
+          "originalText": "本轮收益：{第六轮收益，带符号2位小数%}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第六轮调仓相对不调仓（虚拟金额）：{第六轮相对不交易金额差}",
+          "kind": "data",
+          "sourceUnit": "38.05",
+          "originalText": "相对本轮不交易：{第六轮相对不交易金额差}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "自开局相对长期持有（虚拟金额）：{截至结束相对长期锚金额差}",
+          "kind": "data",
+          "sourceUnit": "38.06",
+          "originalText": "相对长期锚：{截至结束相对长期锚金额差}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "学习积分：{第六轮学习积分}",
+          "kind": "data",
+          "sourceUnit": "38.07",
+          "originalText": "学习积分：{第六轮学习积分}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "你的预判：{forecast}；本轮基准实际：{actual}",
+          "kind": "feedback",
+          "sourceUnit": "38.08",
+          "originalText": "判断 {forecast} / 实际 {actual}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "积分记录纪律与风险观察，不计入金融净值。",
+          "kind": "body",
+          "sourceUnit": "38.09",
+          "originalText": "积分记录纪律与风险观察，不计入金融净值。",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "换个情境再试",
+          "kind": "body",
+          "sourceUnit": "38.10",
+          "originalText": "换个情境再试",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "数据",
+          "text": "第 {1–6轮序号} 轮 | {该轮当时理由} | {该轮收益}",
+          "kind": "data",
+          "condition": "六行历史记录并列；不是独立最终报告",
+          "sourceUnit": "38.11",
+          "originalText": "第 {1–6轮序号} 轮 | {该轮当时理由} | {该轮收益}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "下次，你要检验哪条新证据？",
+          "kind": "title",
+          "sourceUnit": "38.12",
+          "originalText": "下次我会关注什么？",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 10
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 137
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 133
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 161
+        }
+      ],
+      "number": 38,
+      "editorNote": "此处金额与收益仍沿用原动态字段。第六轮收益绝不能改名为六轮累计收益。完整报告另列场景39新增设计。",
+      "additions": [
+        {
+          "text": "先完成复盘，再导出进度保留这次记录。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "新增文案",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "final-delivery-gap",
+      "title": "场景 39｜最终报告与课程交付",
+      "context": "当前正式版本没有独立最终报告或课程交付界面。",
+      "group": "第五幕｜结果、归因与反思",
+      "outputs": [],
+      "sources": [
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 57
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 131
+        }
+      ],
+      "number": 39,
+      "editorNote": "以上是交付结构建议，不冒充现有页面或真实用户研究。须先提供字段、计算来源和导出能力，才能作为最终报告；现有“导出进度”只是JSON，不是研究报告。具体日期、分工和最终提交格式以课程正式安排为准，不预填。",
+      "additions": [
+        {
+          "text": "研究小结",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "建议新增，当前未实现",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "长期定位：我持续看好的行业及依据。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "建议新增，当前未实现",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "短期调整：本轮为什么偏离原配置，费用与风险如何变化。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "建议新增，当前未实现",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "方法证据：四因子设置、回测规则、因子功效和样本局限。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "建议新增，当前未实现",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "周期证据：哪些订单、经营或政策信息支持我的判断，哪些仍待验证。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "建议新增，当前未实现",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "结果与反思：对照参照组合、收益来源和最大回撤，写下下一次要检验的问题。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "建议新增，当前未实现",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        },
+        {
+          "text": "课程交付：保留演示记录、每周研究过程与个人反思，核对最终材料清单。",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "建议新增，当前未实现",
+          "rationale": "补上初学者理解任务所需的上下文。"
+        }
+      ]
+    },
+    {
+      "id": "coach-entry",
+      "title": "场景 40｜AI 研究搭档入口",
+      "context": "研究搭档对话框展开。",
+      "group": "第六幕｜AI 研究支持",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "辅助解释 · 只读",
+          "kind": "data",
+          "sourceUnit": "40.01",
+          "originalText": "只读研究支持",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "研究助手",
+          "kind": "title",
+          "sourceUnit": "40.02",
+          "originalText": "AI 研究搭档",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "解释证据，核对风险。",
+          "kind": "body",
+          "condition": "本地版本",
+          "sourceUnit": "40.03",
+          "originalText": "把宏观变化，连接到你的投资决定。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "一起核对证据，决定由你做。",
+          "kind": "body",
+          "sourceUnit": "40.04",
+          "originalText": "一起核对证据，决定由你做。",
+          "presentation": "合并或移除",
+          "rationale": "与只读用途说明合并，减少重复口号。"
+        },
+        {
+          "speaker": "界面",
+          "text": "只看已确认持仓与已公开信息，不替你调仓。",
+          "kind": "body",
+          "sourceUnit": "40.05",
+          "originalText": "仅基于已确认持仓和公开信息",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "问一条证据，或一个风险问题…",
+          "kind": "body",
+          "condition": "输入为空",
+          "sourceUnit": "40.06",
+          "originalText": "问问证据、风险，或你的判断……",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "利率怎样影响这些行业？",
+          "kind": "body",
+          "sourceUnit": "40.07",
+          "originalText": "利率怎样影响这些行业？",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "我的配置有哪些风险？",
+          "kind": "body",
+          "sourceUnit": "40.08",
+          "originalText": "当前持仓最大的风险是什么？",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "我该如何解释这次结果？",
+          "kind": "body",
+          "sourceUnit": "40.09",
+          "originalText": "我该如何解释这次结果？",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 62
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 11
+        }
+      ],
+      "number": 40,
+      "editorNote": "不把AI描述为必然在线；打开时紧邻显示场景41的真实模式。问题示例来自已有入口，不自动向任何外部服务发送。",
+      "additions": []
+    },
+    {
+      "id": "coach-modes",
+      "title": "场景 41｜Coach 状态与回复容器",
+      "context": "Coach 生成或显示回复。",
+      "group": "第六幕｜AI 研究支持",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "规则提示 · 可离线",
+          "kind": "data",
+          "condition": "本地未配置服务或example结果",
+          "sourceUnit": "41.01",
+          "originalText": "规则反馈 · 可离线",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "在线 AI · 只读",
+          "kind": "data",
+          "condition": "实际live结果，本次未联网运行",
+          "sourceUnit": "41.02",
+          "originalText": "在线 AI · 只读",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "AI 暂不可用 · 规则提示",
+          "kind": "data",
+          "condition": "接口失败或fallback结果",
+          "sourceUnit": "41.03",
+          "originalText": "规则降级 · AI 暂不可用",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "公开版 · 规则提示",
+          "kind": "data",
+          "condition": "静态发布模式",
+          "sourceUnit": "41.04",
+          "originalText": "公开版 · 规则提示",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "以下为固定规则提示，依据当前可见数据生成。",
+          "kind": "body",
+          "condition": "静态发布模式",
+          "sourceUnit": "41.05",
+          "originalText": "公开版未连接在线 AI。以下提示根据当前可见数据与固定规则生成，用于辅助复盘。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "正在整理当前证据…",
+          "kind": "feedback",
+          "condition": "回复等待中",
+          "sourceUnit": "41.06",
+          "originalText": "正在结合当前证据分析…",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "Coach",
+          "text": "{回复模式标签} · 第 {day} 日",
+          "kind": "data",
+          "condition": "每条搭档回复的页内标签",
+          "sourceUnit": "41.07",
+          "originalText": "{回复模式标签} · 第 {day} 日",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "Coach",
+          "text": "{当前可见信息支持的在线回复 summary 原文}",
+          "kind": "body",
+          "condition": "仅实际live结果；文本不固定，本次未运行",
+          "sourceUnit": "41.08",
+          "originalText": "{当前可见信息支持的在线回复 summary 原文}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "查看依据",
+          "kind": "title",
+          "condition": "有detail时可展开",
+          "sourceUnit": "41.09",
+          "originalText": "依据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "Coach",
+          "text": "{detail 原文}",
+          "kind": "body",
+          "condition": "引用明细展开时",
+          "sourceUnit": "41.10",
+          "originalText": "{detail 原文}\n{资料ID，以 · 分隔}",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "此条回复保留生成时的语言。",
+          "kind": "feedback",
+          "condition": "此条回复生成时语言与当前界面不同",
+          "sourceUnit": "41.11",
+          "originalText": "此回复保留生成时的语言",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 20
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 141
+        },
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 164
+        }
+      ],
+      "number": 41,
+      "editorNote": "在线summary与detail是运行时原文，保留原占位，不能用固定精简句冒充真实AI回复。新输出风格建议：一句核心解释、一至三条依据、一个待核对问题；需另行修改服务端格式并验证后才可宣称实现。引用资料ID与生成日仍需默认可见。",
+      "additions": [
+        {
+          "text": "{资料ID，以 · 分隔}",
+          "presentation": "首屏",
+          "condition": "",
+          "status": "拆分原输出",
+          "rationale": "依据正文可展开；引用资料仍默认可见。"
+        }
+      ]
+    },
+    {
+      "id": "coach-rules",
+      "title": "场景 42｜规则式 Coach 的实际正文",
+      "context": "未配置在线服务、公开版或请求失败。",
+      "group": "第六幕｜AI 研究支持",
+      "outputs": [
+        {
+          "speaker": "Coach",
+          "text": "利率和信用条件会逐步影响融资与需求，不能据此知道明天涨跌。",
+          "kind": "body",
+          "condition": "非复盘阶段且问题不匹配风险词",
+          "sourceUnit": "42.01",
+          "originalText": "利率与信用条件通过融资成本和需求逐步传导；当前宏观指标不提供下一交易日价格。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "Coach",
+          "text": "先看行业集中、现金和已有回撤，再区分需求改善与价格风险。",
+          "kind": "body",
+          "condition": "非复盘阶段且问题含风险/回撤/现金或相应英文词",
+          "sourceUnit": "42.02",
+          "originalText": "先检查集中度、Cash 缓冲与已发生回撤，再区分需求改善和估值风险。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "Coach",
+          "text": "先比较本轮调仓与不调仓的差异，再复核原先理由。",
+          "kind": "body",
+          "condition": "当前处于review或complete；优先于问题关键词",
+          "sourceUnit": "42.03",
+          "originalText": "把本轮结果与同一路径下的不交易组合比较，再检查当时理由是否仍成立。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "Coach",
+          "text": "规则提示 · 合成数据。因子偏好不重复投入本金；未来价格未知。",
+          "kind": "body",
+          "condition": "回复依据展开",
+          "sourceUnit": "42.04",
+          "originalText": "因子权重只用于生成行业建议，不会再次投入本金。事件只使用当前已披露信息；未来价格未知。 本回答来自规则式教学提示，市场数据为合成模拟。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "Coach",
+          "text": "MACRO-D{day} · PORTFOLIO-D{day} · {当前最近事件ID或已结算RESULT-R{round}}",
+          "kind": "data",
+          "condition": "无事件/无结算时只有前两项",
+          "sourceUnit": "42.05",
+          "originalText": "MACRO-D{day} · PORTFOLIO-D{day} · {当前最近事件ID或已结算RESULT-R{round}}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 28
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 27
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 201
+        },
+        {
+          "path": "investigation-game/v2/simulation.js",
+          "line": 200
+        }
+      ],
+      "number": 42,
+      "editorNote": "三条解释按提问类别显示一条，不一口气堆叠。模式与合成标签必须紧邻回复，不放到折叠尾部。",
+      "additions": []
+    },
+    {
+      "id": "browser-save",
+      "title": "场景 43｜浏览器保存与恢复",
+      "context": "当前进度保存、导入或存储异常。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "已保存到此浏览器",
+          "kind": "feedback",
+          "condition": "浏览器保存成功",
+          "sourceUnit": "43.01",
+          "originalText": "进度已保存",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "尚未保存，关闭页面会丢失本次更改",
+          "kind": "feedback",
+          "condition": "浏览器不可写",
+          "sourceUnit": "43.02",
+          "originalText": "仅本次页面有效",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "浏览器保存不可用。可继续练习，请导出进度备份。",
+          "kind": "feedback",
+          "condition": "浏览器存储访问/写入失败",
+          "sourceUnit": "43.03",
+          "originalText": "浏览器存储不可用。仍可继续游戏，请使用导出存档保留进度。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "浏览器存档无法读取，已停止自动覆盖。请先导出原存档备份。",
+          "kind": "feedback",
+          "condition": "已有存档无法读取且已停止自动覆盖",
+          "sourceUnit": "43.04",
+          "originalText": "存档无法读取，原内容已保留且停止自动覆盖。可先导出原存档，再通过设置开始新情境。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "导入失败：文件格式或重放校验未通过。当前进度未改变。",
+          "kind": "feedback",
+          "condition": "导入格式/重放失败或文件超过允许大小",
+          "sourceUnit": "43.05",
+          "originalText": "无法导入：存档格式或重放校验不通过。当前进度未改变。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "进度已恢复",
+          "kind": "feedback",
+          "condition": "导入校验成功",
+          "sourceUnit": "43.06",
+          "originalText": "存档已恢复。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 12
+        }
+      ],
+      "number": 43,
+      "editorNote": "成功提示只在真实成功分支出现。恢复功能按原触发来源核对，若包括非文件来源则应改为“进度已恢复”，不能笼统称账号保存成功。坏存档的恢复路径保留场景49，不能自动开始新情境。",
+      "additions": []
+    },
+    {
+      "id": "account-library",
+      "title": "场景 44｜本地账号研究存档",
+      "context": "已登录账号打开存档库。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "账号存档",
+          "kind": "title",
+          "sourceUnit": "44.01",
+          "originalText": "账号与研究存档",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "浏览器草稿自动保存；账号存档需手动保存或更新。",
+          "kind": "body",
+          "sourceUnit": "44.02",
+          "originalText": "账号与存档保存在这台电脑，不会自动同步到其他设备。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号：{用户名}",
+          "kind": "data",
+          "sourceUnit": "44.03",
+          "originalText": "本地账号 · {用户名}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号存档 {存档数量} / 12",
+          "kind": "title",
+          "sourceUnit": "44.04",
+          "originalText": "我的研究存档 {存档数量} / 12",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "还没有账号存档。给当前进度起个名字，再保存。",
+          "kind": "body",
+          "condition": "尚无服务端存档",
+          "sourceUnit": "44.05",
+          "originalText": "还没有账号存档。为当前研究进度命名，保存第一个版本。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "存档名称",
+          "kind": "data",
+          "sourceUnit": "44.06",
+          "originalText": "存档名称",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "例如：复苏情境 · 保留现金",
+          "kind": "body",
+          "condition": "名称输入为空",
+          "sourceUnit": "44.07",
+          "originalText": "例如：复苏情景 · 防御配置",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "最多 12 个存档。保存新版本或更新已有存档，由你选择。",
+          "kind": "body",
+          "condition": "少于12个存档",
+          "sourceUnit": "44.08",
+          "originalText": "最多 12 个独立存档；每次保存由你确认。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已有 12 个存档，可更新其中一个。",
+          "kind": "feedback",
+          "condition": "已有12个存档",
+          "sourceUnit": "44.09",
+          "originalText": "已达到 12 个存档上限。你可以更新已有存档。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已自动保存到此浏览器",
+          "kind": "feedback",
+          "condition": "当前浏览器可写",
+          "sourceUnit": "44.10",
+          "originalText": "浏览器草稿自动保存",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "浏览器保存失败，请导出进度。",
+          "kind": "feedback",
+          "condition": "当前浏览器不可写",
+          "sourceUnit": "44.11",
+          "originalText": "浏览器无法保存草稿，请导出备份",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "尚未手动保存到账号",
+          "kind": "feedback",
+          "condition": "本次尚未手动保存服务端存档",
+          "sourceUnit": "44.12",
+          "originalText": "本地服务：本次研究尚未手动保存",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "上次账号保存 {月日时间}；之后的更改仍在浏览器草稿中。",
+          "kind": "feedback",
+          "condition": "有上次保存；末尾后续更改字样仅草稿已变化时出现",
+          "sourceUnit": "44.13",
+          "originalText": "本地服务：上次保存 {月日时间} · 当前草稿有后续更改",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 8
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 13
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 153
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 22
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 23
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 19
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 32
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 30
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 31
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 97
+        }
+      ],
+      "number": 44,
+      "editorNote": "当前连接的服务端保存命名账号存档。本地部署可说明在本机服务；远程部署可说明在所连接服务器。不得统一称云同步。服务器有存档与否必须由实际保存结果确认。",
+      "additions": []
+    },
+    {
+      "id": "save-item",
+      "title": "场景 45｜单个存档条目",
+      "context": "服务端返回本账号存档列表。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "{存档名称}",
+          "kind": "title",
+          "sourceUnit": "45.01",
+          "originalText": "{存档名称}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "第 {day} 个交易日 · 第 {round} 轮",
+          "kind": "data",
+          "sourceUnit": "45.02",
+          "originalText": "第 {day} 天 · 第 {round} 轮",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "{基准情景／压力情景／复苏情景}",
+          "kind": "data",
+          "condition": "按存档情境选择其一",
+          "sourceUnit": "45.03",
+          "originalText": "{基准情景／压力情景／复苏情景}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "{更新时间} · 版本 {revision}",
+          "kind": "data",
+          "sourceUnit": "45.04",
+          "originalText": "{更新时间} · 版本 {revision}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 154
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 38
+        }
+      ],
+      "number": 45,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "save-confirm",
+      "title": "场景 46｜载入与覆盖确认",
+      "context": "待载入、恢复草稿或覆盖指定存档。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "{待处理存档名称或“恢复上次载入前的草稿”}",
+          "kind": "title",
+          "sourceUnit": "46.01",
+          "originalText": "{待处理存档名称或“恢复上次载入前的草稿”}",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "载入会替换当前进度；当前草稿会先备份，之后可恢复。",
+          "kind": "body",
+          "condition": "载入账号存档或恢复先前草稿",
+          "sourceUnit": "46.02",
+          "originalText": "载入将替换当前工作进度。当前进度会先保留为可恢复草稿。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用当前进度覆盖这个账号存档？",
+          "kind": "body",
+          "condition": "用当前进度覆盖所选存档",
+          "sourceUnit": "46.03",
+          "originalText": "确认用当前工作进度更新此账号存档？其他存档保持独立。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号存档已载入",
+          "kind": "feedback",
+          "condition": "载入成功",
+          "sourceUnit": "46.04",
+          "originalText": "研究存档已载入。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已保存到账号存档",
+          "kind": "feedback",
+          "condition": "新建/更新服务端存档成功",
+          "sourceUnit": "46.05",
+          "originalText": "已保存到本地服务。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已恢复载入前的草稿",
+          "kind": "feedback",
+          "condition": "恢复载入前草稿成功",
+          "sourceUnit": "46.06",
+          "originalText": "载入前草稿已恢复。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 154
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 26
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 27
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 28
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 29
+        }
+      ],
+      "number": 46,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "save-errors",
+      "title": "场景 47｜存档与会话恢复分支",
+      "context": "账号存档操作校验、会话或服务失败。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "请输入 1–60 个字符的存档名称。",
+          "kind": "feedback",
+          "condition": "名称空或超60字符",
+          "sourceUnit": "47.01",
+          "originalText": "请输入 1–60 个字符的存档名称。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已有 12 个存档，可更新其中一个。",
+          "kind": "feedback",
+          "condition": "12个存档名额已用完",
+          "sourceUnit": "47.02",
+          "originalText": "已达到 12 个存档上限。你可以更新已有存档。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "此存档已在别处更新，本次未覆盖。草稿已保留，请刷新列表后核对版本或另存新档。",
+          "kind": "feedback",
+          "condition": "保存版本冲突409",
+          "sourceUnit": "47.03",
+          "originalText": "此存档已在另一处更新。本次没有覆盖，当前草稿仍保留；请刷新列表后另存新档或重新核对版本。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "登录已失效，浏览器草稿已保留。请重新登录。",
+          "kind": "feedback",
+          "condition": "非认证请求401",
+          "sourceUnit": "47.04",
+          "originalText": "登录已失效，账号草稿已保留。请重新登录。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请重新登录。浏览器中的账号草稿已保留。",
+          "kind": "feedback",
+          "condition": "会话校验403",
+          "sourceUnit": "47.05",
+          "originalText": "会话已变化或未通过校验，账号草稿已保留。请重新登录。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "数据校验未通过，草稿和已有存档均未改变。",
+          "kind": "feedback",
+          "condition": "400/413/422校验失败",
+          "sourceUnit": "47.06",
+          "originalText": "数据未通过校验，当前草稿和已有存档均未替换。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "当前草稿备份失败，已停止载入。请先导出当前进度。",
+          "kind": "feedback",
+          "condition": "无法保留载入前草稿",
+          "sourceUnit": "47.07",
+          "originalText": "无法保留载入前草稿，已停止载入。请先导出当前进度。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "账号服务暂不可用。浏览器进度已保留，请稍后重试。",
+          "kind": "feedback",
+          "condition": "服务不可用/超时",
+          "sourceUnit": "47.08",
+          "originalText": "本地服务暂不可用。当前浏览器进度仍保留，请稍后重试。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "尝试过多，请稍后再试。",
+          "kind": "feedback",
+          "condition": "请求429",
+          "sourceUnit": "47.09",
+          "originalText": "尝试次数过多，请稍后重试。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 24
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 32
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 33
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 35
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 37
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 34
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 36
+        }
+      ],
+      "number": 47,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "settings",
+      "title": "场景 48｜设置",
+      "context": "设置对话框展开。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "设置",
+          "kind": "title",
+          "sourceUnit": "48.01",
+          "originalText": "设置",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "语言 / Language",
+          "kind": "data",
+          "sourceUnit": "48.02",
+          "originalText": "语言 / Language",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "简体中文 / English",
+          "kind": "data",
+          "sourceUnit": "48.03",
+          "originalText": "简体中文 / English",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "切换语言不会改变进度或计算结果。",
+          "kind": "body",
+          "sourceUnit": "48.04",
+          "originalText": "切换语言不改变进度、持仓、种子或已计算结果。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "角色动效",
+          "kind": "data",
+          "sourceUnit": "48.05",
+          "originalText": "角色动效",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "关闭动效后仍保留文字提示；同时遵循系统减少动态效果设置。",
+          "kind": "body",
+          "sourceUnit": "48.06",
+          "originalText": "遵循系统的减少动态效果设置；关闭后保留所有文字提示。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "播放速度",
+          "kind": "data",
+          "sourceUnit": "48.07",
+          "originalText": "播放速度",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "标准",
+          "kind": "data",
+          "sourceUnit": "48.08",
+          "originalText": "标准",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "快速",
+          "kind": "data",
+          "sourceUnit": "48.09",
+          "originalText": "快速",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 3
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 12
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 63
+        }
+      ],
+      "number": 48,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "new-scenario",
+      "title": "场景 49｜开始新情境",
+      "context": "新情境确认框展开。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "开始新情境",
+          "kind": "title",
+          "sourceUnit": "49.01",
+          "originalText": "开始新情境",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "新情境会替换当前工作进度。需要保留时，请先导出进度。",
+          "kind": "body",
+          "sourceUnit": "49.02",
+          "originalText": "新情境会替换此版本的当前存档。需要保留时，请先导出存档。其他版本存档不受影响。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "数据",
+          "text": "随机种子：{随机种子，初始20261013}",
+          "kind": "data",
+          "sourceUnit": "49.03",
+          "originalText": "随机种子：{随机种子，初始20261013}",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "经济起点",
+          "kind": "data",
+          "sourceUnit": "49.04",
+          "originalText": "经济起点",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "基准情境",
+          "kind": "data",
+          "sourceUnit": "49.05",
+          "originalText": "基准情境",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "信用承压",
+          "kind": "data",
+          "sourceUnit": "49.06",
+          "originalText": "信用承压",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "需求复苏",
+          "kind": "data",
+          "sourceUnit": "49.07",
+          "originalText": "需求复苏",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 12
+        }
+      ],
+      "number": 49,
+      "editorNote": "“随机种子”展开为高级设置，并解释相同种子与操作可重现模拟；不主动重开或删除任何存档。命名账号存档不等于当前浏览器草稿。",
+      "additions": []
+    },
+    {
+      "id": "exports",
+      "title": "场景 50｜导出",
+      "context": "浏览器下载当前进度文件。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "系统",
+          "text": "FactorLab-save-day-{day}.json",
+          "kind": "data",
+          "condition": "复盘页导出；原存档损坏时导出保留的原内容",
+          "sourceUnit": "50.01",
+          "originalText": "FactorLab-save-day-{day}.json",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "系统",
+          "text": "FactorLab-current-progress.json",
+          "kind": "data",
+          "condition": "账号/公开版存档入口导出",
+          "sourceUnit": "50.02",
+          "originalText": "FactorLab-current-progress.json",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/app.js",
+          "line": 179
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 253
+        }
+      ],
+      "number": 50,
+      "editorNote": "仅保留现有JSON文件名。浏览器发起下载只能提示“已开始下载，请确认文件已保存”，不能据此断言用户磁盘写入成功。",
+      "additions": []
+    },
+    {
+      "id": "model-method",
+      "title": "场景 51｜模型口径",
+      "context": "模型说明对话框展开。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "模拟如何运行",
+          "kind": "title",
+          "sourceUnit": "51.01",
+          "originalText": "这是怎样的模拟？",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "共 6 轮，每轮 20 个交易日。数据由教学模型生成，未用真实市场校准，不能用于预测。",
+          "kind": "body",
+          "sourceUnit": "51.02",
+          "originalText": "原创、可复现的简化教学模型。每轮 20 个交易日，共 6 轮；慢变量定期更新，快变量逐日变化。未用真实市场数据校准，不用于预测。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "利率通过滞后的融资成本和需求影响增长与估值；通胀、流动性、信用压力与情绪共同影响风险。周期使用持续确认规则，减少频繁切换。",
+          "kind": "body",
+          "sourceUnit": "51.03",
+          "originalText": "利率通过滞后的融资成本和需求影响增长与估值；通胀、流动性、信用压力与情绪共同影响风险。周期使用持续确认规则，减少频繁切换。",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "每次确认配置时调仓并扣费，不重复扣款；结算后持仓比例会随价格变化。",
+          "kind": "body",
+          "sourceUnit": "51.04",
+          "originalText": "交易采用配置的模拟买卖费率，确认时扣费；结算后权重自然漂移。费用预览与实际使用同一计算，不重复扣款。",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "模型把收益分为市场、四因子、行业、事件和其他冲击；现金单独计息，各项金额与资产变动对账。因子偏好不重复投入本金。",
+          "kind": "body",
+          "sourceUnit": "51.05",
+          "originalText": "行业收益分为市场 Beta、四因子、行业项、事件和特异冲击；Cash 单独计息。金额归因与净值变化对账。因子偏好用于选行业，不重复分配本金。",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "上行、横盘、下行是你的预判，结算后再与模拟基准比较。",
+          "kind": "body",
+          "sourceUnit": "51.06",
+          "originalText": "上行、横盘、下行是玩家记录的判断，结算后与实际合成市场方向比较，不是 AI 预测。",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "基于已实现日收益；252 日年化，Sharpe 使用同期模拟 Cash 日利率。少于 2 个观测时留空；超额收益零方差时 Sharpe 留空。回撤包含初始净值。",
+          "kind": "body",
+          "sourceUnit": "51.07",
+          "originalText": "基于已实现日收益；252 日年化，Sharpe 使用同期模拟 Cash 日利率。少于 2 个观测时留空；超额收益零方差时 Sharpe 留空。回撤包含初始净值。",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "行业基准：五行业等权、每日再平衡、免交易费。长期持有参照：开局配置不交易。本轮不交易参照：沿同一市场路径持有本轮原仓位。",
+          "kind": "body",
+          "sourceUnit": "51.08",
+          "originalText": "基准为五行业等权、每日再平衡、免交易费的教学参照。长期锚持有开局配置不交易；本轮不交易反事实使用同一市场路径，便于区分交易与市场的影响。",
+          "presentation": "展开",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 13
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 8
+        }
+      ],
+      "number": 51,
+      "editorNote": "",
+      "additions": []
+    },
+    {
+      "id": "course-scope",
+      "title": "场景 52｜课程、伙伴与来源",
+      "context": "研究边界与来源对话框展开。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "项目目标与资料来源",
+          "kind": "title",
+          "sourceUnit": "52.01",
+          "originalText": "研究边界与来源",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "课程子项目 B",
+          "kind": "data",
+          "sourceUnit": "52.02",
+          "originalText": "课程子项目 B",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "高端制造与尖端科技行业配置",
+          "kind": "title",
+          "sourceUnit": "52.03",
+          "originalText": "高端制造与尖端科技行业配置",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "用行业周期、多因子、回测和因子功效，比较长期定位与短期调整。",
+          "kind": "body",
+          "sourceUnit": "52.04",
+          "originalText": "关注长期定位与短期战术配置 使用多因子 回测 因子有效性和行业周期证据支持判断",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "数据来源",
+          "kind": "title",
+          "sourceUnit": "52.05",
+          "originalText": "合成观测",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "模拟价格、宏观指标和回测样本均为合成数据，不能证明真实市场收益。",
+          "kind": "body",
+          "sourceUnit": "52.06",
+          "originalText": "模拟价格 宏观指标与回测样本由模型生成 不能证明真实市场收益",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "判断的边界",
+          "kind": "title",
+          "sourceUnit": "52.07",
+          "originalText": "判断与预测",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "个人预判和 AI 分析是观点，不能当作事实或交易指令。",
+          "kind": "body",
+          "sourceUnit": "52.08",
+          "originalText": "你的预测与 AI 分析属于观点 不构成已发生的事实或交易指令",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "伙伴业务背景",
+          "kind": "title",
+          "sourceUnit": "52.09",
+          "originalText": "伙伴语境",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "参考课程所述证券研究与风险管理场景组织证据；费用和仓位限制为教学假设，不代表机构建议或真实合作。",
+          "kind": "body",
+          "sourceUnit": "52.10",
+          "originalText": "以券商研究和风险管理的工作方式组织证据 成本与仓位限制是教学假设 不代表任何机构的正式建议或实际合作",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "独立历史案例",
+          "kind": "title",
+          "sourceUnit": "52.11",
+          "originalText": "独立的历史案例资料",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "2024 年半导体案例用于行业周期分析，与合成沙盒分开展示。",
+          "kind": "body",
+          "sourceUnit": "52.12",
+          "originalText": "2024 年半导体案例用作周期分析的材料 与沙盒合成数据分开展示",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "NIST · GlobalFoundries · 2024-02-19",
+          "kind": "data",
+          "sourceUnit": "52.13",
+          "originalText": "NIST · GlobalFoundries · 2024-02-19",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "Micron · FY2024 Q2 · 2024-03-20",
+          "kind": "data",
+          "sourceUnit": "52.14",
+          "originalText": "Micron · FY2024 Q2 · 2024-03-20",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 66
+        }
+      ],
+      "number": 52,
+      "editorNote": "课程材料的CITIC Securities与中文机构名不一致，不自行认定公司身份或背书。伙伴期望落实到证据留痕、费用、风险、方法与可复现比较；不据此声称已获伙伴验证。历史事实的日期和来源链接沿用并核对原始资料。",
+      "additions": []
+    },
+    {
+      "id": "update",
+      "title": "场景 53｜公开版更新提示",
+      "context": "静态发布构建检测到新版本，或更新前保存失败。",
+      "group": "第七幕｜存档、设置与恢复",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "有新版本，可保存进度后更新。",
+          "kind": "feedback",
+          "condition": "检测到不同发布版本",
+          "sourceUnit": "53.01",
+          "originalText": "新版本已发布。你可以继续当前研究，准备好后再更新。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "正在保存到此浏览器…",
+          "kind": "feedback",
+          "condition": "更新前保存中",
+          "sourceUnit": "53.02",
+          "originalText": "正在保存进度…",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "保存失败。请先导出进度并确认文件已保存，再手动刷新。",
+          "kind": "feedback",
+          "condition": "保存未获确认",
+          "sourceUnit": "53.03",
+          "originalText": "本次进度未能保存。请先导出进度，确认文件已保存后再手动刷新。当前页面会保留。",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "保存并更新",
+          "kind": "body",
+          "sourceUnit": "53.04",
+          "originalText": "保存进度并更新",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "导出进度",
+          "kind": "body",
+          "sourceUnit": "53.05",
+          "originalText": "导出进度",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "稍后更新",
+          "kind": "body",
+          "sourceUnit": "53.06",
+          "originalText": "稍后",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/pages-update.js",
+          "line": 15
+        },
+        {
+          "path": "investigation-game/v3/pages-update.js",
+          "line": 12
+        },
+        {
+          "path": "investigation-game/v3/pages-update.js",
+          "line": 11
+        }
+      ],
+      "number": 53,
+      "editorNote": "更新只使用现有浏览器保存流程，不能提示已经保存到账号。失败时保留页面。",
+      "additions": []
+    },
+    {
+      "id": "persistent",
+      "title": "场景 54｜常驻导航与状态",
+      "context": "贯穿对应研究视图的共用输出。",
+      "group": "共用幕｜常驻界面与反馈",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "FactorLab",
+          "kind": "title",
+          "sourceUnit": "54.01",
+          "originalText": "FactorLab\nALLOCATION STUDIO",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "研究工作区\nB / 01",
+          "kind": "data",
+          "sourceUnit": "54.02",
+          "originalText": "研究工作区\nB / 01",
+          "presentation": "合并或移除",
+          "rationale": "删除装饰标题或与明确主题、合成标签重复的信息。"
+        },
+        {
+          "speaker": "界面",
+          "text": "行业研究 / 因子与回测 / 本轮配置 / 风险与来源 / 决策复盘",
+          "kind": "data",
+          "sourceUnit": "54.03",
+          "originalText": "行业研究 / 因子与回测 / 配置决策 / 风险与归因 / 决策复盘",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "高端制造与尖端科技行业配置",
+          "kind": "body",
+          "sourceUnit": "54.04",
+          "originalText": "当前研究主题\n长期定位\n短期战术\n高端制造与尖端科技\n在行业周期中检验配置逻辑",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合成数据教学沙盒",
+          "kind": "data",
+          "sourceUnit": "54.05",
+          "originalText": "合成数据教学沙盒",
+          "presentation": "合并或移除",
+          "rationale": "删除装饰标题或与明确主题、合成标签重复的信息。"
+        },
+        {
+          "speaker": "界面",
+          "text": "行业配置 / 研究工作台",
+          "kind": "data",
+          "sourceUnit": "54.06",
+          "originalText": "行业配置 / 研究工作台",
+          "presentation": "合并或移除",
+          "rationale": "删除装饰标题或与明确主题、合成标签重复的信息。"
+        },
+        {
+          "speaker": "界面",
+          "text": "第 {day} 个交易日",
+          "kind": "data",
+          "sourceUnit": "54.07",
+          "originalText": "交易日 {day}",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "第 {round} / {total} 轮",
+          "kind": "data",
+          "sourceUnit": "54.08",
+          "originalText": "第 {round} / {total} 轮",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "等待配置",
+          "kind": "data",
+          "sourceUnit": "54.09",
+          "originalText": "决策暂停",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "模拟进行中",
+          "kind": "data",
+          "sourceUnit": "54.10",
+          "originalText": "市场推进中",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "新信息 · 已暂停",
+          "kind": "data",
+          "sourceUnit": "54.11",
+          "originalText": "事件暂停",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮复盘",
+          "kind": "data",
+          "sourceUnit": "54.12",
+          "originalText": "本轮复盘",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "练习完成",
+          "kind": "data",
+          "sourceUnit": "54.13",
+          "originalText": "章节完成",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合成观测\n同一路径 比较不同决策",
+          "kind": "body",
+          "sourceUnit": "54.14",
+          "originalText": "合成观测\n同一路径 比较不同决策",
+          "presentation": "合并或移除",
+          "rationale": "删除装饰标题或与明确主题、合成标签重复的信息。"
+        },
+        {
+          "speaker": "界面",
+          "text": "合成教学数据 · 不代表真实市场表现",
+          "kind": "body",
+          "sourceUnit": "54.15",
+          "originalText": "合成教学数据 · 不代表真实市场表现",
+          "presentation": "首屏",
+          "rationale": "保留信息含义与动态取值。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 12
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 13
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 15
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 21
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 23
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 26
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 4
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 36
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 59
+        }
+      ],
+      "number": 54,
+      "editorNote": "常驻只保留项目名、一个明确主题、五个任务入口、轮次/交易日、当前阶段、合成标签和真实保存状态。长期/短期概念在研究页面解释，不重复占据多处栏头。",
+      "additions": []
+    },
+    {
+      "id": "common-controls",
+      "title": "场景 55｜共用按钮与选项原文",
+      "context": "对应场景呈现的按钮标签；仅汇总信息文字。",
+      "group": "共用幕｜常驻界面与反馈",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "继续访客进度",
+          "kind": "data",
+          "sourceUnit": "55.01",
+          "originalText": "继续访客进度",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "登录",
+          "kind": "data",
+          "sourceUnit": "55.02",
+          "originalText": "登录",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "注册",
+          "kind": "data",
+          "sourceUnit": "55.03",
+          "originalText": "注册",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "登录并进入",
+          "kind": "data",
+          "sourceUnit": "55.04",
+          "originalText": "登录并进入",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "注册并进入",
+          "kind": "data",
+          "sourceUnit": "55.05",
+          "originalText": "注册并进入",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "返回研究台",
+          "kind": "data",
+          "sourceUnit": "55.06",
+          "originalText": "返回研究台",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "退出账号，返回访客",
+          "kind": "data",
+          "sourceUnit": "55.07",
+          "originalText": "退出并返回访客",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "保存到账号（新存档）",
+          "kind": "data",
+          "sourceUnit": "55.08",
+          "originalText": "保存为新存档",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "载入",
+          "kind": "data",
+          "sourceUnit": "55.09",
+          "originalText": "载入",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "更新此账号存档",
+          "kind": "data",
+          "sourceUnit": "55.10",
+          "originalText": "用当前进度更新",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "刷新列表",
+          "kind": "data",
+          "sourceUnit": "55.11",
+          "originalText": "刷新列表",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "导出当前进度",
+          "kind": "data",
+          "sourceUnit": "55.12",
+          "originalText": "导出当前进度",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "恢复载入前草稿",
+          "kind": "data",
+          "sourceUnit": "55.13",
+          "originalText": "恢复上次载入前的草稿",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "备份草稿并载入",
+          "kind": "data",
+          "sourceUnit": "55.14",
+          "originalText": "保留草稿并载入",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "确认覆盖",
+          "kind": "data",
+          "sourceUnit": "55.15",
+          "originalText": "确认更新",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "取消",
+          "kind": "data",
+          "sourceUnit": "55.16",
+          "originalText": "取消",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "关闭",
+          "kind": "data",
+          "sourceUnit": "55.17",
+          "originalText": "关闭",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "均衡",
+          "kind": "data",
+          "sourceUnit": "55.18",
+          "originalText": "均衡",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "防御",
+          "kind": "data",
+          "sourceUnit": "55.19",
+          "originalText": "防御",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "成长",
+          "kind": "data",
+          "sourceUnit": "55.20",
+          "originalText": "成长",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "按因子生成配置草稿",
+          "kind": "data",
+          "sourceUnit": "55.21",
+          "originalText": "将因子偏好应用到配置",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "确认配置，开始本轮",
+          "kind": "data",
+          "sourceUnit": "55.22",
+          "originalText": "确认配置 · 推进 20 日",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "暂停播放",
+          "kind": "data",
+          "sourceUnit": "55.23",
+          "originalText": "暂停播放",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "继续播放",
+          "kind": "data",
+          "sourceUnit": "55.24",
+          "originalText": "继续播放",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "快进到下一事件或结算",
+          "kind": "data",
+          "sourceUnit": "55.25",
+          "originalText": "推进至下一节点",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "继续本轮",
+          "kind": "data",
+          "sourceUnit": "55.26",
+          "originalText": "继续市场推进",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "进入下一轮研究",
+          "kind": "data",
+          "sourceUnit": "55.27",
+          "originalText": "进入下一轮调查",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "选择新情境",
+          "kind": "data",
+          "sourceUnit": "55.28",
+          "originalText": "换个情境再试",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "导出进度文件",
+          "kind": "data",
+          "sourceUnit": "55.29",
+          "originalText": "导出存档",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "发送",
+          "kind": "data",
+          "sourceUnit": "55.30",
+          "originalText": "发送",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "关闭",
+          "kind": "data",
+          "sourceUnit": "55.31",
+          "originalText": "关闭",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "保存到此浏览器",
+          "kind": "data",
+          "sourceUnit": "55.32",
+          "originalText": "保存当前进度",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "从文件导入进度",
+          "kind": "data",
+          "sourceUnit": "55.33",
+          "originalText": "导入存档",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "开始新情境",
+          "kind": "data",
+          "sourceUnit": "55.34",
+          "originalText": "开始新情境",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "取消",
+          "kind": "data",
+          "sourceUnit": "55.35",
+          "originalText": "取消",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "确认开始",
+          "kind": "data",
+          "sourceUnit": "55.36",
+          "originalText": "确认开始",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "运行回测",
+          "kind": "data",
+          "sourceUnit": "55.37",
+          "originalText": "运行回测",
+          "presentation": "共用词库",
+          "rationale": "保留信息含义与动态取值。"
+        },
+        {
+          "speaker": "界面",
+          "text": "四因子恢复等权",
+          "kind": "data",
+          "sourceUnit": "55.38",
+          "originalText": "恢复等权",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "检验因子 / 制定本轮配置 / 返回证据 / 写复盘 / 查看收益来源 / 研究助手 / 项目目标与来源",
+          "kind": "data",
+          "sourceUnit": "55.39",
+          "originalText": "打开因子实验室 / 制定本轮配置 / 返回查看证据 / 记录我的复盘 / 查看收益归因 / AI 研究伙伴 / 研究边界与来源",
+          "presentation": "共用词库",
+          "rationale": "按钮直接说清动作及保存位置，避免把草稿保存误认为账号存档。"
+        },
+        {
+          "speaker": "界面",
+          "text": "旧版画板 · 10月13日",
+          "kind": "data",
+          "condition": "本地入口；静态构建替换为上一版 · 10月13日",
+          "sourceUnit": "55.40",
+          "originalText": "旧版画板 · 10月13日",
+          "presentation": "展开",
+          "rationale": "版本历史为次要入口。"
+        },
+        {
+          "speaker": "界面",
+          "text": "打开保留的上一版",
+          "kind": "data",
+          "sourceUnit": "55.41",
+          "originalText": "打开保留的上一版",
+          "presentation": "展开",
+          "rationale": "版本历史为次要入口。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 10
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 21
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 23
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 25
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 26
+        },
+        {
+          "path": "investigation-game/v3/accounts.js",
+          "line": 28
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 9
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 7
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 10
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 11
+        },
+        {
+          "path": "investigation-game/v2/i18n.js",
+          "line": 12
+        },
+        {
+          "path": "investigation-game/v3/workspace.js",
+          "line": 15
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 46
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 59
+        },
+        {
+          "path": "investigation-game/v3/index.html",
+          "line": 63
+        }
+      ],
+      "number": 55,
+      "editorNote": "这是各场景按钮词库，不在一屏集中呈现。均衡/防御/成长为可调整的模拟预设，不标为推荐策略。主按钮每个时刻一个，其他操作保留为次要入口；本稿不改变现有功能或自动执行操作。",
+      "additions": []
+    },
+    {
+      "id": "feedback",
+      "title": "场景 56｜共用操作反馈",
+      "context": "完成操作或出现需核对的结果。",
+      "group": "共用幕｜常驻界面与反馈",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "操作已完成",
+          "kind": "feedback",
+          "condition": "成功反馈默认文案",
+          "sourceUnit": "56.01",
+          "originalText": "操作已完成",
+          "presentation": "合并或移除",
+          "rationale": "通用成功没有说明完成了什么；改由具体操作已有反馈承接，不新增自动判断。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已成功，可以继续研究",
+          "kind": "feedback",
+          "condition": "账号认证成功",
+          "sourceUnit": "56.02",
+          "originalText": "已成功，可以继续研究",
+          "presentation": "合并或移除",
+          "rationale": "由登录、保存、回测等具体反馈承接。"
+        },
+        {
+          "speaker": "界面",
+          "text": "已保存到此浏览器",
+          "kind": "feedback",
+          "condition": "手动保存成功",
+          "sourceUnit": "56.03",
+          "originalText": "进度已保存",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请查看本次提示",
+          "kind": "feedback",
+          "condition": "失败/不确定/需复核",
+          "sourceUnit": "56.04",
+          "originalText": "请查看提示并核对证据",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮虚拟资产增长；接着核对风险与收益来源。",
+          "kind": "feedback",
+          "condition": "结算增长且未使用里程碑分支；正常理由会产生徽章，通常先触发里程碑",
+          "sourceUnit": "56.05",
+          "originalText": "本轮虚拟净值增长；请继续复盘风险与归因",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮练习完成，可以写复盘。",
+          "kind": "feedback",
+          "condition": "结算为最终轮或获得徽章",
+          "sourceUnit": "56.06",
+          "originalText": "本轮研究目标已完成，继续记录你的反思",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "规则提示已生成",
+          "kind": "feedback",
+          "condition": "Coach规则回退",
+          "sourceUnit": "56.07",
+          "originalText": "回复已就绪，当前使用规则回退",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "回测结果已更新",
+          "kind": "feedback",
+          "condition": "回测运行完成",
+          "sourceUnit": "56.08",
+          "originalText": "回测已完成；合成结果不代表现实有效性",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/experience.js",
+          "line": 11
+        }
+      ],
+      "number": 56,
+      "editorNote": "一次操作只显示一条对应反馈；角色字幕不再复述同一成功句。具体消息要由真实事件驱动，不能在写入失败时宣布保存成功。",
+      "additions": []
+    },
+    {
+      "id": "mascot-captions",
+      "title": "场景 57｜研究伙伴字幕",
+      "context": "角色静止、动作或媒体失败时的共用字幕。",
+      "group": "共用幕｜常驻界面与反馈",
+      "outputs": [
+        {
+          "speaker": "界面",
+          "text": "研究助手",
+          "kind": "feedback",
+          "condition": "静态显示",
+          "sourceUnit": "57.01",
+          "originalText": "研究伙伴",
+          "presentation": "首屏",
+          "rationale": "用白话表达，保留原有含义。"
+        },
+        {
+          "speaker": "界面",
+          "text": "慢慢来，先看证据",
+          "kind": "feedback",
+          "condition": "空闲动作",
+          "sourceUnit": "57.02",
+          "originalText": "慢慢来，先看证据",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "欢迎回来",
+          "kind": "feedback",
+          "condition": "欢迎动作",
+          "sourceUnit": "57.03",
+          "originalText": "欢迎回来",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "正在核对信息",
+          "kind": "feedback",
+          "condition": "真实核对请求等待中",
+          "sourceUnit": "57.04",
+          "originalText": "正在核对信息",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "操作已完成",
+          "kind": "feedback",
+          "condition": "成功动作",
+          "sourceUnit": "57.05",
+          "originalText": "操作已完成",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "本轮资产增长",
+          "kind": "feedback",
+          "condition": "增长动作",
+          "sourceUnit": "57.06",
+          "originalText": "本轮资产增长",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "研究里程碑已完成",
+          "kind": "feedback",
+          "condition": "里程碑动作",
+          "sourceUnit": "57.07",
+          "originalText": "研究里程碑已完成",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "请核对风险与证据",
+          "kind": "feedback",
+          "condition": "静态警示",
+          "sourceUnit": "57.08",
+          "originalText": "请核对风险与证据",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        },
+        {
+          "speaker": "界面",
+          "text": "研究伙伴 · 静态显示",
+          "kind": "feedback",
+          "condition": "媒体加载/播放失败",
+          "sourceUnit": "57.09",
+          "originalText": "研究伙伴 · 静态显示",
+          "presentation": "展开",
+          "rationale": "保留在同页详情中，减少首次阅读负担。"
+        }
+      ],
+      "sources": [
+        {
+          "path": "investigation-game/v3/mascot.js",
+          "line": 19
+        },
+        {
+          "path": "investigation-game/v3/mascot.js",
+          "line": 8
+        },
+        {
+          "path": "investigation-game/v3/mascot.js",
+          "line": 17
+        }
+      ],
+      "number": 57,
+      "editorNote": "建议把角色字幕与系统状态合并：角色装饰保留在辅助区域，默认不弹出第二条同义提示。媒体失败只需保留文字研究助手，不把装饰失败打断为业务警告。这里的“展开”表示次要角色说明，不要求新增一个折叠按钮。",
+      "additions": []
+    }
+  ],
+  "baselineSourceVersion": "当前工作区正式实现｜审计源清单 SHA-256 4ec817e7ffab090d59666232e73ee946bde329fc068a2d2fecd724bbc212fcac",
+  "originalCoverage": [
+    {
+      "name": "提取性质",
+      "status": "现版提取",
+      "note": "保留当前中文原文及原标点；动态值用花括号表示。场景标题与触发说明用于编排，不是新增应用文案。没有将交互demo或建议稿混入正式版本。"
+    },
+    {
+      "name": "实际界面核对",
+      "status": "已运行（隔离浏览器）",
+      "note": "Chrome file模式、空白独立上下文核对研究首屏、欢迎横幅、离线登录、因子回测和第120日完成界面；未接触真实账号、私有数据库或凭证。"
+    },
+    {
+      "name": "六轮实际推进",
+      "status": "已运行（隔离引擎回放）",
+      "note": "使用当前正式引擎默认参数在隔离页面推进到120日，核对事件公开日7/25/46/72/95/116与结算日20/40/60/80/100/120；实际输出数值没有冒充用户结果，剧本仅保留动态占位。"
+    },
+    {
+      "name": "第二轮披露分支",
+      "status": "弱分支已运行；强分支源码可达",
+      "note": "本次默认回放出现弱披露；强披露按源码条件提取，未把未触发分支写成已发生。字典中的无分支通用披露正文未被当前触发器使用，因此未列为现版可见输出。"
+    },
+    {
+      "name": "动态数据与表格",
+      "status": "已覆盖模板",
+      "note": "宏观、价格、净值、费用、风险、归因、回测逐月/IC、六轮记录以标签和占位呈现；不逐帧重复数值，不声称合成结果证明现实收益或学习有效性。"
+    },
+    {
+      "name": "本地账号成功与服务端存档",
+      "status": "源码可达，未实走",
+      "note": "未创建或登录账号、未写数据库；登录成功、存档库、冲突与会话恢复均按当前渲染调用提取。"
+    },
+    {
+      "name": "公开版静态分支",
+      "status": "源码可达，未在本次发布页面实走",
+      "note": "明确区分浏览器存档与本地服务存档；公开版没有已连接的账号或在线AI。更新提示仅静态构建注入。"
+    },
+    {
+      "name": "Coach与Jev",
+      "status": "规则/降级与在线分支源码已覆盖；本次未真实请求",
+      "note": "在线自由文本不可预知，只列容器/动态占位。HTTP451等现有原因原文保留；没有声称在线服务可用。Jev服务端返回但前端没有展示的label、notice、asOfDay不冒充用户可见输出。"
+    },
+    {
+      "name": "独立最终报告",
+      "status": "当前无输出／未实现",
+      "note": "第六轮结束仍显示“完成首章研究”、最后一轮结算、六行手记与全程风险指标；没有独立综合报告页、报告正文或报告导出。"
+    },
+    {
+      "name": "课程模块时间、演示、每周流程与最终交付",
+      "status": "当前无独立输出／未实现",
+      "note": "当前课程范围对话框含子项目B、研究方法、合成边界、伙伴语境与历史来源；没有对应模块时间表、每周流程、课程提交包或交付确认。课程要求不因此被视为已完成。"
+    },
+    {
+      "name": "历史案例正文",
+      "status": "范围说明与两个链接已展示；研究数据中的完整三条资料未直接渲染",
+      "note": "现版只展示课程来源对话框原文及NIST/Micron链接标签；研究模块内另存的完整事实列表不是当前页面输出，未移植进剧本。"
+    },
+    {
+      "name": "下载与退出",
+      "status": "已覆盖可见结果边界",
+      "note": "导出触发JSON下载，没有额外独立成功提示；登录成功直接进入研究台，未将未被调用的“已进入账号研究空间”字典项当作现版可见消息。"
+    },
+    {
+      "name": "语言范围",
+      "status": "中文现版完整流程；英文未逐条转录",
+      "note": "页面支持简体中文与English。此剧本用于当前中文表达效率审阅，保留切换说明和回复语言状态；不把中文翻译为新的英文稿。"
+    },
+    {
+      "name": "显示样式与无障碍说明",
+      "status": "按条件标识",
+      "note": "个别描述仅作无障碍关联或悬停提示，已在condition说明；不将绘图形状、图标本身、隐藏内部状态和未来参数写成可见正文。"
+    },
+    {
+      "name": "信息量统计",
+      "status": "机械计数，非理解负荷评估",
+      "note": "57个场景；488条输出单元；标题68、正文100、数据/标签227、反馈93；去空白Unicode字符7648。同一原文在不同触发场景可重复，动态占位按当前占位文本计数；不是实际每次游玩的总阅读量。"
+    }
+  ],
+  "versionStatus": "editorial-review-draft-not-implemented",
+  "sourceFileSha256": "525d6de31e04635548d4569eca2bca8cb2e8373a1865025a03ea559de5e9efb0",
+  "courseFileSha256": "11508d95532e1bd3e4b8f3ab0bcc9edc0153298fa7febd84455243d657c2a057",
+  "audience": "金融初学者：白话引导，术语按需展开",
+  "courseAlignment": [
+    {
+      "criterion": 1,
+      "scope": "子项目B、五行业与长期/短期比较",
+      "scenes": [
+        1,
+        6,
+        18,
+        20,
+        33,
+        38,
+        39,
+        52
+      ],
+      "status": "剧本保留；不等于真实市场验证"
+    },
+    {
+      "criterion": 2,
+      "scope": "四因子、多因子偏好、回测、因子功效、风险归因",
+      "scenes": [
+        14,
+        15,
+        16,
+        19,
+        35,
+        36,
+        51
+      ],
+      "status": "剧本保留；样本为合成数据"
+    },
+    {
+      "criterion": 3,
+      "scope": "行业周期与政策/经营传导证据",
+      "scenes": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        52
+      ],
+      "status": "剧本保留；未披露数据不补造"
+    },
+    {
+      "criterion": 4,
+      "scope": "只读研究助手与理由核对",
+      "scenes": [
+        22,
+        23,
+        24,
+        25,
+        40,
+        41,
+        42
+      ],
+      "status": "模式区分；已知Jev HTTP451，在线质量未验证"
+    },
+    {
+      "criterion": 5,
+      "scope": "研究、配置、推进与复盘交互",
+      "scenes": [
+        6,
+        14,
+        18,
+        20,
+        26,
+        33,
+        37
+      ],
+      "status": "剧本保留；本稿没有接入应用或做人类测试"
+    },
+    {
+      "criterion": 6,
+      "scope": "模块时间、演示、反思、每周流程与最终交付",
+      "scenes": [
+        37,
+        38,
+        39
+      ],
+      "status": "部分；独立报告、每周流程与交付界面仍是待实现缺口"
+    },
+    {
+      "criterion": 7,
+      "scope": "伙伴期望、证券研究与风险管理语境",
+      "scenes": [
+        18,
+        35,
+        36,
+        39,
+        52
+      ],
+      "status": "教学背景；机构名不一致待核对，无合作或背书宣称"
+    }
+  ]
+}

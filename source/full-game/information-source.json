@@ -1,0 +1,6 @@
+{
+  "version": "factorlab-information-v1",
+  "synthetic": true,
+  "description": "Authored AI sector teaching index, not observed market data; monthly pre-game points -6 through 0. Later points compound only settled fixture AI returns. Not a full backtesting dataset.",
+  "pre_game_prices": [96, 99, 97, 101, 100, 103, 102]
+}

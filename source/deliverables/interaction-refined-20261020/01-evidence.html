@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>01 证据聚焦 · 精简交互</title>
+  <link rel="stylesheet" href="icons.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="01-evidence.css">
+</head>
+<body data-demo="01" data-theme="paper">
+  <main class="evidence-page">
+    <header class="question-heading">
+      <p>01 / 证据聚焦 <span>高端制造与尖端科技</span></p>
+      <h1>订单回暖，<wbr>利润兑现了吗？</h1>
+    </header>
+    <section class="trend-panel" aria-labelledby="trend-title">
+      <header class="trend-heading">
+        <div><h2 id="trend-title">需求先行，盈利待证</h2><p>日度合成演示 · 线索指数</p></div>
+        <div class="period-switch" aria-label="示意历史时间段"><button type="button" data-period="12" aria-pressed="false">12 周</button><button type="button" data-period="24" aria-pressed="true">24 周</button></div>
+      </header>
+      <div class="trend-metrics">
+        <div class="metric"><span class="metric-name"><i class="order-key"></i>订单</span><strong class="number-stage" id="order-number" aria-label="55.0"><span>55.0</span></strong></div>
+        <div class="metric"><span class="metric-name"><i class="profit-key"></i>盈利</span><strong class="number-stage" id="profit-number" aria-label="50.0"><span>50.0</span></strong></div>
+        <span class="selected-date" id="selected-date">2025.06.20</span>
+      </div>
+      <div class="chart-interaction" id="chart-interaction" role="slider" tabindex="0" aria-label="模拟历史数据点，左右方向键切换" aria-valuemin="1" aria-valuemax="120" aria-valuenow="120" aria-valuetext="2025年6月20日，订单55.0，盈利50.0，示意指数">
+        <svg id="history-chart" aria-hidden="true"></svg>
+        <div class="chart-tooltip" id="chart-tooltip" aria-hidden="true"></div>
+      </div>
+      <div class="chart-caption"><span>移动、点按或用 ← → 查看数据点</span><span id="sample-note">120 个日度合成样本</span></div>
+    </section>
+    <section class="evidence-row" aria-label="三条证据，点击展开">
+      <button type="button" class="evidence-card" data-evidence="E1" aria-haspopup="dialog"><span class="card-meta"><b>E1</b><span class="seal" data-seal="cycle" aria-hidden="true"></span><i aria-hidden="true">↗</i></span><span class="card-conclusion">订单向好，盈利仍待确认。</span></button>
+      <button type="button" class="evidence-card" data-evidence="E2" aria-haspopup="dialog"><span class="card-meta"><b>E2</b><span class="seal" data-seal="factors" aria-hidden="true"></span><i aria-hidden="true">↗</i></span><span class="card-conclusion">好消息，可能已被定价。</span></button>
+      <button type="button" class="evidence-card" data-evidence="E3" aria-haspopup="dialog"><span class="card-meta"><b>E3</b><span class="seal" data-seal="research" aria-hidden="true"></span><i aria-hidden="true">↗</i></span><span class="card-conclusion">长期支持，不等于本轮买点。</span></button>
+    </section>
+    <section class="extracts" aria-label="摘录的证据结论">
+      <div class="extract-top"><span id="extract-count">尚未摘录</span><button type="button" id="undo-extract" disabled>撤销</button></div>
+      <ul id="extract-list"></ul>
+    </section>
+    <footer class="quiet-footer">独立演示 · 合成样本，非组合收益 <span>本地 Motion 14.1.0 / MIT</span></footer>
+  </main>
+  <dialog class="evidence-dialog" id="evidence-dialog" aria-labelledby="dialog-title">
+    <header class="dialog-top"><div class="evidence-switch" aria-label="切换证据"><button type="button" data-dialog-evidence="E1">E1</button><button type="button" data-dialog-evidence="E2">E2</button><button type="button" data-dialog-evidence="E3">E3</button></div><button type="button" class="dialog-close" id="dialog-close" aria-label="关闭证据">关闭 <span aria-hidden="true">×</span></button></header>
+    <div id="dialog-content"></div>
+    <footer class="dialog-bottom"><span>本演示的合成研究材料</span><button type="button" id="save-extract">摘录结论并关闭 <span aria-hidden="true">↘</span></button></footer>
+  </dialog>
+  <p class="sr-only" id="chart-status" role="status" aria-live="polite"></p>
+  <script src="vendor/motion.js"></script>
+  <script src="common.js"></script>
+  <script src="01-evidence.js"></script>
+</body>
+</html>

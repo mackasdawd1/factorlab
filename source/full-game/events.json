@@ -1,0 +1,8 @@
+[
+  {"id":"demand","title":"增长与估值","clue":"AI 需求前景存在分歧，高估值也带来压力。参与机会时，你愿意使用多少缓冲？","tag":"DEMAND / VALUATION","mission":"cap","mission_title":"建立风险预算","mission_text":"执行时 AI 不超过策略参考上限。","reflection":"收益来自承担的暴露。一次正收益能证明这个预算合理吗？"},
+  {"id":"rates","title":"利率与缓冲","clue":"利率压力抬头，科技主题可能更易波动。增长故事仍在，现金的机会成本也仍在。","tag":"RATES / VOLATILITY","mission":"cash","mission_title":"保留应对空间","mission_text":"执行时 Cash 比例不低于本轮开始。","reflection":"你用多少上涨参与度换取了缓冲？减少暴露仍可能亏损。"},
+  {"id":"supply","title":"供应链分歧","clue":"供应链约束让主题间差异扩大。传闻尚未兑现；追逐最热主题并非唯一选项。","tag":"SUPPLY / UNCERTAINTY","mission":"hold","mission_title":"练习不交易","mission_text":"本轮选择 Keep，观察漂移持仓的后果。这是教学练习，不是最佳策略建议。","reflection":"不交易也是选择。你保留了哪些风险，放弃了哪些调整机会？"},
+  {"id":"innovation","title":"创新与集中","clue":"新技术的商业化前景受到关注，兑现时间仍不确定。热度与持仓集中可能同时上升。","tag":"INNOVATION / EXPOSURE","mission":"cap","mission_title":"机会也有边界","mission_text":"执行时 AI 不超过策略参考上限；必要时处理之前累积的漂移。","reflection":"观察整个 run 的暴露，而不只看这次加仓幅度。"},
+  {"id":"policy","title":"政策与流动性","clue":"产业政策讨论增多，各主题可能受到不同影响。为最后一轮保留选择空间值得多少机会成本？","tag":"POLICY / LIQUIDITY","mission":"cash","mission_title":"为下一轮留空间","mission_text":"执行时 Cash 比例不低于本轮开始。","reflection":"现金也有机会成本。你是在回应约束，还是追随上一轮的输赢？"},
+  {"id":"sentiment","title":"最后的预算检查","clue":"风险偏好变得脆弱，主题可能同步波动。最后一次决策仍需要预算纪律，而非追回损失。","tag":"SENTIMENT / CORRELATION","mission":"cap","mission_title":"完成预算检查","mission_text":"执行时 AI 不超过策略参考上限。没有必须盈利才能通关的门槛。","reflection":"回看六轮：结果最差的一次，是否也可能有值得保留的决策习惯？"}
+]

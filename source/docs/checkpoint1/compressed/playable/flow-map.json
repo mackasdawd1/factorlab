@@ -1,0 +1,46 @@
+{
+  "version": "week3-playable-v1",
+  "source": "data.json",
+  "milestone": "Week 3 Checkpoint 1 Playable Mid-fi MVP",
+  "review_date": "2026-09-23",
+  "golden_path": [
+    "Choose Strategy",
+    "Round 1: choose decision and inspect inline preview",
+    "Execute 1 -> Result/Reward Overlay",
+    "Next Round",
+    "Round 2: choose decision and inspect inline preview",
+    "Execute 2 -> Result/Reward Overlay",
+    "Player Profile"
+  ],
+  "golden_path_clicks": 7,
+  "replay_additional_clicks": 1,
+  "mandatory_parameter_inputs": 0,
+  "mandatory_layout_families": [
+    "Strategy selection",
+    "Main Game Screen",
+    "Player Profile"
+  ],
+  "optional_entries": [
+    "Why This Matters",
+    "Factor Details"
+  ],
+  "transitions": {
+    "choose": "strategy + colon; plan phase",
+    "decision": "draft only, no settlement",
+    "execute": "options[draft].next; result phase; one settlement",
+    "next": "plan if round<3; otherwise final",
+    "close_result": "settled Main; Reopen Result available",
+    "learning_close": "same financial node and draft",
+    "replay": "clear run; retain terminal path collection in localStorage"
+  },
+  "figma": "NOT IMPLEMENTED / MCP QUOTA BLOCKED",
+  "user_testing": "NOT RUN",
+  "enhancements": [
+    "Run HUD",
+    "Round Mission",
+    "trade-off meters",
+    "mission outcome",
+    "profile badges",
+    "persistent explored paths"
+  ]
+}

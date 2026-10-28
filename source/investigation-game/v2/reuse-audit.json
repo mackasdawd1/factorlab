@@ -1,0 +1,112 @@
+{
+  "reviewedOn": "2026-10-13",
+  "scope": "Targeted reuse review before the FactorLab 2.0 subsystem implementation; source inspection only, no third-party code executed.",
+  "limitations": [
+    "GitHub REST API returned HTTP 403 rate-limit errors. Repository availability, HEAD and commit dates were recovered from official github.com HTML; pushed_at is not available.",
+    "No root LICENSE was listed in the three requested simulation repositories; raw HEAD/LICENSE returned 404. This is not an exhaustive legal determination. No code or assets from these repositories are adopted.",
+    "Source inspection demonstrates architecture, not model calibration, numerical correctness or empirical validity.",
+    "All FactorLab economic coefficients and generated prices remain explicit synthetic teaching assumptions; central-bank references support qualitative transmission only."
+  ],
+  "repositories": [
+    {
+      "repository": "hutkudemir/central-bank-game",
+      "url": "https://github.com/hutkudemir/central-bank-game",
+      "accessible": true,
+      "commit": "0eaf667fca60017f61a9d976fd222285465ce43a",
+      "commitDate": "2025-08-19T13:10:50+03:00",
+      "pushedAt": null,
+      "visibleCommitCount": 44,
+      "license": "Not found in reviewed root tree; LICENSE request returned 404",
+      "mode": "Reference",
+      "architecture": "R Shiny app with global reactive state, server/UI separation, translations, shocks, advisors and policy-buffer state. It uses R/Shiny/Plotly dependencies, incompatible with direct browser-native integration.",
+      "sourceInspected": [
+        {"path": "global.R", "sha256": "18d33b357ad62ae93eb8be8b73e04a28e67301a3f84221ba2c4fee78889da9c3"},
+        {"path": "server.R", "sha256": "aecfac6615f48f4012fbb66e96a921892aecb446b0815c1cc1f1c50216eb5764"},
+        {"path": "R/utils_economic_model.R", "sha256": "3f15e85a4cf61b4711513c271b17da8c485ee1c9187c3d1bd9b00d9e4e2fa463"}
+      ],
+      "maintenanceObservation": "Latest default-branch commit observed is from August 2025. A source comment claims a later test date, but that comment is not verification evidence.",
+      "use": "Conceptual reference for lagged policy effects, stochastic shocks and post-decision explanation. No source copying, asset copying or claims of validated economics."
+    },
+    {
+      "repository": "Gemeri/economic-simulation",
+      "url": "https://github.com/Gemeri/economic-simulation",
+      "accessible": true,
+      "commit": "3368df77b65704712bb631e9a0df2d983d789b62",
+      "commitDate": "2026-06-05T13:20:30-07:00",
+      "pushedAt": null,
+      "visibleCommitCount": 1,
+      "license": "Not found in reviewed root tree; LICENSE request returned 404",
+      "mode": "Reference",
+      "architecture": "Separate backend/frontend directories. frontend/package.json specifies React 18, TypeScript, Vite, Recharts, Zustand, D3 and Framer Motion.",
+      "sourceInspected": [
+        {"path": "frontend/package.json", "sha256": "70d90c996f991c706d23ad1ee3567aec0df384c05328c103f4e5d1cd252b6a8a"}
+      ],
+      "maintenanceObservation": "Only one visible commit at the observed HEAD. Build, tests and economic model were not executed or validated; guessed backend/main.py path returned 404 and was not retried.",
+      "use": "Reference only for separating simulation and presentation. Reject full-stack migration because it adds a build toolchain without solving a current native-runtime requirement."
+    },
+    {
+      "repository": "ishaan1234/EconoSphere",
+      "url": "https://github.com/ishaan1234/EconoSphere",
+      "accessible": true,
+      "commit": "7e264a2b16b80330f3126319b5a96b779339e5f3",
+      "commitDate": "2025-10-26T10:12:09-04:00",
+      "pushedAt": null,
+      "visibleCommitCount": 63,
+      "license": "Not found in reviewed root tree; LICENSE request returned 404",
+      "mode": "Reference",
+      "architecture": "Python entry launches a Dash dashboard with Flask/WSGI server. requirements.txt includes Mesa, NumPy, Pandas, Plotly, Dash, scikit-learn and optional data/LLM clients. Repository tree separates agents, simulation, dashboard and tests.",
+      "sourceInspected": [
+        {"path": "main.py", "sha256": "a2e4bf87dc9fd8f875f328b5100df0ea032a51bc828db6939c38702e2c553460"},
+        {"path": "requirements.txt", "sha256": "d34c14e2e980593737c3b947a98b17f6f4dd6dc1f8ca1da98ff76c62809547d4"}
+      ],
+      "maintenanceObservation": "Latest default-branch commit observed is October 2025. Tests are present in the tree, but were not executed and do not establish financial validity.",
+      "use": "Reference for keeping macro state separate from presentation. Reject agent-based Python/Dash runtime integration for this small deterministic browser exercise."
+    }
+  ],
+  "libraries": [
+    {
+      "name": "React",
+      "url": "https://react.dev/",
+      "mode": "Reject",
+      "reason": "Mature component library; the existing project has working native DOM modules and no package build. A framework migration is unnecessary for the requested static editable HTML export."
+    },
+    {
+      "name": "TypeScript",
+      "url": "https://www.typescriptlang.org/docs/",
+      "mode": "Reference",
+      "reason": "Useful typed JavaScript tooling, but adopting a compiler/toolchain is outside the smallest coherent change. Runtime validation, frozen metadata and Node tests cover the current contracts."
+    },
+    {
+      "name": "Recharts",
+      "url": "https://recharts.github.io/en-US/",
+      "mode": "Reject",
+      "license": "MIT stated by official site",
+      "reason": "Official site describes React components built on SVG. Existing native SVG charts are exportable without requiring React solely for chart rendering."
+    },
+    {
+      "name": "i18next",
+      "url": "https://www.i18next.com/overview/getting-started",
+      "mode": "Integrate",
+      "version": "26.0.0",
+      "license": "MIT",
+      "assetUrl": "https://unpkg.com/i18next@26.0.0/dist/umd/i18next.min.js",
+      "assetBytes": 42388,
+      "assetSha256": "1ba036eee545fe8965b47120b64574f0c7d6b6be95f1792ee0b76dd9496b4341",
+      "licenseUrl": "https://unpkg.com/i18next@26.0.0/LICENSE",
+      "licenseSha256": "1cd0a2b02a6cc40ef8ee16310d13eeffdd7b5de4a562fd3ee7c921d8eb54f60a",
+      "packageUrl": "https://unpkg.com/i18next@26.0.0/package.json",
+      "packageSha256": "1e6978c01d9f72d41e7ca7c2e68e6e02383e7f271451056b3ac10ea1c31b9e8f",
+      "reason": "Official documentation supports direct browser UMD use and recommends fixed versions. Vendor the fixed standalone UMD plus MIT notice locally; inline translation resources need neither an HTTP backend nor a framework adapter.",
+      "installationStatus": "Research verified download and hashes; integration performed separately by the implementation owner. No third-party install scripts executed."
+    }
+  ],
+  "economicReferences": [
+    {
+      "name": "Bank of England: Interest rates and Bank Rate",
+      "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate",
+      "mode": "Reference",
+      "use": "Qualitative mechanism: higher rates raise borrowing costs and encourage saving, reducing spending and subsequent inflation pressure; lower rates can reverse these effects.",
+      "boundary": "Does not validate FactorLab coefficients, shock probabilities, sector betas or returns. No current rate or inflation value is adopted as a model calibration."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[Unit]
+Description=FactorLab research service
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=factorlab
+Group=factorlab
+WorkingDirectory=/opt/factorlab/current/investigation-game
+Environment=NODE_ENV=production
+Environment=FACTORLAB_DATA_DIR=/var/lib/factorlab
+Environment=FACTORLAB_PORT=18991
+EnvironmentFile=-/etc/factorlab/factorlab.env
+ExecStart=/opt/factorlab/runtime/node-v24.22.0-linux-x64/bin/node /opt/factorlab/current/investigation-game/deploy/start.cjs
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/factorlab
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

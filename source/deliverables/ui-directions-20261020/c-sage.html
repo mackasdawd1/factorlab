@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>C / 雾绿·纸白 — FactorLab 方案草图</title>
+<link rel="stylesheet" href="icons.css">
+<style>
+:root{--page:#EFF2EA;--paper:#FEFFF9;--ink:#203E37;--green:#527765;--muted:#6d7c70;--line:#d5ded0;--tint:#e7eee1;--font:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.6}button,textarea{font:inherit}button{cursor:pointer}button:focus-visible,summary:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:4px}a{color:inherit}button{color:inherit}h1,h2,h3,p{margin:0}.app{display:grid;grid-template-columns:166px minmax(0,1fr);min-height:100dvh}.sidebar{background:#e6ece0;border-right:1px solid var(--line);display:flex;flex-direction:column;padding:29px 16px 22px}.brand{font-size:22px;font-weight:650;letter-spacing:-1px;padding:0 10px}.brand small{display:block;font-size:10px;font-weight:500;letter-spacing:1.6px;margin-top:2px;color:var(--green)}.nav{display:grid;gap:7px;margin-top:50px}.nav button{border:0;background:transparent;text-align:left;display:flex;align-items:center;gap:8px;padding:12px 9px;border-radius:3px;font-size:13px;color:#526b5d}.nav button[aria-current=page]{background:var(--paper);box-shadow:inset 3px 0 var(--green);font-weight:650;color:var(--ink)}.nav button:hover{background:#f5f7ef}.nav .seal{width:27px;height:27px;flex:none}.side-note{margin-top:auto;padding:30px 10px 0;font-size:11px;color:var(--muted);line-height:1.9}.side-note strong{display:block;color:var(--green);font-size:12px;margin-bottom:6px;font-weight:600}.side-line{height:1px;background:#c9d4c3;margin-bottom:19px}
+.workspace{min-width:0}.topbar{height:78px;padding:0 40px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}.concept{display:flex;align-items:center;gap:18px}.concept strong{font-size:12px;letter-spacing:.05em;font-weight:600}.concept span{font-size:13px;color:var(--green);border-left:1px solid #b8c7b3;padding-left:18px}.topnote{text-align:right;color:var(--muted);font-size:11px}.topnote b{font-weight:500;color:var(--green)}.spread{max-width:1320px;margin:0 auto;padding:31px 40px 24px;display:grid;grid-template-columns:minmax(0,1fr) 302px;gap:40px;align-items:start}.reading{min-width:0}.subject{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;color:var(--green);letter-spacing:.04em}.subject span:last-child{color:var(--muted)}h1{font-size:30px;letter-spacing:-.8px;font-weight:600;line-height:1.45;margin-top:13px}.lead{color:var(--muted);font-size:13px;line-height:1.9;margin-top:12px;max-width:48em}.reading-order{display:flex;align-items:center;gap:13px;font-size:11px;color:var(--green);margin:23px 0 25px}.reading-order i{display:block;width:30px;height:1px;background:#afc0a8}.reading-order strong{font-weight:600}.evidence-head{border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:13px 0 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}.evidence-head h2{font-size:14px;font-weight:600}.evidence-head small{font-size:10px;color:var(--muted)}.evidence{display:grid;grid-template-columns:37px minmax(0,1fr);gap:19px;padding:19px 0 17px;border-bottom:1px solid var(--line)}.number{font-size:23px;line-height:1.4;font-weight:300;color:#95a78f;font-variant-numeric:tabular-nums}.evidence .source{font-size:10px;letter-spacing:.04em;color:var(--green);margin-bottom:5px}.evidence h3{font-size:17px;font-weight:600;letter-spacing:-.2px;line-height:1.55}.evidence .body{font-size:12px;line-height:1.9;color:var(--muted);margin-top:6px;max-width:53em}.evidence-bottom{display:flex;justify-content:space-between;align-items:start;gap:10px;margin-top:9px}.observations{font-size:11px;color:var(--green);font-variant-numeric:tabular-nums;display:flex;gap:18px;flex-wrap:wrap}.observations b{font-size:13px;font-weight:550;color:var(--ink);padding-left:4px}.evidence details{margin-left:auto;flex:none}.evidence summary{list-style:none;color:var(--green);font-size:11px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}.evidence summary::-webkit-details-marker{display:none}.evidence details[open]{flex:1}.detail{font-size:12px;line-height:1.8;padding:12px 14px;background:var(--paper);margin-top:10px;max-width:450px;color:var(--muted)}.working-note{display:grid;grid-template-columns:80px minmax(0,1fr);gap:15px;margin-top:22px;padding:3px 0 3px 14px;border-left:2px solid #93ad82}.working-note h2{font-size:12px;line-height:1.85;font-weight:600}.working-note p{font-size:12px;color:var(--green);line-height:1.85}.reading-footer{font-size:10px;color:#7d8c7c;display:flex;justify-content:space-between;gap:16px;margin-top:25px}.reading-footer span:last-child{white-space:nowrap}
+.draft{background:var(--paper);border:1px solid var(--line);padding:24px 23px 20px;box-shadow:0 2px 0 #e1e7db}.draft-title{display:flex;justify-content:space-between;align-items:center;gap:10px}.draft-title h2{font-size:21px;font-weight:600;letter-spacing:-.5px}.draft-title .seal{width:35px;height:35px}.draft-caption{font-size:10px;color:var(--muted);margin:5px 0 20px}.field-label{font-size:11px;font-weight:600;margin-bottom:8px}.horizon{display:grid;grid-template-columns:1fr 1fr;background:var(--page);padding:3px;gap:3px;margin-bottom:21px}.horizon button{border:0;border-radius:2px;background:transparent;color:var(--muted);font-size:11px;padding:7px 4px}.horizon button[aria-pressed=true]{background:var(--green);color:var(--paper)}.weights-head{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);font-size:11px;color:var(--green);padding-bottom:8px;margin-bottom:2px}.weights-head span:last-child{font-size:10px}.weight-row{display:grid;grid-template-columns:27px minmax(0,1fr) 35px;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid #edf1e7}.weight-row .seal{width:25px;height:25px}.weight-row .name{font-size:11px}.weight-row output{font-size:13px;font-weight:550;text-align:right;font-variant-numeric:tabular-nums}.weight-row.cash{margin-top:3px}.balance{display:flex;justify-content:space-between;padding-top:12px;font-size:10px;color:var(--muted)}.balance strong{color:var(--green);font-weight:600}.note-label{display:block;font-size:11px;font-weight:600;margin-top:20px}.draft textarea{width:100%;display:block;min-height:68px;resize:vertical;border:0;border-bottom:1px solid #bdcbb5;border-radius:0;background:#f5f8f0;color:var(--green);font-size:11px;line-height:1.85;padding:11px 12px;margin-top:8px}.next-step{width:100%;padding:12px 10px;margin-top:18px;border:1px solid var(--green);background:var(--green);color:var(--paper);font-size:12px;font-weight:550}.next-step:hover{background:var(--ink)}.draft-footnote{font-size:9px;color:var(--muted);text-align:center;margin-top:8px}.coach{margin-top:21px;border-top:1px solid var(--line);padding-top:18px;display:grid;grid-template-columns:34px 1fr;gap:10px}.coach .seal{width:32px;height:32px}.coach h3{font-size:12px;font-weight:600}.coach p{font-size:10px;line-height:1.9;color:var(--muted);margin-top:4px}.coach small{font-size:9px;color:var(--green);display:block;margin-top:7px}.seal{filter:grayscale(1)}
+@media(min-width:1600px){.spread{padding-top:46px;gap:55px}h1{font-size:34px}.evidence{padding:24px 0}.lead{font-size:14px}}
+@media(min-width:861px) and (max-width:1599px){.reading-order{margin:17px 0 20px}.evidence{padding:15px 0 13px}.working-note{margin-top:17px}.reading-footer{margin-top:18px}.draft{padding-top:21px;padding-bottom:16px}.draft-caption{margin-bottom:13px}.horizon{margin-bottom:14px}.weight-row{padding-top:4px;padding-bottom:4px}.note-label{margin-top:13px}.draft textarea{min-height:60px}.next-step{margin-top:13px}.coach{margin-top:14px;padding-top:13px}}
+@media(max-width:1120px){.app{grid-template-columns:150px minmax(0,1fr)}.sidebar{padding-left:10px;padding-right:10px}.topbar{padding:0 27px}.spread{padding:27px;gap:25px;grid-template-columns:minmax(0,1fr) 272px}.draft{padding:21px 18px}.evidence{gap:11px;grid-template-columns:28px minmax(0,1fr)}h1{font-size:26px}.evidence-bottom{display:block}.evidence details{margin-top:7px}.reading-footer{display:block}.reading-footer span{display:block;margin-top:5px}.subject span:last-child{display:none}}
+@media(max-width:860px){.spread{grid-template-columns:minmax(0,1fr)}.draft{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px}.draft-header,.draft-allocation{grid-column:1}.draft-writing{grid-column:2;grid-row:1 / span 2}.note-label{margin-top:0}.coach{margin-top:23px}.topnote{max-width:220px}}
+@media(max-width:600px){.app{display:block}.sidebar{padding:16px 17px 8px;border-right:0;border-bottom:1px solid var(--line);display:block}.brand{font-size:19px;padding:0;display:flex;align-items:center;justify-content:space-between}.brand small{font-size:9px;letter-spacing:1px;margin:0}.nav{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin-top:16px}.nav button{padding:8px 1px;display:flex;flex-direction:column;gap:5px;font-size:10px;text-align:center;white-space:nowrap}.nav button[aria-current=page]{box-shadow:inset 0 -2px var(--green)}.nav .seal{width:27px;height:27px}.side-note{display:none}.topbar{padding:15px 20px;height:auto;min-height:69px;align-items:start;gap:8px}.concept{display:block}.concept strong{font-size:11px}.concept span{display:block;font-size:12px;border:0;padding:2px 0 0}.topnote{font-size:9px;max-width:143px;margin-top:2px}.spread{padding:23px 20px 30px;gap:28px}h1{font-size:27px;line-height:1.5;letter-spacing:-.7px;max-width:330px;margin-top:12px}.subject{font-size:10px}.lead{font-size:12px;line-height:1.95}.reading-order{gap:9px;font-size:10px;margin:21px 0 23px;justify-content:space-between}.reading-order i{width:16px;flex:none}.evidence-head{align-items:start}.evidence-head small{max-width:135px;text-align:right;font-size:9px}.evidence{padding:19px 0;grid-template-columns:25px minmax(0,1fr);gap:12px}.number{font-size:20px}.evidence h3{font-size:16px}.evidence .body{font-size:12px}.observations{font-size:10px;gap:11px}.observations b{font-size:12px}.evidence summary{font-size:11px}.working-note{grid-template-columns:1fr;gap:6px;padding-left:13px;margin-top:23px}.reading-footer{font-size:9px}.draft{display:block;padding:22px}.draft-writing .note-label{margin-top:22px}.draft-caption{font-size:10px}.draft textarea{font-size:12px}.weight-row{padding:8px 0}.weight-row .name{font-size:12px}.next-step{min-height:44px}.coach p{font-size:11px}.draft-footnote{font-size:10px}.coach small{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">FactorLab<small>RESEARCH NOTEBOOK</small></div>
+    <nav class="nav" aria-label="研究工作流程草图">
+      <button type="button" aria-current="page"><span class="seal" data-seal="research" aria-hidden="true"></span><span>行业研究</span></button>
+      <button type="button"><span class="seal" data-seal="backtest" aria-hidden="true"></span><span>因子回测</span></button>
+      <button type="button"><span class="seal" data-seal="allocation" aria-hidden="true"></span><span>配置决策</span></button>
+      <button type="button"><span class="seal" data-seal="risk" aria-hidden="true"></span><span>风险归因</span></button>
+      <button type="button"><span class="seal" data-seal="journal" aria-hidden="true"></span><span>决策复盘</span></button>
+    </nav>
+    <div class="side-note"><div class="side-line"></div><strong>课程子项目 B</strong>高端制造与尖端科技<br>长期定位 · 短期战术<br><br>合成教学沙盒<br>先证据，再判断。</div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="concept"><strong>C / 方案草图</strong><span>雾绿·纸白</span></div>
+      <p class="topnote"><b>全页数字与图形：草图示意数据</b><br>仅供配色与布局选择 · 非正式产品</p>
+    </header>
+    <main class="spread">
+      <section class="reading" aria-labelledby="research-question">
+        <div class="subject"><span>行业研究 / 半导体景气观察</span><span>第 1 / 6 轮 · 交易日 0</span></div>
+        <h1 id="research-question">订单回暖，利润兑现了吗？</h1>
+        <p class="lead">需求修复是线索，盈利兑现才是下一步证据。<br>对照景气、估值与长期支持，形成你的长期定位与短期判断。</p>
+        <div class="reading-order" aria-label="研究阅读与下一步"><strong>观察需求</strong><i aria-hidden="true"></i><span>检验传导</span><i aria-hidden="true"></i><span>下一步：检验因子</span></div>
+        <div class="evidence-head"><h2>本轮可见证据</h2><small>以下均为合成材料 / 草图示意数据</small></div>
+        <article class="evidence">
+          <span class="number" aria-hidden="true">E1</span>
+          <div>
+            <p class="source">需求端 / 行业调查</p>
+            <h3>订单回暖，利润尚未确认</h3>
+            <p class="body">新增订单出现修复，但利润改善还没有得到确认。需要继续观察需求能否转化为持续交付与盈利。</p>
+            <div class="evidence-bottom">
+              <div class="observations"><span>关注传导<b>订单 → 利润</b></span></div>
+              <details><summary>查看证据</summary><p class="detail">合成教学材料：订单回暖提供了需求改善线索，但利润仍待确认。这里只展示研究证据的阅读方式，不对应真实调查或机构报告，也不直接推导配置建议。</p></details>
+            </div>
+          </div>
+        </article>
+        <article class="evidence">
+          <span class="number" aria-hidden="true">E2</span>
+          <div>
+            <p class="source">市场预期 / 估值观察</p>
+            <h3>好消息，可能已反映在估值</h3>
+            <p class="body">价格可能先于盈利变化。即便行业方向改善，也要核对当前估值是否已计入乐观预期。</p>
+            <div class="evidence-bottom">
+              <div class="observations"><span>待检验因子<b>价值 · 质量</b></span></div>
+              <details><summary>查看证据</summary><p class="detail">合成教学材料：好消息可能已经反映在估值中。这是需要检验的研究线索，仍需因子回测与风险检查，不能当作已验证收益。</p></details>
+            </div>
+          </div>
+        </article>
+        <article class="evidence">
+          <span class="number" aria-hidden="true">E3</span>
+          <div>
+            <p class="source">产业基础 / 长期支持</p>
+            <h3>长期支持，需要时间兑现</h3>
+            <p class="body">产业升级与技术投入支撑长期研究方向，但兑现存在时滞。长期逻辑不等于本轮立即加仓。</p>
+            <div class="evidence-bottom">
+              <div class="observations"><span>判断期限<b>长期定位</b></span></div>
+              <details><summary>查看证据</summary><p class="detail">合成教学材料：长期支持可能需要时间兑现。配置判断需要区分长期定位和短期战术，并记录后续哪些可见证据会使你修正观点。</p></details>
+            </div>
+          </div>
+        </article>
+        <section class="working-note"><h2>暂存判断</h2><p>需求改善支持继续观察；在利润确认前核对估值，并给长期逻辑留下兑现时间。<br>这是待检验的观点，不是已确认的事实。</p></section>
+        <footer class="reading-footer"><span>练习路径：周期证据 → 因子检验 → 配置 → 风险归因 → 复盘</span><span>不代表真实市场表现</span></footer>
+      </section>
+      <aside class="draft" aria-labelledby="draft-title">
+        <div class="draft-header">
+          <div class="draft-title"><h2 id="draft-title">配置草稿</h2><span class="seal" data-seal="allocation" aria-hidden="true"></span></div>
+          <p class="draft-caption">初始净值 100,000 · 未结算<br>第 1 / 6 轮 · 交易日 0 · 草图示意数据</p>
+          <p class="field-label">这次判断面向哪个期限？</p>
+          <div class="horizon" aria-label="期限选择外观示意"><button type="button" aria-pressed="true">长期定位</button><button type="button" aria-pressed="false">短期战术</button></div>
+        </div>
+        <div class="draft-allocation">
+          <div class="weights-head"><span>行业与现金</span><span>草稿权重 / 示意</span></div>
+          <div class="weight-row"><span class="seal" data-seal="semiconductor" aria-hidden="true"></span><span class="name">半导体</span><output>20%</output></div>
+          <div class="weight-row"><span class="seal" data-seal="robotics" aria-hidden="true"></span><span class="name">机器人</span><output>20%</output></div>
+          <div class="weight-row"><span class="seal" data-seal="materials" aria-hidden="true"></span><span class="name">先进材料</span><output>15%</output></div>
+          <div class="weight-row"><span class="seal" data-seal="energy" aria-hidden="true"></span><span class="name">清洁能源</span><output>15%</output></div>
+          <div class="weight-row"><span class="seal" data-seal="infrastructure" aria-hidden="true"></span><span class="name">AI 基础设施</span><output>15%</output></div>
+          <div class="weight-row cash"><span class="seal" data-seal="cash" aria-hidden="true"></span><span class="name">现金</span><output>15%</output></div>
+          <div class="balance"><span>合计 <strong>100%</strong></span><span>权重仅作界面示意</span></div>
+        </div>
+        <div class="draft-writing">
+          <label class="note-label" for="rationale">写下证据与配置之间的联系</label>
+          <textarea id="rationale" aria-describedby="draft-local-note">先观察订单修复能否传导至利润，保留现金，等待更多证据。</textarea>
+          <button class="next-step" type="button">下一步：检验因子</button>
+          <p class="draft-footnote" id="draft-local-note">草图控件，不提交或保存研究进度</p>
+          <section class="coach"><span class="seal" data-seal="coach" aria-hidden="true"></span><div><h3>AI 只读研究伙伴</h3><p>帮助核对可见证据与判断期限。<br>不访问未来，不改变配置，不自动交易。</p><small>本草图未连接 AI 服务</small></div></section>
+        </div>
+      </aside>
+    </main>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 285" fill="none">
+<defs><pattern id="die" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)"><rect x="3" y="3" width="20" height="20" rx="2" stroke="#d5dcc4" stroke-width="1"/></pattern><clipPath id="wafer"><circle cx="257" cy="136" r="99"/></clipPath></defs>
+<path d="M45 211L211 263L401 205L237 153Z" fill="#223f35" stroke="#91a38a"/>
+<ellipse cx="258" cy="155" rx="116" ry="99" fill="#18392e" opacity=".6"/>
+<circle cx="257" cy="136" r="106" fill="#64795d" stroke="#cbd1ac" stroke-width="2"/>
+<circle cx="257" cy="136" r="99" fill="#355848"/>
+<g clip-path="url(#wafer)"><rect x="130" y="10" width="255" height="255" fill="url(#die)"/><path d="M140 219L347 37" stroke="#dfbf73" stroke-width="34" opacity=".16"/></g>
+<path d="M84 191L115 170L146 180L177 148L206 153" stroke="#dda85d" stroke-width="3"/><path d="M193 148L206 153L199 165" stroke="#dda85d" stroke-width="3"/>
+<path d="M78 92V65H143M342 223H383V189" stroke="#9dae94"/>
+<rect x="52" y="99" width="112" height="61" rx="2" fill="#f0e7cb" transform="rotate(-8 52 99)"/><g stroke="#69816c" stroke-width="2"><path d="M70 112L133 103M72 126L147 115M74 139L119 132"/></g>
+<circle cx="383" cy="56" r="9" stroke="#d4b970"/><path d="M383 40V31M399 56H410M383 72V81M367 56H356" stroke="#d4b970"/>
+</svg>

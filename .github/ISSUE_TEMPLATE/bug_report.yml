@@ -1,0 +1,32 @@
+name: 报告问题
+description: 页面异常、计算疑问、操作失败或可访问性问题
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: "请勿提交密码、验证码、API key 或真实用户存档。截图请先遮住个人信息。"
+  - type: input
+    id: page
+    attributes:
+      label: 出问题的页面
+      placeholder: 页面链接或功能名称
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 从打开网站开始，依次做了什么？
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 实际结果与期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 设备、浏览器与截图
+      description: 截图可直接拖入此处。

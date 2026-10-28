@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>配置雕刻 · 黑白交互研究</title>
+  <link rel="stylesheet" href="icons.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="02-allocation.css">
+</head>
+<body data-demo="02" data-theme="mono">
+  <main class="allocation-demo">
+    <header class="allocation-heading">
+      <div>
+        <p class="edition">ALLOCATION ATELIER <span>02 / 配置雕刻</span></p>
+        <h1>每一份判断，都有分量。</h1>
+        <p class="intro">调节行业权重，现金自动互补。</p>
+      </div>
+      <p class="draft-mark"><span aria-hidden="true"></span>交互示意 · 草稿未执行</p>
+    </header>
+
+    <section class="allocation-workspace" aria-label="行业配置交互工作台">
+      <div class="allocation-visual">
+        <div class="visual-top">
+          <div class="horizon-switch" role="group" aria-label="判断期限">
+            <button type="button" data-horizon="long" aria-pressed="true">长期定位</button>
+            <button type="button" data-horizon="tactical" aria-pressed="false">短期战术</button>
+          </div>
+          <span class="draft-counter">DRAFT <b>01</b></span>
+        </div>
+        <div class="composition" id="composition">
+          <svg class="allocation-ring" viewBox="0 0 620 500" aria-hidden="true">
+            <g id="current-ring"></g>
+            <g id="dial-connectors"></g>
+          </svg>
+          <span class="ring-caption" id="ring-caption">五个行业与现金 · 面积随权重变化</span>
+        </div>
+        <div class="ring-summary">
+            <span id="focus-name">草稿总权重</span>
+            <strong aria-hidden="true"><span id="focus-visual">100</span><small>%</small></strong>
+            <output id="focus-value" class="sr-only">100</output>
+            <span id="focus-detail">5 个行业 + 现金</span>
+        </div>
+        <div class="visual-caption">
+          <p id="horizon-copy">看产业位置与盈利兑现，再决定长期敞口。</p>
+          <p class="horizon-boundary">切换视角，不改变权重</p>
+        </div>
+        <div class="visual-actions">
+          <button class="compare-button" id="compare-allocation" type="button" aria-pressed="false">
+            <span class="seal" data-seal="allocation" aria-hidden="true"></span><span>前后对照</span>
+          </button>
+          <span id="change-summary">尚未调整</span>
+        </div>
+        <div class="comparison" id="comparison" hidden>
+          <div class="comparison-head"><span>行业 / 现金</span><span>初始</span><span>当前</span><span>变化</span></div>
+          <div id="comparison-rows"></div>
+          <p>变化表示权重的百分点差。</p>
+        </div>
+      </div>
+
+      <div class="allocation-editor">
+        <div class="editor-heading">
+          <div><p class="editor-kicker">FIVE SECTORS + CASH</p><h2>塑造你的草稿</h2></div>
+          <button id="undo-allocation" class="quiet-button" type="button" disabled>撤销一笔</button>
+        </div>
+        <p class="editor-instruction" id="slider-help">拖动或用方向键微调 1%。Home 归零，End 至可用上限。</p>
+        <div class="sector-controls" id="sector-controls"></div>
+        <div class="cash-row">
+          <span class="sector-icon"><span class="seal" data-seal="cash" aria-hidden="true"></span></span>
+          <div><strong>现金</strong><span id="cash-detail">自动互补</span></div>
+          <output id="cash-output">15<small>%</small></output>
+        </div>
+        <div class="allocation-footer">
+          <div class="total-line"><span>草稿合计 <strong id="total-output">100%</strong></span><span>未执行</span></div>
+          <p id="allocation-feedback" role="status" aria-live="polite">调整仅在本页生效。</p>
+          <div class="editor-actions">
+            <button id="check-allocation" class="check-button" type="button" aria-expanded="false" aria-controls="allocation-rules">
+              <span class="seal" data-seal="risk" aria-hidden="true"></span><span>检查草稿</span><span class="check-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button id="reset-allocation" class="reset-button" type="button">回到初始</button>
+          </div>
+        </div>
+        <section class="allocation-rules" id="allocation-rules" aria-label="本地规则检查结果" hidden>
+          <div class="rules-heading"><h3>草稿检查</h3><span>本地规则</span></div>
+          <div id="rule-results"></div>
+          <p class="rule-boundary">示意阈值：单行业 ≤40%，现金 ≥10%。非课程或真实风控限制，不预测收益。</p>
+        </section>
+      </div>
+    </section>
+    <footer class="allocation-note"><span>高端制造与尖端科技 · 配置交互研究</span><span>仅草稿 / 无交易 / 无收益预测</span></footer>
+  </main>
+  <script src="vendor/motion.js"></script>
+  <script src="common.js"></script>
+  <script src="02-allocation.js"></script>
+</body>
+</html>

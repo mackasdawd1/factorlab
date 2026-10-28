@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FactorLab · 信息输出剧本</title><link rel="stylesheet" href="flow-script.css"></head>
+<body>
+<header class="script-header"><a class="brand" href="index.html">FactorLab <span>CONTENT REVIEW</span></a><div><a href="01-evidence.html">证据聚焦</a><a href="02-allocation.html">配置雕刻</a><a href="flow-script.md" download>下载文字版</a><button id="print-script">打印剧本</button></div></header>
+<main>
+  <section class="script-intro"><div><p class="eyebrow">CURRENT PRODUCT / INFORMATION ONLY</p><h1>把整个体验，读成一份剧本。</h1><p id="scope-text">当前正式版本的信息输出，按出现情境逐幕排列。保留原文，便于检查冗余与表达顺序。</p></div><div class="counts"><strong id="scene-count">—</strong><span>场景</span><strong id="output-count">—</strong><span>原始输出</span></div></section>
+  <div class="review-note"><b>这是现版提取，不是建议改稿。</b><span>动态值用占位符表示；条件分支不会在一次体验中全部出现。两版新 demo 的简化文案未混入此剧本。</span></div>
+  <div class="script-tools"><label class="search-wrap"><span>查找</span><input id="script-search" type="search" placeholder="输入页面、原句或关键词" autocomplete="off"></label><select id="group-filter" aria-label="筛选流程阶段"><option value="">全部阶段</option></select><div class="mode-group" aria-label="阅读方式"><button id="mode-one" aria-pressed="false">逐幕阅读</button><button id="mode-all" aria-pressed="true">连续剧本</button></div><span id="result-count" role="status"></span></div>
+  <div class="script-layout"><aside><nav id="scene-outline" aria-label="场景目录"></nav><a class="coverage-jump" href="#coverage">查看当前覆盖与缺口 ↓</a></aside><div class="script-content"><div id="script-scenes"></div><p id="empty-message" hidden>没有匹配场景，换一个词试试。</p><div class="scene-pager" id="scene-pager" hidden><button id="scene-prev">← 上一幕</button><span id="page-number"></span><button id="scene-next">下一幕 →</button></div></div></div>
+  <section id="coverage" class="coverage"><p class="eyebrow">COVERAGE & BOUNDARIES</p><h2>当前输出覆盖</h2><p>区分已存在的输出与尚未实现的内容；源码可达不等于已走完全部分支。</p><div id="coverage-items"></div></section>
+  <footer><span id="source-version"></span><span>只整理用户可见输出 · 不改动正式流程</span></footer>
+</main>
+<script src="flow-script-data.js"></script><script src="flow-script.js"></script>
+</body></html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01 证据聚焦 · FactorLab 交互演示</title>
+  <link rel="stylesheet" href="icons.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="01-evidence.css">
+</head>
+<body data-demo="01">
+  <main class="evidence-demo">
+    <header class="research-heading">
+      <div><p class="kicker">01 / 证据聚焦 <span>子项目 B · 高端制造与尖端科技</span></p><h1>订单回暖，<wbr>利润兑现了吗？</h1></div>
+      <div class="demo-stamp">独立交互演示<span>全部材料为示意 · 不连接 AI / API</span></div>
+    </header>
+    <div class="try-path" aria-label="建议试用路径">
+      <span class="path-label">试用路径</span><span><b>1</b>打开 E1</span><i aria-hidden="true">→</i><span><b>2</b>摘录一句</span><i aria-hidden="true">→</i><span><b>3</b>加入 E2 对照</span><i aria-hidden="true">→</i><span><b>4</b>撤销或清空</span>
+    </div>
+    <div class="reading-desk" id="reading-desk">
+      <svg class="context-wire" id="context-wire" aria-hidden="true"><path id="focus-link"></path></svg>
+      <section class="evidence-index" aria-labelledby="index-title">
+        <div class="index-heading"><h2 id="index-title">三条证据，一次判断</h2><span>03</span></div>
+        <div class="evidence-list">
+          <button class="evidence-card" data-evidence="E1" aria-expanded="false" aria-controls="focus-sheet">
+            <span class="card-top"><span class="evidence-code">E1</span><span class="card-kind">周期传导</span><span class="seal" data-seal="cycle" aria-hidden="true"></span></span>
+            <span class="card-title">订单 ≠ 盈利</span>
+            <span class="card-summary">需求开始修复，利润与现金流仍需要独立验证。</span>
+            <span class="card-bottom"><span class="card-state">待阅读</span><span class="card-open">展开证据 <span aria-hidden="true">↗</span></span></span>
+          </button>
+          <button class="evidence-card" data-evidence="E2" aria-expanded="false" aria-controls="focus-sheet">
+            <span class="card-top"><span class="evidence-code">E2</span><span class="card-kind">价格与预期</span><span class="seal" data-seal="factors" aria-hidden="true"></span></span>
+            <span class="card-title">好消息，可能已定价</span>
+            <span class="card-summary">景气改善与价格吸引力，是两个需要分开回答的问题。</span>
+            <span class="card-bottom"><span class="card-state">待阅读</span><span class="card-open">展开证据 <span aria-hidden="true">↗</span></span></span>
+          </button>
+          <button class="evidence-card" data-evidence="E3" aria-expanded="false" aria-controls="focus-sheet">
+            <span class="card-top"><span class="evidence-code">E3</span><span class="card-kind">判断期限</span><span class="seal" data-seal="research" aria-hidden="true"></span></span>
+            <span class="card-title">长期支持 ≠ 短期买点</span>
+            <span class="card-summary">产业投入支持长期跟踪，兑现时点仍取决于本轮证据。</span>
+            <span class="card-bottom"><span class="card-state">待阅读</span><span class="card-open">展开证据 <span aria-hidden="true">↗</span></span></span>
+          </button>
+        </div>
+        <p class="index-note">点击或按 Enter / 空格打开。聚焦后用 ↑ ↓ 切换，Esc 收起。</p>
+      </section>
+      <section class="reading-space" id="reading-space" aria-label="证据阅读区">
+        <div class="reading-empty" id="reading-empty">
+          <div class="empty-caption"><span class="seal" data-seal="evidence" aria-hidden="true"></span><span>保留上下文的阅读方式</span></div>
+          <h2>放大证据，<br><em>不丢掉研究问题。</em></h2>
+          <p>从左侧打开一条证据。它会在这里展开，<br class="desktop-break">其余证据继续留在视野里。</p>
+          <div class="relation-map" aria-label="三条证据共同约束本轮配置判断">
+            <div class="relation-sources"><span><b>E1</b>盈利确认</span><span><b>E2</b>估值预期</span><span><b>E3</b>判断期限</span></div>
+            <div class="relation-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="relation-target"><span>共同约束</span><strong>本轮配置理由</strong></div>
+          </div>
+          <button type="button" class="start-reading" id="start-reading">从 E1 开始阅读 <span aria-hidden="true">→</span></button>
+          <p class="empty-foot">可摘录、加入对照，随时撤销。</p>
+        </div>
+        <article class="focus-sheet" id="focus-sheet" aria-labelledby="focus-title" hidden></article>
+      </section>
+    </div>
+    <section class="collection" aria-labelledby="collection-title">
+      <div class="collection-head">
+        <div class="collection-heading"><span class="seal" data-seal="journal" aria-hidden="true"></span><div><h2 id="collection-title">我的研究对照</h2><p id="collection-count">0 条对照 · 0 条摘录</p></div></div>
+        <div class="collection-actions"><button type="button" id="undo-action" disabled>撤销上一步</button><button type="button" id="clear-collection" disabled>清空</button></div>
+      </div>
+      <div id="collection-body"><p class="collection-empty">把值得一起看的证据放到这里。对照与摘录只保留在本次演示中。</p></div>
+    </section>
+    <footer class="demo-source">交互参考：<a href="https://linear.app/docs/peek" target="_blank" rel="noopener noreferrer">Linear Peek</a> 的上下文阅读与键盘切换；独立实现。动效：本地 Motion 14.1.0 · MIT。所有材料仅为交互示意。</footer>
+    <p class="screen-reader" id="evidence-status" role="status" aria-live="polite"></p>
+  </main>
+  <script src="vendor/motion.js"></script>
+  <script src="common.js"></script>
+  <script src="01-evidence.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+name: 改进建议
+description: 对布局、交互、研究流程、内容表达或代码提出建议
+title: "[建议] "
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: 你想改进哪方面？
+      options:
+        - 界面与配色
+        - 操作与交互
+        - 研究流程与内容表达
+        - 因子、回测与风险分析
+        - AI 助手
+        - 账号与存档
+        - 代码与部署
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 当前哪里不够好？
+      description: 描述使用场景和遇到的不便。
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 你的改进建议
+      description: 可附草图或参考链接。
+    validations:
+      required: true

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="740" viewBox="0 0 1440 740">
+<rect width="1440" height="740" fill="#f6f2e9"/><g fill="#263f37" font-family="Microsoft YaHei, sans-serif"><text x="40" y="55" font-size="26">调查与抉择 · 本轮设计草图</text><text x="40" y="88" font-size="15">2026-10-12 · AI 辅助绘制的当前方案，不冒充早期手绘或已完成的网站流转</text></g>
+<g fill="none" stroke="#566c61" stroke-width="2"><rect x="40" y="125" width="430" height="545"/><rect x="505" y="125" width="430" height="545"/><rect x="970" y="125" width="430" height="545"/>
+<path d="M40 180H470M505 180H935M970 180H1400M320 180V620M785 180V620M1250 180V620"/>
+<rect x="65" y="210" width="230" height="110"/><path d="M65 375H295M65 435H295M65 495H295"/>
+<rect x="530" y="210" width="230" height="110"/><path d="M530 390H760M530 445H760M530 500H760"/>
+<rect x="995" y="210" width="230" height="110"/><path d="M995 390H1215M995 420H1190M995 450H1180"/></g>
+<g fill="#263f37" font-family="Microsoft YaHei, sans-serif" font-size="19"><text x="65" y="160">01 调查：发现矛盾</text><text x="530" y="160">02 决定：说明取舍</text><text x="995" y="160">03 复盘：判断与结果</text>
+<text x="80" y="250">订单改善</text><text x="80" y="285">但价格已先行上涨</text><text x="70" y="365">需求证据 → 展开</text><text x="70" y="425">价格证据 → 展开</text><text x="70" y="485">政策证据 → 展开</text>
+<text x="545" y="250">半导体 20% → 25%</text><text x="545" y="285">Cash 15% → 10%</text><text x="540" y="375">维持 / 增加 / 减少</text><text x="540" y="430">选择理由</text><text x="540" y="485">补充自己的想法</text>
+<text x="1010" y="250">发生了什么？</text><text x="1010" y="285">决定带来什么差别？</text><text x="1000" y="375">实际结果</text><text x="1000" y="410">长期持有对照</text><text x="1000" y="445">调整贡献</text>
+<text x="339" y="240">AI 搭档</text><text x="804" y="240">AI 搭档</text><text x="1269" y="240">AI 搭档</text></g>
+<g fill="#65786a" font-family="Microsoft YaHei, sans-serif" font-size="15"><text x="337" y="290">提问 / 追问</text><text x="800" y="290">检验理由</text><text x="1265" y="290">对照证据</text><text x="337" y="330">证据引用</text><text x="800" y="330">保留疑问</text><text x="1265" y="330">修正判断</text><text x="75" y="650">看过证据 → 去做决定</text><text x="540" y="650">确认配置 → 揭示市场</text><text x="1005" y="650">留下反思 → 完成本章</text><text x="40" y="711">规则：虚拟资金；合成剧情；研究工具按需展开；不以单次盈亏给决策打分。</text></g></svg>

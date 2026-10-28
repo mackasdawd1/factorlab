@@ -1,0 +1,1023 @@
+{
+  "version": "week3-playable-v1",
+  "remote": "NOT VERIFIED / STARTER QUOTA",
+  "page": "Week 3 Playable Frozen",
+  "preserve_existing_pages": true,
+  "source": "data.json + progression.js + style.css",
+  "frames": [
+    {
+      "id": "guardian:/plan",
+      "node": "guardian:",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "guardian:/plan/boost",
+          "weights": [
+            0.1,
+            0.1,
+            0.15,
+            0.15,
+            0.13,
+            0.37
+          ],
+          "execute": "guardian:boost/result"
+        },
+        {
+          "frame": "guardian:/plan/hold",
+          "weights": [
+            0.1,
+            0.1,
+            0.15,
+            0.15,
+            0.1,
+            0.4
+          ],
+          "execute": "guardian:hold/result"
+        },
+        {
+          "frame": "guardian:/plan/buffer",
+          "weights": [
+            0.1,
+            0.1,
+            0.15,
+            0.15,
+            0.07,
+            0.43000000000000005
+          ],
+          "execute": "guardian:buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "guardian:boost/plan",
+      "node": "guardian:boost",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "guardian:boost/plan/boost",
+          "weights": [
+            0.10312651838924312,
+            0.10213491725088501,
+            0.1457653673386417,
+            0.15022757246125318,
+            0.16148631094628496,
+            0.337259313613692
+          ],
+          "execute": "guardian:boost.boost/result"
+        },
+        {
+          "frame": "guardian:boost/plan/hold",
+          "weights": [
+            0.10312651838924312,
+            0.10213491725088501,
+            0.1457653673386417,
+            0.15022757246125318,
+            0.13148631094628496,
+            0.367259313613692
+          ],
+          "execute": "guardian:boost.hold/result"
+        },
+        {
+          "frame": "guardian:boost/plan/buffer",
+          "weights": [
+            0.10312651838924312,
+            0.10213491725088501,
+            0.1457653673386417,
+            0.15022757246125318,
+            0.10148631094628496,
+            0.39725931361369204
+          ],
+          "execute": "guardian:boost.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "guardian:boost/result",
+      "node": "guardian:boost",
+      "phase": "result",
+      "record_round": 1,
+      "close": "guardian:boost/settled",
+      "reopen": "guardian:boost/result",
+      "next": "guardian:boost/plan"
+    },
+    {
+      "id": "guardian:boost.boost/result",
+      "node": "guardian:boost.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:boost.boost/settled",
+      "reopen": "guardian:boost.boost/result",
+      "next": "guardian:boost.boost/final"
+    },
+    {
+      "id": "guardian:boost.boost/final",
+      "node": "guardian:boost.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:boost.hold/result",
+      "node": "guardian:boost.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:boost.hold/settled",
+      "reopen": "guardian:boost.hold/result",
+      "next": "guardian:boost.hold/final"
+    },
+    {
+      "id": "guardian:boost.hold/final",
+      "node": "guardian:boost.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:boost.buffer/result",
+      "node": "guardian:boost.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:boost.buffer/settled",
+      "reopen": "guardian:boost.buffer/result",
+      "next": "guardian:boost.buffer/final"
+    },
+    {
+      "id": "guardian:boost.buffer/final",
+      "node": "guardian:boost.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:hold/plan",
+      "node": "guardian:hold",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "guardian:hold/plan/boost",
+          "weights": [
+            0.1031848397658498,
+            0.10219267784502431,
+            0.14584780236134537,
+            0.15031253100506,
+            0.13120051592419885,
+            0.36726163309852167
+          ],
+          "execute": "guardian:hold.boost/result"
+        },
+        {
+          "frame": "guardian:hold/plan/hold",
+          "weights": [
+            0.1031848397658498,
+            0.10219267784502431,
+            0.14584780236134537,
+            0.15031253100506,
+            0.10120051592419883,
+            0.39726163309852164
+          ],
+          "execute": "guardian:hold.hold/result"
+        },
+        {
+          "frame": "guardian:hold/plan/buffer",
+          "weights": [
+            0.1031848397658498,
+            0.10219267784502431,
+            0.14584780236134537,
+            0.15031253100506,
+            0.07120051592419883,
+            0.4272616330985216
+          ],
+          "execute": "guardian:hold.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "guardian:hold/result",
+      "node": "guardian:hold",
+      "phase": "result",
+      "record_round": 1,
+      "close": "guardian:hold/settled",
+      "reopen": "guardian:hold/result",
+      "next": "guardian:hold/plan"
+    },
+    {
+      "id": "guardian:hold.boost/result",
+      "node": "guardian:hold.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:hold.boost/settled",
+      "reopen": "guardian:hold.boost/result",
+      "next": "guardian:hold.boost/final"
+    },
+    {
+      "id": "guardian:hold.boost/final",
+      "node": "guardian:hold.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:hold.hold/result",
+      "node": "guardian:hold.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:hold.hold/settled",
+      "reopen": "guardian:hold.hold/result",
+      "next": "guardian:hold.hold/final"
+    },
+    {
+      "id": "guardian:hold.hold/final",
+      "node": "guardian:hold.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:hold.buffer/result",
+      "node": "guardian:hold.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:hold.buffer/settled",
+      "reopen": "guardian:hold.buffer/result",
+      "next": "guardian:hold.buffer/final"
+    },
+    {
+      "id": "guardian:hold.buffer/final",
+      "node": "guardian:hold.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:buffer/plan",
+      "node": "guardian:buffer",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "guardian:buffer/plan/boost",
+          "weights": [
+            0.10324322714502696,
+            0.10225050380709401,
+            0.14593033067614386,
+            0.15039758569684214,
+            0.10088044632841274,
+            0.3972979063464802
+          ],
+          "execute": "guardian:buffer.boost/result"
+        },
+        {
+          "frame": "guardian:buffer/plan/hold",
+          "weights": [
+            0.10324322714502696,
+            0.10225050380709401,
+            0.14593033067614386,
+            0.15039758569684214,
+            0.07088044632841274,
+            0.42729790634648024
+          ],
+          "execute": "guardian:buffer.hold/result"
+        },
+        {
+          "frame": "guardian:buffer/plan/buffer",
+          "weights": [
+            0.10324322714502696,
+            0.10225050380709401,
+            0.14593033067614386,
+            0.15039758569684214,
+            0.04088044632841274,
+            0.45729790634648027
+          ],
+          "execute": "guardian:buffer.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "guardian:buffer/result",
+      "node": "guardian:buffer",
+      "phase": "result",
+      "record_round": 1,
+      "close": "guardian:buffer/settled",
+      "reopen": "guardian:buffer/result",
+      "next": "guardian:buffer/plan"
+    },
+    {
+      "id": "guardian:buffer.boost/result",
+      "node": "guardian:buffer.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:buffer.boost/settled",
+      "reopen": "guardian:buffer.boost/result",
+      "next": "guardian:buffer.boost/final"
+    },
+    {
+      "id": "guardian:buffer.boost/final",
+      "node": "guardian:buffer.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:buffer.hold/result",
+      "node": "guardian:buffer.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:buffer.hold/settled",
+      "reopen": "guardian:buffer.hold/result",
+      "next": "guardian:buffer.hold/final"
+    },
+    {
+      "id": "guardian:buffer.hold/final",
+      "node": "guardian:buffer.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "guardian:buffer.buffer/result",
+      "node": "guardian:buffer.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "guardian:buffer.buffer/settled",
+      "reopen": "guardian:buffer.buffer/result",
+      "next": "guardian:buffer.buffer/final"
+    },
+    {
+      "id": "guardian:buffer.buffer/final",
+      "node": "guardian:buffer.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:/plan",
+      "node": "navigator:",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "navigator:/plan/boost",
+          "weights": [
+            0.2,
+            0.2,
+            0.15,
+            0.15,
+            0.2,
+            0.09999999999999999
+          ],
+          "execute": "navigator:boost/result"
+        },
+        {
+          "frame": "navigator:/plan/hold",
+          "weights": [
+            0.2,
+            0.2,
+            0.15,
+            0.15,
+            0.15,
+            0.15
+          ],
+          "execute": "navigator:hold/result"
+        },
+        {
+          "frame": "navigator:/plan/buffer",
+          "weights": [
+            0.2,
+            0.2,
+            0.15,
+            0.15,
+            0.09999999999999999,
+            0.2
+          ],
+          "execute": "navigator:buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "navigator:boost/plan",
+      "node": "navigator:boost",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "navigator:boost/plan/boost",
+          "weights": [
+            0.20460358056265987,
+            0.20263623844186507,
+            0.14459964587841825,
+            0.14902616565020657,
+            0.25066889632107026,
+            0.048465473145780036
+          ],
+          "execute": "navigator:boost.boost/result"
+        },
+        {
+          "frame": "navigator:boost/plan/hold",
+          "weights": [
+            0.20460358056265987,
+            0.20263623844186507,
+            0.14459964587841825,
+            0.14902616565020657,
+            0.20066889632107027,
+            0.09846547314578004
+          ],
+          "execute": "navigator:boost.hold/result"
+        },
+        {
+          "frame": "navigator:boost/plan/buffer",
+          "weights": [
+            0.20460358056265987,
+            0.20263623844186507,
+            0.14459964587841825,
+            0.14902616565020657,
+            0.15066889632107028,
+            0.14846547314578004
+          ],
+          "execute": "navigator:boost.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "navigator:boost/result",
+      "node": "navigator:boost",
+      "phase": "result",
+      "record_round": 1,
+      "close": "navigator:boost/settled",
+      "reopen": "navigator:boost/result",
+      "next": "navigator:boost/plan"
+    },
+    {
+      "id": "navigator:boost.boost/result",
+      "node": "navigator:boost.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:boost.boost/settled",
+      "reopen": "navigator:boost.boost/result",
+      "next": "navigator:boost.boost/final"
+    },
+    {
+      "id": "navigator:boost.boost/final",
+      "node": "navigator:boost.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:boost.hold/result",
+      "node": "navigator:boost.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:boost.hold/settled",
+      "reopen": "navigator:boost.hold/result",
+      "next": "navigator:boost.hold/final"
+    },
+    {
+      "id": "navigator:boost.hold/final",
+      "node": "navigator:boost.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:boost.buffer/result",
+      "node": "navigator:boost.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:boost.buffer/settled",
+      "reopen": "navigator:boost.buffer/result",
+      "next": "navigator:boost.buffer/final"
+    },
+    {
+      "id": "navigator:boost.buffer/final",
+      "node": "navigator:boost.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:hold/plan",
+      "node": "navigator:hold",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "navigator:hold/plan/boost",
+          "weights": [
+            0.20479495889331958,
+            0.20282577659626844,
+            0.1447348988332595,
+            0.1491655590016246,
+            0.20064244572441292,
+            0.09783636095111505
+          ],
+          "execute": "navigator:hold.boost/result"
+        },
+        {
+          "frame": "navigator:hold/plan/hold",
+          "weights": [
+            0.20479495889331958,
+            0.20282577659626844,
+            0.1447348988332595,
+            0.1491655590016246,
+            0.15064244572441293,
+            0.14783636095111505
+          ],
+          "execute": "navigator:hold.hold/result"
+        },
+        {
+          "frame": "navigator:hold/plan/buffer",
+          "weights": [
+            0.20479495889331958,
+            0.20282577659626844,
+            0.1447348988332595,
+            0.1491655590016246,
+            0.10064244572441293,
+            0.19783636095111506
+          ],
+          "execute": "navigator:hold.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "navigator:hold/result",
+      "node": "navigator:hold",
+      "phase": "result",
+      "record_round": 1,
+      "close": "navigator:hold/settled",
+      "reopen": "navigator:hold/result",
+      "next": "navigator:hold/plan"
+    },
+    {
+      "id": "navigator:hold.boost/result",
+      "node": "navigator:hold.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:hold.boost/settled",
+      "reopen": "navigator:hold.boost/result",
+      "next": "navigator:hold.boost/final"
+    },
+    {
+      "id": "navigator:hold.boost/final",
+      "node": "navigator:hold.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:hold.hold/result",
+      "node": "navigator:hold.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:hold.hold/settled",
+      "reopen": "navigator:hold.hold/result",
+      "next": "navigator:hold.hold/final"
+    },
+    {
+      "id": "navigator:hold.hold/final",
+      "node": "navigator:hold.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:hold.buffer/result",
+      "node": "navigator:hold.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:hold.buffer/settled",
+      "reopen": "navigator:hold.buffer/result",
+      "next": "navigator:hold.buffer/final"
+    },
+    {
+      "id": "navigator:hold.buffer/final",
+      "node": "navigator:hold.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:buffer/plan",
+      "node": "navigator:buffer",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "navigator:buffer/plan/boost",
+          "weights": [
+            0.20498669557504684,
+            0.203015669656056,
+            0.14487040504582635,
+            0.14930521336355573,
+            0.1505223218685326,
+            0.14729969449098257
+          ],
+          "execute": "navigator:buffer.boost/result"
+        },
+        {
+          "frame": "navigator:buffer/plan/hold",
+          "weights": [
+            0.20498669557504684,
+            0.203015669656056,
+            0.14487040504582635,
+            0.14930521336355573,
+            0.10052232186853258,
+            0.19729969449098256
+          ],
+          "execute": "navigator:buffer.hold/result"
+        },
+        {
+          "frame": "navigator:buffer/plan/buffer",
+          "weights": [
+            0.20498669557504684,
+            0.203015669656056,
+            0.14487040504582635,
+            0.14930521336355573,
+            0.050522321868532574,
+            0.24729969449098255
+          ],
+          "execute": "navigator:buffer.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "navigator:buffer/result",
+      "node": "navigator:buffer",
+      "phase": "result",
+      "record_round": 1,
+      "close": "navigator:buffer/settled",
+      "reopen": "navigator:buffer/result",
+      "next": "navigator:buffer/plan"
+    },
+    {
+      "id": "navigator:buffer.boost/result",
+      "node": "navigator:buffer.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:buffer.boost/settled",
+      "reopen": "navigator:buffer.boost/result",
+      "next": "navigator:buffer.boost/final"
+    },
+    {
+      "id": "navigator:buffer.boost/final",
+      "node": "navigator:buffer.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:buffer.hold/result",
+      "node": "navigator:buffer.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:buffer.hold/settled",
+      "reopen": "navigator:buffer.hold/result",
+      "next": "navigator:buffer.hold/final"
+    },
+    {
+      "id": "navigator:buffer.hold/final",
+      "node": "navigator:buffer.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "navigator:buffer.buffer/result",
+      "node": "navigator:buffer.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "navigator:buffer.buffer/settled",
+      "reopen": "navigator:buffer.buffer/result",
+      "next": "navigator:buffer.buffer/final"
+    },
+    {
+      "id": "navigator:buffer.buffer/final",
+      "node": "navigator:buffer.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:/plan",
+      "node": "challenger:",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "challenger:/plan/boost",
+          "weights": [
+            0.25,
+            0.15,
+            0.1,
+            0.1,
+            0.37,
+            0.03
+          ],
+          "execute": "challenger:boost/result"
+        },
+        {
+          "frame": "challenger:/plan/hold",
+          "weights": [
+            0.25,
+            0.15,
+            0.1,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "execute": "challenger:hold/result"
+        },
+        {
+          "frame": "challenger:/plan/buffer",
+          "weights": [
+            0.25,
+            0.15,
+            0.1,
+            0.1,
+            0.22999999999999998,
+            0.17
+          ],
+          "execute": "challenger:buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "challenger:boost/plan",
+      "node": "challenger:boost",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "challenger:boost/plan/boost",
+          "weights": [
+            0.25466976188377266,
+            0.15133260850401106,
+            0.09599091024849893,
+            0.098929407501004,
+            0.3990773118627135,
+            0.0
+          ],
+          "execute": "challenger:boost.boost/result"
+        },
+        {
+          "frame": "challenger:boost/plan/hold",
+          "weights": [
+            0.25466976188377266,
+            0.15133260850401106,
+            0.09599091024849893,
+            0.098929407501004,
+            0.36966295436513774,
+            0.029414357497575736
+          ],
+          "execute": "challenger:boost.hold/result"
+        },
+        {
+          "frame": "challenger:boost/plan/buffer",
+          "weights": [
+            0.25466976188377266,
+            0.15133260850401106,
+            0.09599091024849893,
+            0.098929407501004,
+            0.29966295436513773,
+            0.09941435749757574
+          ],
+          "execute": "challenger:boost.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "challenger:boost/result",
+      "node": "challenger:boost",
+      "phase": "result",
+      "record_round": 1,
+      "close": "challenger:boost/settled",
+      "reopen": "challenger:boost/result",
+      "next": "challenger:boost/plan"
+    },
+    {
+      "id": "challenger:boost.boost/result",
+      "node": "challenger:boost.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:boost.boost/settled",
+      "reopen": "challenger:boost.boost/result",
+      "next": "challenger:boost.boost/final"
+    },
+    {
+      "id": "challenger:boost.boost/final",
+      "node": "challenger:boost.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:boost.hold/result",
+      "node": "challenger:boost.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:boost.hold/settled",
+      "reopen": "challenger:boost.hold/result",
+      "next": "challenger:boost.hold/final"
+    },
+    {
+      "id": "challenger:boost.hold/final",
+      "node": "challenger:boost.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:boost.buffer/result",
+      "node": "challenger:boost.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:boost.buffer/settled",
+      "reopen": "challenger:boost.buffer/result",
+      "next": "challenger:boost.buffer/final"
+    },
+    {
+      "id": "challenger:boost.buffer/final",
+      "node": "challenger:boost.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:hold/plan",
+      "node": "challenger:hold",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "challenger:hold/plan/boost",
+          "weights": [
+            0.2550019615535504,
+            0.1515300117693213,
+            0.09611612397018439,
+            0.09905845429580228,
+            0.3701176932130247,
+            0.028175755198116895
+          ],
+          "execute": "challenger:hold.boost/result"
+        },
+        {
+          "frame": "challenger:hold/plan/hold",
+          "weights": [
+            0.2550019615535504,
+            0.1515300117693213,
+            0.09611612397018439,
+            0.09905845429580228,
+            0.30011769321302467,
+            0.0981757551981169
+          ],
+          "execute": "challenger:hold.hold/result"
+        },
+        {
+          "frame": "challenger:hold/plan/buffer",
+          "weights": [
+            0.2550019615535504,
+            0.1515300117693213,
+            0.09611612397018439,
+            0.09905845429580228,
+            0.23011769321302467,
+            0.1681757551981169
+          ],
+          "execute": "challenger:hold.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "challenger:hold/result",
+      "node": "challenger:hold",
+      "phase": "result",
+      "record_round": 1,
+      "close": "challenger:hold/settled",
+      "reopen": "challenger:hold/result",
+      "next": "challenger:hold/plan"
+    },
+    {
+      "id": "challenger:hold.boost/result",
+      "node": "challenger:hold.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:hold.boost/settled",
+      "reopen": "challenger:hold.boost/result",
+      "next": "challenger:hold.boost/final"
+    },
+    {
+      "id": "challenger:hold.boost/final",
+      "node": "challenger:hold.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:hold.hold/result",
+      "node": "challenger:hold.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:hold.hold/settled",
+      "reopen": "challenger:hold.hold/result",
+      "next": "challenger:hold.hold/final"
+    },
+    {
+      "id": "challenger:hold.hold/final",
+      "node": "challenger:hold.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:hold.buffer/result",
+      "node": "challenger:hold.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:hold.buffer/settled",
+      "reopen": "challenger:hold.buffer/result",
+      "next": "challenger:hold.buffer/final"
+    },
+    {
+      "id": "challenger:hold.buffer/final",
+      "node": "challenger:hold.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:buffer/plan",
+      "node": "challenger:buffer",
+      "phase": "plan",
+      "draft": null,
+      "previews": [
+        {
+          "frame": "challenger:buffer/plan/boost",
+          "weights": [
+            0.2553350290198081,
+            0.15172793070600135,
+            0.09624166478438921,
+            0.09918783819615623,
+            0.3003907608001807,
+            0.0971167764934644
+          ],
+          "execute": "challenger:buffer.boost/result"
+        },
+        {
+          "frame": "challenger:buffer/plan/hold",
+          "weights": [
+            0.2553350290198081,
+            0.15172793070600135,
+            0.09624166478438921,
+            0.09918783819615623,
+            0.23039076080018067,
+            0.1671167764934644
+          ],
+          "execute": "challenger:buffer.hold/result"
+        },
+        {
+          "frame": "challenger:buffer/plan/buffer",
+          "weights": [
+            0.2553350290198081,
+            0.15172793070600135,
+            0.09624166478438921,
+            0.09918783819615623,
+            0.16039076080018067,
+            0.2371167764934644
+          ],
+          "execute": "challenger:buffer.buffer/result"
+        }
+      ]
+    },
+    {
+      "id": "challenger:buffer/result",
+      "node": "challenger:buffer",
+      "phase": "result",
+      "record_round": 1,
+      "close": "challenger:buffer/settled",
+      "reopen": "challenger:buffer/result",
+      "next": "challenger:buffer/plan"
+    },
+    {
+      "id": "challenger:buffer.boost/result",
+      "node": "challenger:buffer.boost",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:buffer.boost/settled",
+      "reopen": "challenger:buffer.boost/result",
+      "next": "challenger:buffer.boost/final"
+    },
+    {
+      "id": "challenger:buffer.boost/final",
+      "node": "challenger:buffer.boost",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:buffer.hold/result",
+      "node": "challenger:buffer.hold",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:buffer.hold/settled",
+      "reopen": "challenger:buffer.hold/result",
+      "next": "challenger:buffer.hold/final"
+    },
+    {
+      "id": "challenger:buffer.hold/final",
+      "node": "challenger:buffer.hold",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    },
+    {
+      "id": "challenger:buffer.buffer/result",
+      "node": "challenger:buffer.buffer",
+      "phase": "result",
+      "record_round": 2,
+      "close": "challenger:buffer.buffer/settled",
+      "reopen": "challenger:buffer.buffer/result",
+      "next": "challenger:buffer.buffer/final"
+    },
+    {
+      "id": "challenger:buffer.buffer/final",
+      "node": "challenger:buffer.buffer",
+      "phase": "final",
+      "replay": "choose; retain explored IDs"
+    }
+  ]
+}

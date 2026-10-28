@@ -1,0 +1,29 @@
+.seal {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  background-image: url("assets/woodcut-atlas.png");
+  background-repeat: no-repeat;
+  filter: grayscale(1) brightness(1.06);
+  pointer-events: none;
+}
+.seal { background-size: 615.9722222222222% 307.9861111111111%; }
+.seal[data-seal="research"] { background-position: 2.25437% 8.34725%; clip-path: inset(11.80556% 5.72917%); }
+.seal[data-seal="factors"] { background-position: 21.63526% 8.34725%; clip-path: inset(11.11111% 6.07639%); }
+.seal[data-seal="cycle"] { background-position: 40.44415% 8.59766%; clip-path: inset(9.89583% 6.59722%); }
+.seal[data-seal="backtest"] { background-position: 59.11844% 9.09850%; clip-path: inset(9.20139% 8.50694%); }
+.seal[data-seal="allocation"] { background-position: 78.36474% 8.34725%; clip-path: inset(13.19444% 4.68750%); }
+.seal[data-seal="risk"] { background-position: 97.64468% 8.84808%; clip-path: inset(9.72222% 6.59722%); }
+.seal[data-seal="journal"] { background-position: 2.08614% 50.16694%; clip-path: inset(8.50694% 6.59722%); }
+.seal[data-seal="coach"] { background-position: 21.16420% 51.25209%; clip-path: inset(8.33333% 5.38194%); }
+.seal[data-seal="evidence"] { background-position: 40.71332% 51.25209%; clip-path: inset(11.80556% 1.73611%); }
+.seal[data-seal="account"] { background-position: 59.42127% 50.91820%; clip-path: inset(9.72222% 7.98611%); }
+.seal[data-seal="save"] { background-position: 78.56662% 51.16861%; clip-path: inset(10.93750% 6.42361%); }
+.seal[data-seal="settings"] { background-position: 97.77927% 50.91820%; clip-path: inset(10.06944% 7.29167%); }
+.seal[data-seal="semiconductor"] { background-position: 2.08614% 93.32220%; clip-path: inset(8.68056% 7.29167%); }
+.seal[data-seal="robotics"] { background-position: 21.76985% 93.82304%; clip-path: inset(9.02778% 6.42361%); }
+.seal[data-seal="materials"] { background-position: 40.51144% 93.15526%; clip-path: inset(8.68056% 7.63889%); }
+.seal[data-seal="energy"] { background-position: 59.11844% 94.15693%; clip-path: inset(6.25000% 6.77083%); }
+.seal[data-seal="infrastructure"] { background-position: 78.60027% 93.90651%; clip-path: inset(7.81250% 5.20833%); }
+.seal[data-seal="cash"] { background-position: 97.47645% 93.15526%; clip-path: inset(8.33333% 6.77083%); }

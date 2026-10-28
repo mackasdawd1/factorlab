@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#284c3f"><title>行业观察室 · 调查与抉择</title><link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"></head>
+<body>
+<a class="skip" href="#workspace">跳到研究工作台</a>
+<header class="masthead"><a href="./" class="brand"><span class="brand-mark" aria-hidden="true">观</span><span>行业观察室<small>FIELD NOTES / 01</small></span></a><div class="status-strip"><div><span>章节</span><strong>01 <small>/ 首章试作</small></strong></div><div><span>虚拟资产</span><strong id="nav">100,000.00</strong></div><div><span>当前半导体配置</span><strong id="current-weight">20%</strong></div></div><button id="research-open" class="quiet">研究工具 <span aria-hidden="true">↗</span></button></header>
+<div id="notice" class="notice" role="status" hidden></div>
+<main id="workspace" tabindex="-1">
+<nav class="journey" aria-label="章节进度"><span id="step-investigate" class="active">01 <b>调查线索</b></span><i aria-hidden="true"></i><span id="step-decide">02 <b>作出决定</b></span><i aria-hidden="true"></i><span id="step-review">03 <b>复盘判断</b></span><small>虚拟资金 · 合成教学剧情 · 约 3–5 分钟</small></nav>
+<div class="desk">
+<section class="case-file" aria-label="本轮事件与配置">
+<section class="dispatch" id="dispatch"><div class="dispatch-copy"><p class="eyebrow">案例 001 / 半导体产业</p><h1>好消息，<br>值得加仓吗？</h1><p>订单开始改善，价格却已提前上涨。<br>你会调整眼前的配置，还是继续等待证据？</p><span class="time-stamp">决策时点：模拟月 0</span></div><img class="wafer" src="board.svg" alt="晶圆与研究便笺的原创示意插画"></section>
+<section id="investigation">
+<div class="section-line"><h2>桌上的三条线索</h2><span id="evidence-count">已查看 0 / 3</span></div><p class="section-help">先拆开一张证据。支持与反对的理由，可能同时成立。</p>
+<div id="evidence-cards" class="evidence-cards"></div>
+<section class="decision" aria-labelledby="decision-title"><div class="section-line"><h2 id="decision-title">这一次，你怎么做？</h2><span>长期配置是起点</span></div><p class="section-help">只调整半导体与 Cash，其余行业保持原计划。</p><div id="choices" class="choices"></div>
+<div id="preview" class="allocation-preview" aria-live="polite"></div>
+<div class="reason-row"><label for="reason">我的主要依据<select id="reason"><option value="">选择一个理由</option></select></label><label for="note">给未来的自己留一句话 <span>选填</span><textarea id="note" maxlength="280" rows="2" placeholder="我愿意承担什么风险？什么证据会让我改变想法？"></textarea></label></div>
+<div class="decision-footer"><p id="lock-hint">查看至少一张证据，再留下判断理由。</p><button id="lock" class="primary" disabled>确认配置，看下一幕 <span aria-hidden="true">→</span></button></div></section>
+</section>
+<section id="result" hidden aria-labelledby="result-title" tabindex="-1"></section>
+</section>
+<aside class="partner" aria-labelledby="partner-title"><div class="partner-heading"><span class="avatar" aria-hidden="true">砚</span><div><h2 id="partner-title">阿砚 <small>研究搭档</small></h2><span id="ai-mode" class="mode-label">检查连接中</span></div><span class="connection-dot" aria-hidden="true"></span></div>
+<p class="partner-intro">我帮你梳理证据。<br>最后的判断，留给你。</p>
+<div id="messages" class="messages" role="log" aria-label="与研究搭档的对话" aria-live="polite"><div class="welcome-note"><span class="eyebrow">从一个问题开始</span><p>订单改善和价格上涨，讲的是同一件事吗？我们可以先找出其中的差别。</p></div></div>
+<div class="quick-questions"><button data-question="什么支持加仓？">什么支持加仓？ <span>↗</span></button><button data-question="最大的反对理由？">最大的反对理由？ <span>↗</span></button><button data-question="这会改变长期判断吗？">这会改变长期判断吗？ <span>↗</span></button></div>
+<form id="chat-form"><label for="question" class="sr-only">向研究搭档提问</label><textarea id="question" maxlength="600" rows="2" placeholder="也可以问自己的问题……"></textarea><div class="chat-bottom"><small id="chat-status">只讨论当前可见的证据</small><button id="send" type="submit" aria-label="发送问题">发送 ↑</button></div></form><p class="privacy-note">在线时，问题和当前游戏信息会发送给模型服务。请勿输入个人敏感信息。</p></aside>
+</div>
+</main>
+<footer class="page-footer"><span>高端制造 × 尖端科技 · 长期配置与短期抉择</span><div><button id="study-open">试玩记录</button><a href="design.html">设计过程</a><button id="reset-open">重新体验</button></div></footer>
+<nav class="mobile-tools" aria-label="移动端工作台导航"><button data-jump="case">回到调查台</button><button data-jump="partner">和阿砚讨论 ↗</button></nav>
+<dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
+<noscript>本游戏需要启用 JavaScript 才能进行配置和结算。</noscript>
+<script src="../card-game/engine.js"></script><script src="chapter.js"></script><script src="research.js"></script><script src="app.js"></script>
+</body></html>

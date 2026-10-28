@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 512,
+    "height": 512,
+    "sourceContent": [
+      0,
+      21,
+      512,
+      470
+    ],
+    "background": "#fafaf8"
+  },
+  "rendering": "opaque light-background design container; no transparency or white-key removal",
+  "processing": "Source action inspection, piecewise time remap to shorten holds, preserve action phases, common natural-pose endpoint; no audio, H.264/yuv420p/30fps/faststart.",
+  "poster": "poster.png",
+  "sourceIntegrity": "Original files remain unchanged in the user Downloads folder. Source hashes are recorded per clip.",
+  "boundaries": [
+    "The original 668x612 frames already end at the lower legs; full source framing is retained without new cropping.",
+    "White mask and pale texture background are preserved; these MP4 files are opaque.",
+    "5201 is a sideward look and return. Risk semantics cannot be inferred from that motion, so caution uses a static poster."
+  ],
+  "clips": {
+    "idle": {
+      "file": "idle.mp4",
+      "poster": "poster.png",
+      "sourceId": "3969",
+      "sourceName": "jimeng-2026-10-19-3969-严格保持上传参考图中的角色形象：白色双角面具、黑色椭圆眼孔、面部折线纹、深灰色披....mp4",
+      "sourceSha256": "74c499c8691c168b6c0d113562942287cb4976e56a37971ae6094eb3ddd4ce57",
+      "sourceDurationSeconds": 5.057,
+      "sourceActionWindowSeconds": [
+        0.1,
+        1.3
+      ],
+      "timeMapOutputToSourceSeconds": [
+        [
+          0,
+          0.1
+        ],
+        [
+          0.2,
+          0.3
+        ],
+        [
+          0.95,
+          1.05
+        ],
+        [
+          1.2,
+          1.3
+        ]
+      ],
+      "targetDurationSeconds": 1.2,
+      "actualDurationSeconds": 1.2,
+      "width": 512,
+      "height": 512,
+      "frames": 36,
+      "bytes": 35101,
+      "sha256": "633e78dc004c7b15c0e7c919c15ed9d5afb02cafe33a6e75b1275a289ebbf6dc",
+      "loop": false,
+      "fallback": "poster.png",
+      "motion": "Subtle breathing, short quiet segment",
+      "repeatPolicy": "Login only, randomized 12-20 seconds",
+      "cooldownMs": null
+    },
+    "welcome": {
+      "file": "welcome.mp4",
+      "poster": "poster.png",
+      "sourceId": "1669",
+      "sourceName": "jimeng-2026-10-19-1669-严格保持上传参考图中的角色形象：白色双角面具、黑色椭圆眼孔、面部折线纹、深灰色披....mp4",
+      "sourceSha256": "51e698e0e834434022cc2f001918c117c28ed024cc669526082e907e60acf25e",
+      "sourceDurationSeconds": 5.057,
+      "sourceActionWindowSeconds": [
+        0.8,
+        4.25
+      ],
+      "timeMapOutputToSourceSeconds": [
+        [
+          0,
+          0.8
+        ],
+        [
+          0.12,
+          1.2
+        ],
+        [
+          0.45,
+          2
+        ],
+        [
+          0.58,
+          2.8
+        ],
+        [
+          0.94,
+          3.8
+        ],
+        [
+          1.1,
+          4.25
+        ]
+      ],
+      "targetDurationSeconds": 1.1,
+      "actualDurationSeconds": 1.1,
+      "width": 512,
+      "height": 512,
+      "frames": 33,
+      "bytes": 68133,
+      "sha256": "4bfba045668e27e8a963da4883bfaad10f5c0b074c80ea23d42ca378fd37d12d",
+      "loop": false,
+      "fallback": "poster.png",
+      "motion": "Head tilt and return; shortened tilted hold",
+      "repeatPolicy": "Once per relevant user event",
+      "cooldownMs": 5000
+    },
+    "thinking": {
+      "file": "thinking.mp4",
+      "poster": "poster.png",
+      "sourceId": "6321",
+      "sourceName": "jimeng-2026-10-19-6321-严格保持上传参考图中的角色形象：白色双角面具、黑色椭圆眼孔、面部折线纹、深灰色披....mp4",
+      "sourceSha256": "331d4078b6e6c58f1edf444a256668b39348fe4b7c800f34ce4eb1d9f47fdc01",
+      "sourceDurationSeconds": 5.057,
+      "sourceActionWindowSeconds": [
+        0.65,
+        4.3
+      ],
+      "timeMapOutputToSourceSeconds": [
+        [
+          0,
+          0.65
+        ],
+        [
+          0.16,
+          1
+        ],
+        [
+          0.55,
+          1.7
+        ],
+        [
+          0.85,
+          2.7
+        ],
+        [
+          1.25,
+          3.75
+        ],
+        [
+          1.5,
+          4.3
+        ]
+      ],
+      "targetDurationSeconds": 1.5,
+      "actualDurationSeconds": 1.5,
+      "width": 512,
+      "height": 512,
+      "frames": 45,
+      "bytes": 73394,
+      "sha256": "ed82787a0b49410f89d3f426cbc93dfe7a633eda25f48680b0d6ee7995c2ebd9",
+      "loop": false,
+      "fallback": "poster.png",
+      "motion": "Look down and return; shortened lowered hold",
+      "repeatPolicy": "Only while a real request remains pending, controlled by the application",
+      "cooldownMs": null
+    },
+    "success": {
+      "file": "success.mp4",
+      "poster": "poster.png",
+      "sourceId": "9436",
+      "sourceName": "jimeng-2026-10-19-9436-严格保持上传参考图中的角色形象：白色双角面具、黑色椭圆眼孔、面部折线纹、深灰色披....mp4",
+      "sourceSha256": "e59a1e9fbf00aef5656f6ed69ca131d340ab9e198033597a1b8e1082e506dfae",
+      "sourceDurationSeconds": 5.057,
+      "sourceActionWindowSeconds": [
+        0.65,
+        3.55
+      ],
+      "timeMapOutputToSourceSeconds": [
+        [
+          0,
+          0.65
+        ],
+        [
+          0.32,
+          1.25
+        ],
+        [
+          0.42,
+          2.45
+        ],
+        [
+          0.8,
+          3.1
+        ],
+        [
+          1,
+          3.55
+        ]
+      ],
+      "targetDurationSeconds": 1,
+      "actualDurationSeconds": 1.0,
+      "width": 512,
+      "height": 512,
+      "frames": 30,
+      "bytes": 66558,
+      "sha256": "aae16c1071902feee8c5198ed9647e5f245f9885696bd8be6ced1afc392065b2",
+      "loop": false,
+      "fallback": "poster.png",
+      "motion": "Nod and return; shortened bowed hold",
+      "repeatPolicy": "Once per relevant user event",
+      "cooldownMs": null
+    },
+    "growth": {
+      "file": "growth.mp4",
+      "poster": "poster.png",
+      "sourceId": "5021",
+      "sourceName": "jimeng-2026-10-19-5021-严格保持上传参考图中的角色形象：白色双角面具、黑色椭圆眼孔、面部折线纹、深灰色披....mp4",
+      "sourceSha256": "2165be439958b4a9d715504e1b2dcd6a78cf8716040a0f4f1065479b87726612",
+      "sourceDurationSeconds": 5.057,
+      "sourceActionWindowSeconds": [
+        0.2,
+        4.6
+      ],
+      "timeMapOutputToSourceSeconds": [
+        [
+          0,
+          0.2
+        ],
+        [
+          0.25,
+          1.2
+        ],
+        [
+          0.55,
+          1.75
+        ],
+        [
+          0.78,
+          3.25
+        ],
+        [
+          1.1,
+          3.95
+        ],
+        [
+          1.3,
+          4.6
+        ]
+      ],
+      "targetDurationSeconds": 1.3,
+      "actualDurationSeconds": 1.3,
+      "width": 512,
+      "height": 512,
+      "frames": 39,
+      "bytes": 88424,
+      "sha256": "8d51dc8fceb8b8109dddeaec72730ae8bef42c9a69d3bb5761570d66592914bb",
+      "loop": false,
+      "fallback": "poster.png",
+      "motion": "Cloak opening with small sparkle, then return",
+      "repeatPolicy": "Once per relevant user event",
+      "cooldownMs": null
+    },
+    "milestone": {
+      "file": "milestone.mp4",
+      "poster": "poster.png",
+      "sourceId": "9111",
+      "sourceName": "jimeng-2026-10-19-9111-严格保持上传参考图中的角色形象：白色双角面具、黑色椭圆眼孔、面部折线纹、深灰色披....mp4",
+      "sourceSha256": "3d4e18448b0c3c75b244d8ca919976a68a872bb03bbb947d8d028e9d966e2c62",
+      "sourceDurationSeconds": 5.057,
+      "sourceActionWindowSeconds": [
+        0.25,
+        4.55
+      ],
+      "timeMapOutputToSourceSeconds": [
+        [
+          0,
+          0.25
+        ],
+        [
+          0.4,
+          1.15
+        ],
+        [
+          0.5,
+          1.6
+        ],
+        [
+          0.8,
+          2.2
+        ],
+        [
+          1.04,
+          3.1
+        ],
+        [
+          1.5,
+          3.95
+        ],
+        [
+          1.8,
+          4.55
+        ]
+      ],
+      "targetDurationSeconds": 1.8,
+      "actualDurationSeconds": 1.8,
+      "width": 512,
+      "height": 512,
+      "frames": 54,
+      "bytes": 143231,
+      "sha256": "c489fb78844a54ac0e364536789f6f9a01c1b5ac1c51ef6f25a680d90242636a",
+      "loop": false,
+      "fallback": "poster.png",
+      "motion": "Crouch, jump, sparkle, land, and return",
+      "repeatPolicy": "Once per relevant user event",
+      "cooldownMs": null
+    }
+  },
+  "unmappedSource": {
+    "sourceId": "5201",
+    "sourceName": "jimeng-2026-10-19-5201-严格保持上传参考图中的角色形象：白色双角面具、黑色椭圆眼孔、面部折线纹、深灰色披....mp4",
+    "sourceSha256": "e7e8f86623e82dcc3577d0d09c4dd472ed89e1a8f6fa45c79ae0d9a18d1317af",
+    "observedMotion": "Sideward look and return",
+    "reason": "No specific caution action can be verified"
+  },
+  "caution": {
+    "poster": "poster.png",
+    "targetDurationSeconds": 1.2,
+    "motion": "Static image; amber cue belongs to the application",
+    "loop": false
+  },
+  "posterSha256": "9c3b2ebfbbe80fda7cb090db1e549d2a36ee14d71d6b5057184768ea5e3997c8"
+}
