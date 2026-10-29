@@ -77,3 +77,55 @@ test('optional DemoNavSeries fixture is synthetic-demo labeled', () => {
   assert.ok(fixture.points.length >= 2);
   assert.match(fixture.disclaimer, /合成/);
 });
+
+
+test('toPublicStudyResult builds public_real pack with required refs', () => {
+  const pack = S.toPublicStudyResult({
+    sampleWindow: { start: '2019-07-31', end: '2024-12-31', frequency: 'month' },
+    sampleCount: 60,
+    factors: [
+      { id: 'Momentum', meanIC: 0.02, validMonths: 54 },
+      { id: 'Value', meanIC: null, validMonths: 40 },
+      { id: 'Quality', meanIC: 0.01, validMonths: 40 },
+      { id: 'LowVol', meanIC: 0.015, validMonths: 54 }
+    ],
+    publicSourceRefs: [
+      { title: 'Yahoo Finance', url: 'https://finance.yahoo.com/', asOf: '2026-10-29' }
+    ],
+    industryTrack: 'both',
+    lookback: 6
+  });
+  assert.equal(pack.schemaVersion, 'studyresult/1');
+  assert.equal(pack.dataProvenance, 'public_real');
+  assert.equal(pack.factorUniverseVersion, 'factors-public-v1');
+  assert.equal(pack.sampleCount, 60);
+  assert.ok(Array.isArray(pack.publicSourceRefs));
+  assert.ok(pack.publicSourceRefs.length >= 1);
+  assert.equal(pack.publicSourceRefs[0].title, 'Yahoo Finance');
+  assert.equal(pack.industryTrack, 'both');
+  assert.match(pack.note, /不证明投资功效|Rank IC/);
+  const keys = [...collectKeys(pack)];
+  for (const key of keys) {
+    assert.equal(FORBIDDEN.test(key), false, `forbidden key: ${key}`);
+  }
+});
+
+test('toPublicStudyResult rejects empty publicSourceRefs', () => {
+  assert.throws(() => S.toPublicStudyResult({
+    sampleWindow: { start: '2019-07-31', end: '2024-12-31', frequency: 'month' },
+    sampleCount: 12,
+    factors: [{ id: 'Momentum', meanIC: 0.01, validMonths: 10 }],
+    publicSourceRefs: []
+  }), /publicSourceRefs/);
+});
+
+test('public-real fixture is valid via toPublicStudyResult', () => {
+  const fixturePath = path.join(__dirname, 'fixtures', 'public-real-studyresult-sample.json');
+  const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8'));
+  assert.equal(fixture.dataProvenance, 'public_real');
+  assert.equal(fixture.factorUniverseVersion, 'factors-public-v1');
+  const pack = S.toPublicStudyResult(fixture);
+  assert.equal(pack.dataProvenance, 'public_real');
+  assert.ok(pack.publicSourceRefs.length >= 1);
+  assert.equal(pack.factors.length, 4);
+});
