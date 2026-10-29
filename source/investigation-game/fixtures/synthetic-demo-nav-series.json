@@ -1,0 +1,195 @@
+{
+  "label": "synthetic-demo",
+  "dataProvenance": "synthetic",
+  "tag": "synthetic-demo",
+  "title": "教学合成示意 · 资产与比较",
+  "disclaimer": "示意曲线，合成/教学数据，≠ 实盘或已验证因子功效。",
+  "studyId": "synthetic-8c25fb33",
+  "points": [
+    {
+      "monthIndex": 0,
+      "strategyNav": 1,
+      "benchmarkNav": 1
+    },
+    {
+      "monthIndex": 1,
+      "strategyNav": 0.9864498612622008,
+      "benchmarkNav": 1.002422741743003
+    },
+    {
+      "monthIndex": 2,
+      "strategyNav": 0.9621232381156273,
+      "benchmarkNav": 1.0176512377729492
+    },
+    {
+      "monthIndex": 3,
+      "strategyNav": 0.9768931543225321,
+      "benchmarkNav": 1.0239096888647934
+    },
+    {
+      "monthIndex": 4,
+      "strategyNav": 0.9691737262528726,
+      "benchmarkNav": 1.0211925632598333
+    },
+    {
+      "monthIndex": 5,
+      "strategyNav": 0.9323919026254507,
+      "benchmarkNav": 1.019228165670075
+    },
+    {
+      "monthIndex": 6,
+      "strategyNav": 0.8979518438439795,
+      "benchmarkNav": 1.026650687329004
+    },
+    {
+      "monthIndex": 7,
+      "strategyNav": 0.9015945569822577,
+      "benchmarkNav": 1.0376925598347086
+    },
+    {
+      "monthIndex": 8,
+      "strategyNav": 0.9462537473072775,
+      "benchmarkNav": 1.0588952681437735
+    },
+    {
+      "monthIndex": 9,
+      "strategyNav": 0.9651224816767429,
+      "benchmarkNav": 1.062571523255153
+    },
+    {
+      "monthIndex": 10,
+      "strategyNav": 0.9725416460404103,
+      "benchmarkNav": 1.0594634836406114
+    },
+    {
+      "monthIndex": 11,
+      "strategyNav": 0.9803887141375851,
+      "benchmarkNav": 1.062907239251105
+    },
+    {
+      "monthIndex": 12,
+      "strategyNav": 0.9890737143204799,
+      "benchmarkNav": 1.0770056816701516
+    },
+    {
+      "monthIndex": 13,
+      "strategyNav": 1.0330447703620802,
+      "benchmarkNav": 1.0921486722330125
+    },
+    {
+      "monthIndex": 14,
+      "strategyNav": 1.0472296492498177,
+      "benchmarkNav": 1.1035422696019677
+    },
+    {
+      "monthIndex": 15,
+      "strategyNav": 1.0071295337981894,
+      "benchmarkNav": 1.1004842853424062
+    },
+    {
+      "monthIndex": 16,
+      "strategyNav": 0.9626021356072549,
+      "benchmarkNav": 1.0999111763896088
+    },
+    {
+      "monthIndex": 17,
+      "strategyNav": 0.9775618661976937,
+      "benchmarkNav": 1.1115858492952033
+    },
+    {
+      "monthIndex": 18,
+      "strategyNav": 0.9890708689257155,
+      "benchmarkNav": 1.1306808291847419
+    },
+    {
+      "monthIndex": 19,
+      "strategyNav": 0.9921783655073376,
+      "benchmarkNav": 1.1429971419825478
+    },
+    {
+      "monthIndex": 20,
+      "strategyNav": 0.9798853854665498,
+      "benchmarkNav": 1.1371092194981434
+    },
+    {
+      "monthIndex": 21,
+      "strategyNav": 0.9732162196733789,
+      "benchmarkNav": 1.1317571114462535
+    },
+    {
+      "monthIndex": 22,
+      "strategyNav": 0.9664927773660182,
+      "benchmarkNav": 1.1342780225774858
+    },
+    {
+      "monthIndex": 23,
+      "strategyNav": 0.9855996575929437,
+      "benchmarkNav": 1.1479352957364761
+    },
+    {
+      "monthIndex": 24,
+      "strategyNav": 0.9985992758924735,
+      "benchmarkNav": 1.1625116073662127
+    },
+    {
+      "monthIndex": 25,
+      "strategyNav": 1.0037248343461818,
+      "benchmarkNav": 1.1665049134453314
+    },
+    {
+      "monthIndex": 26,
+      "strategyNav": 1.0052874091862012,
+      "benchmarkNav": 1.155811977153647
+    },
+    {
+      "monthIndex": 27,
+      "strategyNav": 1.0010754318035942,
+      "benchmarkNav": 1.164359892152189
+    },
+    {
+      "monthIndex": 28,
+      "strategyNav": 1.0153383666556905,
+      "benchmarkNav": 1.178391694520631
+    },
+    {
+      "monthIndex": 29,
+      "strategyNav": 1.0052572589951814,
+      "benchmarkNav": 1.1949206298289379
+    },
+    {
+      "monthIndex": 30,
+      "strategyNav": 0.9922861334577908,
+      "benchmarkNav": 1.2031496197072333
+    },
+    {
+      "monthIndex": 31,
+      "strategyNav": 0.9937136324044749,
+      "benchmarkNav": 1.2007940300855122
+    },
+    {
+      "monthIndex": 32,
+      "strategyNav": 0.9637826046728238,
+      "benchmarkNav": 1.196180016511318
+    },
+    {
+      "monthIndex": 33,
+      "strategyNav": 0.9322711222985818,
+      "benchmarkNav": 1.2148312217958397
+    },
+    {
+      "monthIndex": 34,
+      "strategyNav": 0.9369558890979636,
+      "benchmarkNav": 1.2338805668057131
+    },
+    {
+      "monthIndex": 35,
+      "strategyNav": 0.9561915040813026,
+      "benchmarkNav": 1.2482046411854302
+    },
+    {
+      "monthIndex": 36,
+      "strategyNav": 0.9717426198101069,
+      "benchmarkNav": 1.251994049932209
+    }
+  ]
+}
