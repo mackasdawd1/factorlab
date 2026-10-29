@@ -133,11 +133,18 @@ test('public-real fixture is valid via toPublicStudyResult', () => {
   assert.ok(pack.publicSourceRefs.length >= 1);
   assert.ok(pack.factors.length >= 2);
   assert.ok(pack.factors.every(f => ['Momentum', 'Value', 'Quality', 'LowVol'].includes(f.id)));
-  // interim price-only: no hand-filled fake IC when sampleCount is 0
+  // interim price-only: no hand-filled fake IC when sampleCount is 0;
+  // when prices loaded, meanIC must be finite (recomputed, not hand-filled)
   if (pack.sampleCount === 0) {
     for (const f of pack.factors) {
       assert.equal(f.meanIC, null);
       assert.equal(f.validMonths, 0);
+    }
+  } else {
+    assert.ok(pack.sampleCount > 0);
+    for (const f of pack.factors) {
+      assert.ok(Number.isFinite(f.meanIC), f.id + ' meanIC must be finite when sampleCount>0');
+      assert.ok(f.validMonths >= 1, f.id + ' validMonths');
     }
   }
 });

@@ -373,10 +373,20 @@
 
   function loadUniverseTickers(publicDataDir) {
     if (!fs || !path) return [];
-    const uPath = path.join(publicDataDir, 'universe-factors-public-v1.json');
-    if (!fs.existsSync(uPath)) return [];
-    const u = JSON.parse(fs.readFileSync(uPath, 'utf8'));
-    return Array.isArray(u.tickers) ? u.tickers.map(t => t.ticker) : [];
+    const candidates = [
+      'universe-factors-public-price-v1.json',
+      'universe-factors-public-v1.json'
+    ];
+    for (let c = 0; c < candidates.length; c++) {
+      const uPath = path.join(publicDataDir, candidates[c]);
+      if (!fs.existsSync(uPath)) continue;
+      const u = JSON.parse(fs.readFileSync(uPath, 'utf8'));
+      if (!Array.isArray(u.tickers) || !u.tickers.length) continue;
+      return u.tickers
+        .map(t => (typeof t === 'string' ? t : t && t.ticker))
+        .filter(Boolean);
+    }
+    return [];
   }
 
   function loadPriceRows(publicDataDir, ticker) {
