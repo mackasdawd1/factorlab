@@ -123,9 +123,45 @@ test('public-real fixture is valid via toPublicStudyResult', () => {
   const fixturePath = path.join(__dirname, 'fixtures', 'public-real-studyresult-sample.json');
   const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8'));
   assert.equal(fixture.dataProvenance, 'public_real');
-  assert.equal(fixture.factorUniverseVersion, 'factors-public-v1');
+  assert.ok(
+    fixture.factorUniverseVersion === 'factors-public-v1'
+      || fixture.factorUniverseVersion === 'factors-public-price-v1'
+  );
   const pack = S.toPublicStudyResult(fixture);
   assert.equal(pack.dataProvenance, 'public_real');
+  assert.equal(pack.factorUniverseVersion, fixture.factorUniverseVersion);
   assert.ok(pack.publicSourceRefs.length >= 1);
-  assert.equal(pack.factors.length, 4);
+  assert.ok(pack.factors.length >= 2);
+  assert.ok(pack.factors.every(f => ['Momentum', 'Value', 'Quality', 'LowVol'].includes(f.id)));
+  // interim price-only: no hand-filled fake IC when sampleCount is 0
+  if (pack.sampleCount === 0) {
+    for (const f of pack.factors) {
+      assert.equal(f.meanIC, null);
+      assert.equal(f.validMonths, 0);
+    }
+  }
+});
+
+test('toPublicStudyResult accepts factors-public-price-v1 interim', () => {
+  const pack = S.toPublicStudyResult({
+    factorUniverseVersion: 'factors-public-price-v1',
+    sampleWindow: { start: '2019-07-31', end: '2024-12-31', frequency: 'month' },
+    sampleCount: 0,
+    factors: [
+      { id: 'Momentum', meanIC: null, validMonths: 0 },
+      { id: 'LowVol', meanIC: null, validMonths: 0 }
+    ],
+    publicSourceRefs: [
+      { title: 'Yahoo Finance', url: 'https://finance.yahoo.com/', asOf: '2026-10-29' }
+    ],
+    industryTrack: 'both',
+    lookback: 6,
+    interim: true,
+    note: 'interim: Value/Quality 未测；诚实空测量'
+  });
+  assert.equal(pack.factorUniverseVersion, 'factors-public-price-v1');
+  assert.equal(pack.sampleCount, 0);
+  assert.equal(pack.interim, true);
+  assert.equal(pack.factors.length, 2);
+  assert.equal(pack.factors[0].meanIC, null);
 });

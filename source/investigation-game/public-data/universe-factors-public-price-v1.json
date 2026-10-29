@@ -1,0 +1,205 @@
+{
+  "factorUniverseVersion": "factors-public-price-v1",
+  "industryTrack": "both",
+  "asOf": "2026-10-29",
+  "frozenAsOf": "2019-07-31",
+  "n": 39,
+  "tickers": [
+    {
+      "ticker": "AAPL",
+      "name": "AAPL",
+      "track": "both"
+    },
+    {
+      "ticker": "ADBE",
+      "name": "ADBE",
+      "track": "both"
+    },
+    {
+      "ticker": "ADI",
+      "name": "ADI",
+      "track": "both"
+    },
+    {
+      "ticker": "AMAT",
+      "name": "AMAT",
+      "track": "both"
+    },
+    {
+      "ticker": "AMD",
+      "name": "AMD",
+      "track": "both"
+    },
+    {
+      "ticker": "ANET",
+      "name": "ANET",
+      "track": "both"
+    },
+    {
+      "ticker": "ASML",
+      "name": "ASML",
+      "track": "both"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "AVGO",
+      "track": "both"
+    },
+    {
+      "ticker": "CAT",
+      "name": "CAT",
+      "track": "both"
+    },
+    {
+      "ticker": "CDNS",
+      "name": "CDNS",
+      "track": "both"
+    },
+    {
+      "ticker": "CRM",
+      "name": "CRM",
+      "track": "both"
+    },
+    {
+      "ticker": "CRWD",
+      "name": "CRWD",
+      "track": "both"
+    },
+    {
+      "ticker": "DE",
+      "name": "DE",
+      "track": "both"
+    },
+    {
+      "ticker": "ENPH",
+      "name": "ENPH",
+      "track": "both"
+    },
+    {
+      "ticker": "ETN",
+      "name": "ETN",
+      "track": "both"
+    },
+    {
+      "ticker": "FSLR",
+      "name": "FSLR",
+      "track": "both"
+    },
+    {
+      "ticker": "GE",
+      "name": "GE",
+      "track": "both"
+    },
+    {
+      "ticker": "HON",
+      "name": "HON",
+      "track": "both"
+    },
+    {
+      "ticker": "INTC",
+      "name": "INTC",
+      "track": "both"
+    },
+    {
+      "ticker": "KEYS",
+      "name": "KEYS",
+      "track": "both"
+    },
+    {
+      "ticker": "KLAC",
+      "name": "KLAC",
+      "track": "both"
+    },
+    {
+      "ticker": "LRCX",
+      "name": "LRCX",
+      "track": "both"
+    },
+    {
+      "ticker": "MRVL",
+      "name": "MRVL",
+      "track": "both"
+    },
+    {
+      "ticker": "MSFT",
+      "name": "MSFT",
+      "track": "both"
+    },
+    {
+      "ticker": "MU",
+      "name": "MU",
+      "track": "both"
+    },
+    {
+      "ticker": "NOW",
+      "name": "NOW",
+      "track": "both"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVDA",
+      "track": "both"
+    },
+    {
+      "ticker": "ON",
+      "name": "ON",
+      "track": "both"
+    },
+    {
+      "ticker": "ORCL",
+      "name": "ORCL",
+      "track": "both"
+    },
+    {
+      "ticker": "PANW",
+      "name": "PANW",
+      "track": "both"
+    },
+    {
+      "ticker": "QCOM",
+      "name": "QCOM",
+      "track": "both"
+    },
+    {
+      "ticker": "ROK",
+      "name": "ROK",
+      "track": "both"
+    },
+    {
+      "ticker": "SMCI",
+      "name": "SMCI",
+      "track": "both"
+    },
+    {
+      "ticker": "SNPS",
+      "name": "SNPS",
+      "track": "both"
+    },
+    {
+      "ticker": "TER",
+      "name": "TER",
+      "track": "both"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "TSLA",
+      "track": "both"
+    },
+    {
+      "ticker": "TSM",
+      "name": "TSM",
+      "track": "both"
+    },
+    {
+      "ticker": "TXN",
+      "name": "TXN",
+      "track": "both"
+    },
+    {
+      "ticker": "UBER",
+      "name": "UBER",
+      "track": "both"
+    }
+  ],
+  "note": "interim universe from laptop Yahoo chart cache; survivor/selection bias disclosed"
+}
