@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "studyresult/1",
+  "studyId": "public-real-fixture-v1",
+  "dataProvenance": "public_real",
+  "factorUniverseVersion": "factors-public-v1",
+  "sampleWindow": {
+    "start": "2019-07-31",
+    "end": "2024-12-31",
+    "frequency": "month"
+  },
+  "sampleCount": 60,
+  "factors": [
+    {
+      "id": "Momentum",
+      "meanIC": 0.021,
+      "validMonths": 54
+    },
+    {
+      "id": "Value",
+      "meanIC": -0.008,
+      "validMonths": 48
+    },
+    {
+      "id": "Quality",
+      "meanIC": 0.012,
+      "validMonths": 48
+    },
+    {
+      "id": "LowVol",
+      "meanIC": 0.015,
+      "validMonths": 54
+    }
+  ],
+  "publicSourceRefs": [
+    {
+      "title": "Yahoo Finance (via yfinance) — Phase A fixture placeholder",
+      "url": "https://finance.yahoo.com/",
+      "asOf": "2026-10-29"
+    }
+  ],
+  "industryTrack": "both",
+  "lookback": 6,
+  "note": "公开样本上的 Rank IC 测量（fixture 手填示意值，待 D1/D2 管线替换）；披露幸存者/选样偏差与交易成本=0；不证明投资功效。"
+}
