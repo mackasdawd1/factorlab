@@ -1,0 +1,8 @@
+{
+  "asOf": "2026-10-29",
+  "mode": "laptop-yahoo-chart-cache",
+  "priceFiles": 39,
+  "source": "Yahoo chart v8 monthly via laptop \u2192 public-data/prices",
+  "factorUniverseVersion": "factors-public-price-v1",
+  "interim": true
+}

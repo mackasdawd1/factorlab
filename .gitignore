@@ -17,3 +17,6 @@ test-results/
 playwright-report/
 .DS_Store
 Thumbs.db
+
+# FactorLab public-data local venv
+source/investigation-game/public-data/.venv/

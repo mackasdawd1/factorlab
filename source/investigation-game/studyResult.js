@@ -32,9 +32,12 @@
     const factorIds = Array.isArray(input && input.factors)
       ? input.factors.map(f => f && f.id).filter(Boolean).join(',')
       : '';
+    const universe = (input && typeof input.factorUniverseVersion === 'string' && input.factorUniverseVersion)
+      ? input.factorUniverseVersion
+      : PUBLIC_FACTOR_UNIVERSE_VERSION;
     const raw = [
       PUBLIC_DATA_PROVENANCE,
-      PUBLIC_FACTOR_UNIVERSE_VERSION,
+      universe,
       window.start || '',
       window.end || '',
       input && input.sampleCount != null ? String(input.sampleCount) : '',
@@ -173,19 +176,28 @@
     const note = typeof input.note === 'string' && input.note.trim()
       ? input.note.trim()
       : DEFAULT_PUBLIC_NOTE;
+    const allowedPublicUniverse = {
+      'factors-public-v1': true,
+      'factors-public-price-v1': true
+    };
+    const universeVersion = (typeof input.factorUniverseVersion === 'string'
+      && allowedPublicUniverse[input.factorUniverseVersion])
+      ? input.factorUniverseVersion
+      : PUBLIC_FACTOR_UNIVERSE_VERSION;
     const pack = {
       schemaVersion: SCHEMA_VERSION,
       studyId: typeof input.studyId === 'string' && input.studyId.trim()
         ? input.studyId.trim()
-        : stablePublicStudyId(input),
+        : stablePublicStudyId(Object.assign({}, input, { factorUniverseVersion: universeVersion })),
       dataProvenance: PUBLIC_DATA_PROVENANCE,
-      factorUniverseVersion: PUBLIC_FACTOR_UNIVERSE_VERSION,
+      factorUniverseVersion: universeVersion,
       sampleWindow,
       sampleCount,
       factors,
       publicSourceRefs,
       note
     };
+    if (input.interim != null) pack.interim = !!input.interim;
     if (input.industryTrack != null) pack.industryTrack = String(input.industryTrack);
     if (input.lookback != null) pack.lookback = Number(input.lookback);
     if (input.methods != null) pack.methods = input.methods;
